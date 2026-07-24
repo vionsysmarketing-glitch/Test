@@ -1,14 +1,18 @@
 <section class="product-page page-width">
   <div class="product-page__media">
-    {% if product.featured_image %}
-      <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.featured_image.alt | escape }}" width="800" height="800">
-    {% else %}
-      <div class="product-row__media-placeholder">{{ product.title }}</div>
-    {% endif %}
+    <div class="product-page__media-frame">
+      {% if product.featured_image %}
+        <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.featured_image.alt | escape }}" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}" loading="eager">
+      {% else %}
+        <div class="product-row__media-placeholder">{{ product.title }}</div>
+      {% endif %}
+    </div>
     {% if product.images.size > 1 %}
       <div class="product-page__thumbs">
         {% for image in product.images %}
-          <img src="{{ image | image_url: width: 150 }}" alt="{{ image.alt | escape }}" width="150" height="150">
+          <div class="product-page__thumb">
+            <img src="{{ image | image_url: width: 150 }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy">
+          </div>
         {% endfor %}
       </div>
     {% endif %}
@@ -32,9 +36,15 @@
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
       {% endunless %}
 
-      <button type="submit" class="btn btn--solid" {% unless product.available %}disabled{% endunless %}>
-        {% if product.available %}Add to Cart{% else %}Sold Out{% endif %}
-      </button>
+      <div class="product-page__actions">
+        <button type="submit" class="btn btn--outline" {% unless product.available %}disabled{% endunless %}>
+          {% if product.available %}Add to Cart{% else %}Sold Out{% endif %}
+        </button>
+      </div>
+
+      {% if product.available %}
+        {{ form | payment_button }}
+      {% endif %}
     {% endform %}
   </div>
 </section>

@@ -10,27 +10,28 @@
       <a href="{{ section.settings.secondary_link }}" class="btn btn--outline">{{ section.settings.secondary_label }}</a>
     </div>
 
+    {% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
     <div class="hero__swatches" role="list" aria-label="Flavours">
-      {% for block in section.blocks %}
-        {% case block.settings.label %}
-          {% when 'Ghost' %}{% assign fallback = 'ghost-chutney.jpg' %}
-          {% when 'Imli' %}{% assign fallback = 'imli-chutney.jpg' %}
-          {% when 'Momo' %}{% assign fallback = 'momo-chutney.jpg' %}
-          {% when 'Chilli' %}{% assign fallback = 'chilli-flakes.jpg' %}
-          {% when 'Masala' %}{% assign fallback = 'garam-masala.jpg' %}
-          {% else %}{% assign fallback = 'ghost-chutney.jpg' %}
-        {% endcase %}
-        <a href="{{ block.settings.link | default: '#' }}" class="hero__swatch" role="listitem" {{ block.shopify_attributes }}>
-          <span class="hero__swatch-dot">
-            {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | image_url: width: 80 }}" alt="{{ block.settings.label }}" width="34" height="34" loading="lazy">
-            {% else %}
-              <img src="{{ fallback | asset_url }}" alt="{{ block.settings.label }}" width="34" height="34" loading="lazy">
-            {% endif %}
-          </span>
-          <span class="hero__swatch-label">{{ block.settings.label }}</span>
-        </a>
-      {% endfor %}
+      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
+        <span class="hero__swatch-dot"><img src="{{ 'ghost-chutney.jpg' | asset_url }}" alt="Ghost" width="34" height="34" loading="lazy"></span>
+        <span class="hero__swatch-label">Ghost</span>
+      </a>
+      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
+        <span class="hero__swatch-dot"><img src="{{ 'imli-chutney.jpg' | asset_url }}" alt="Imli" width="34" height="34" loading="lazy"></span>
+        <span class="hero__swatch-label">Imli</span>
+      </a>
+      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
+        <span class="hero__swatch-dot"><img src="{{ 'momo-chutney.jpg' | asset_url }}" alt="Momo" width="34" height="34" loading="lazy"></span>
+        <span class="hero__swatch-label">Momo</span>
+      </a>
+      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
+        <span class="hero__swatch-dot"><img src="{{ 'chilli-flakes.jpg' | asset_url }}" alt="Chilli" width="34" height="34" loading="lazy"></span>
+        <span class="hero__swatch-label">Chilli</span>
+      </a>
+      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
+        <span class="hero__swatch-dot"><img src="{{ 'garam-masala.jpg' | asset_url }}" alt="Masala" width="34" height="34" loading="lazy"></span>
+        <span class="hero__swatch-label">Masala</span>
+      </a>
     </div>
   </div>
 
@@ -60,27 +61,8 @@
     { "type": "image_picker", "id": "image", "label": "Hero image", "info": "Defaults to the Hungry Dinosaur product banner" },
     { "type": "text", "id": "badge_text", "label": "Corner badge text", "default": "New Batch" },
     { "type": "color", "id": "color_left", "label": "Left panel color", "default": "#FBEADF" },
-    { "type": "color", "id": "color_right", "label": "Right panel color", "default": "#9D0101" }
-  ],
-  "blocks": [
-    {
-      "type": "swatch",
-      "name": "Flavour swatch",
-      "settings": [
-        { "type": "text", "id": "label", "label": "Label", "default": "Ghost" },
-        { "type": "image_picker", "id": "image", "label": "Thumbnail" },
-        { "type": "url", "id": "link", "label": "Link" }
-      ]
-    }
-  ],
-  "default": {
-    "blocks": [
-      { "type": "swatch", "settings": { "label": "Ghost" } },
-      { "type": "swatch", "settings": { "label": "Imli" } },
-      { "type": "swatch", "settings": { "label": "Momo" } },
-      { "type": "swatch", "settings": { "label": "Chilli" } },
-      { "type": "swatch", "settings": { "label": "Masala" } }
-    ]
-  }
+    { "type": "color", "id": "color_right", "label": "Right panel color", "default": "#9D0101" },
+    { "type": "url", "id": "shop_all_link", "label": "Flavour swatches link" }
+  ]
 }
 {% endschema %}

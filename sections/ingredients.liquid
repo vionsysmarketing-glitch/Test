@@ -1,14 +1,39 @@
+{% comment %}
+  Hardcoded rather than schema "default" blocks — that mechanism proved
+  unreliable on live Shopify (see scroll-showcase.liquid), silently
+  rendering zero blocks with no error.
+{% endcomment %}
 <section class="ingredients">
   <div class="page-width">
+    <span class="ingredients__eyebrow">{{ section.settings.eyebrow }}</span>
     <h2 class="ingredients__heading">{{ section.settings.heading }}</h2>
+
     <div class="ingredients__grid">
-      {% for block in section.blocks %}
-        <div class="ingredients__item" {{ block.shopify_attributes }}>
-          <span class="ingredients__icon" aria-hidden="true">{{ block.settings.emoji }}</span>
-          <h3 class="ingredients__item-title">{{ block.settings.title }}</h3>
-          <p class="ingredients__item-text">{{ block.settings.text }}</p>
-        </div>
-      {% endfor %}
+      <div class="ingredients__item ingredients__item--1">
+        <span class="ingredients__icon" style="background: #9D0101;" aria-hidden="true">🌶️</span>
+        <h3 class="ingredients__item-title">Hyperlocal Ingredients</h3>
+        <p class="ingredients__item-text">Sourced from Indian farms and markets, not a lab.</p>
+      </div>
+      <div class="ingredients__item ingredients__item--2">
+        <span class="ingredients__icon" style="background: #014C9D;" aria-hidden="true">🚫</span>
+        <h3 class="ingredients__item-title">Zero Preservatives</h3>
+        <p class="ingredients__item-text">Nothing artificial, nothing you can't pronounce.</p>
+      </div>
+      <div class="ingredients__item ingredients__item--3">
+        <span class="ingredients__icon" style="background: #B5651D;" aria-hidden="true">🔥</span>
+        <h3 class="ingredients__item-title">Small-Batch Made</h3>
+        <p class="ingredients__item-text">Cooked in small batches for consistent, homemade-style taste.</p>
+      </div>
+      <div class="ingredients__item ingredients__item--4">
+        <span class="ingredients__icon" style="background: #4A6B1F;" aria-hidden="true">🌍</span>
+        <h3 class="ingredients__item-title">Bold Global Twist</h3>
+        <p class="ingredients__item-text">Classic Indian flavour, remixed for the world.</p>
+      </div>
+      <div class="ingredients__item ingredients__item--5">
+        <span class="ingredients__icon" style="background: #B8960C;" aria-hidden="true">🥄</span>
+        <h3 class="ingredients__item-title">Ready to Eat</h3>
+        <p class="ingredients__item-text">Straight from the jar to your plate. No cooking required.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -17,27 +42,8 @@
 {
   "name": "Ingredients",
   "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "No Nonsense, No Additives" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "What's Inside, Matters" }
-  ],
-  "blocks": [
-    {
-      "type": "item",
-      "name": "Item",
-      "settings": [
-        { "type": "text", "id": "emoji", "label": "Emoji", "default": "🌶️" },
-        { "type": "text", "id": "title", "label": "Title" },
-        { "type": "textarea", "id": "text", "label": "Text" }
-      ]
-    }
-  ],
-  "default": {
-    "blocks": [
-      { "type": "item", "settings": { "emoji": "🌶️", "title": "Hyperlocal Ingredients", "text": "Sourced from Indian farms and markets, not a lab." } },
-      { "type": "item", "settings": { "emoji": "🚫", "title": "Zero Preservatives", "text": "Nothing artificial, nothing you can't pronounce." } },
-      { "type": "item", "settings": { "emoji": "🔥", "title": "Small-Batch Made", "text": "Cooked in small batches for consistent, homemade-style taste." } },
-      { "type": "item", "settings": { "emoji": "🌍", "title": "Bold Global Twist", "text": "Classic Indian flavour, remixed for the world." } },
-      { "type": "item", "settings": { "emoji": "🥄", "title": "Ready to Eat", "text": "Straight from the jar to your plate. No cooking required." } }
-    ]
-  }
+  ]
 }
 {% endschema %}

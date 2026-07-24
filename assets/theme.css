@@ -499,27 +499,55 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- Ingredients ---------- */
-.ingredients { background: var(--color-background-alt); padding: 5rem 0; }
-.ingredients__heading { text-align: center; font-size: clamp(2rem, 3.2vw, 2.6rem); margin-bottom: 3rem; color: var(--color-primary); }
+.ingredients {
+  background: var(--color-background-alt);
+  background-image: radial-gradient(rgba(34,34,34,0.06) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  padding: 5.5rem 0;
+  overflow: hidden;
+}
+.ingredients__eyebrow {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+.ingredients__heading { text-align: center; font-size: clamp(2rem, 3.2vw, 2.6rem); margin-bottom: 3.5rem; }
 .ingredients__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  gap: 1.75rem 1.25rem;
 }
 .ingredients__item {
+  position: relative;
   background: #fff;
   border-radius: var(--radius-md);
-  padding: 2rem 1.25rem;
+  padding: 2.25rem 1.25rem 1.75rem;
   text-align: center;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 10px 0 rgba(34,34,34,0.06), var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+.ingredients__item:hover {
+  transform: translateY(-6px) rotate(0deg) !important;
+  box-shadow: 0 16px 24px rgba(34,34,34,0.16);
+}
+.ingredients__item--1 { transform: rotate(-3deg); }
+.ingredients__item--2 { transform: rotate(2deg); margin-top: 1.5rem; }
+.ingredients__item--3 { transform: rotate(-2deg); }
+.ingredients__item--4 { transform: rotate(3deg); margin-top: 1.5rem; }
+.ingredients__item--5 { transform: rotate(-1deg); }
 .ingredients__icon {
-  font-size: 1.6rem;
-  width: 64px; height: 64px;
+  font-size: 1.8rem;
+  width: 68px; height: 68px;
   display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.1rem;
-  background: var(--color-background-alt);
+  margin: -3.25rem auto 1.1rem;
   border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 14px rgba(34,34,34,0.25);
 }
 .ingredients__item-title { font-family: var(--font-body); font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
 .ingredients__item-text { font-size: 0.88rem; color: rgba(34,34,34,0.7); margin: 0; }
@@ -644,14 +672,34 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- Product / Collection / Cart / misc pages ---------- */
-.product-page { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 3.5rem 0; }
-.product-page__media img { border-radius: var(--radius-lg); }
+.product-page { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 3.5rem 0; align-items: start; }
+.product-page__media-frame {
+  aspect-ratio: 1 / 1;
+  background: rgba(255,255,255,0.6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+}
+.product-page__media-frame img { width: 100%; height: 100%; object-fit: contain; }
 .product-page__thumbs { display: flex; gap: 0.75rem; margin-top: 0.75rem; }
-.product-page__thumbs img { border-radius: var(--radius-sm); cursor: pointer; }
+.product-page__thumb {
+  width: 72px; height: 72px;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+}
+.product-page__thumb img { width: 100%; height: 100%; object-fit: contain; }
 .product-page__title { color: var(--color-primary); margin-bottom: 0.5rem; font-size: 2rem; }
 .product-page__price { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; }
 .product-page__description { margin-bottom: 1.75rem; }
 .product-page__variant-select { display: block; margin-bottom: 1rem; padding: 0.6rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); }
+.product-page__actions { margin-bottom: 1rem; }
+.product-page__actions .btn { width: 100%; }
 
 .collection__header { padding: 3rem 0 2rem; text-align: center; }
 .collection__title { color: var(--color-primary); font-size: 2rem; }
@@ -714,7 +762,11 @@ h1, h2, h3, h4 {
      pattern: flatten the split gradient to a single solid color. */
   .scroll-showcase__bg { background: var(--bg-left); }
 
-  .ingredients__grid { grid-template-columns: repeat(2, 1fr); }
+  .ingredients__grid { grid-template-columns: repeat(2, 1fr); row-gap: 2.5rem; }
+  .ingredients__item--1, .ingredients__item--2, .ingredients__item--3, .ingredients__item--4, .ingredients__item--5 {
+    transform: none;
+    margin-top: 0;
+  }
   .how-it-works__grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
   .testimonials__inner { grid-template-columns: 1fr; }
   .lifestyle-banner__inner { grid-template-columns: 1fr; }

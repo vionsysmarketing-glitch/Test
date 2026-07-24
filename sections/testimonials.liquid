@@ -1,3 +1,4 @@
+{% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
 <section class="testimonials">
   <div class="page-width testimonials__inner">
     <div class="testimonials__trust">
@@ -11,12 +12,18 @@
     </div>
 
     <div class="testimonials__grid">
-      {% for block in section.blocks %}
-        <blockquote class="testimonial-card" {{ block.shopify_attributes }}>
-          <p class="testimonial-card__quote">&ldquo;{{ block.settings.quote }}&rdquo;</p>
-          <footer class="testimonial-card__author">— {{ block.settings.author }}</footer>
-        </blockquote>
-      {% endfor %}
+      <blockquote class="testimonial-card">
+        <p class="testimonial-card__quote">&ldquo;The Ghost Chutney lives up to its name. Absolutely addictive on everything.&rdquo;</p>
+        <footer class="testimonial-card__author">— Priya S.</footer>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial-card__quote">&ldquo;Finally, a momo chutney that tastes like the street cart back home.&rdquo;</p>
+        <footer class="testimonial-card__author">— Arjun M.</footer>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial-card__quote">&ldquo;The garam masala completely changed my dal. So much more aromatic.&rdquo;</p>
+        <footer class="testimonial-card__author">— Fatima K.</footer>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -28,23 +35,6 @@
     { "type": "text", "id": "count", "label": "Customer count", "default": "12,000" },
     { "type": "text", "id": "count_label", "label": "Count label", "default": "happy taste buds and counting" },
     { "type": "text", "id": "tagline", "label": "Tagline", "default": "Real people. Real heat. Real cravings." }
-  ],
-  "blocks": [
-    {
-      "type": "testimonial",
-      "name": "Testimonial",
-      "settings": [
-        { "type": "textarea", "id": "quote", "label": "Quote" },
-        { "type": "text", "id": "author", "label": "Author" }
-      ]
-    }
-  ],
-  "default": {
-    "blocks": [
-      { "type": "testimonial", "settings": { "quote": "The Ghost Chutney lives up to its name. Absolutely addictive on everything.", "author": "Priya S." } },
-      { "type": "testimonial", "settings": { "quote": "Finally, a momo chutney that tastes like the street cart back home.", "author": "Arjun M." } },
-      { "type": "testimonial", "settings": { "quote": "Devil Sour Creme is my new go-to for wraps. Cool with just the right kick.", "author": "Fatima K." } }
-    ]
-  }
+  ]
 }
 {% endschema %}
