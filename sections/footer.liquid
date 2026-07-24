@@ -1,7 +1,10 @@
 <footer class="footer">
   <div class="page-width footer__inner">
     <div class="footer__brand">
-      <a href="{{ routes.root_url }}" class="footer__logo">🦖 {{ section.settings.logo_text }}</a>
+      <a href="{{ routes.root_url }}" class="footer__logo">
+        <img src="{{ 'logo.png' | asset_url }}" alt="" width="36" height="36" class="footer__logo-image">
+        {{ section.settings.logo_text }}
+      </a>
       <p class="footer__tagline">{{ section.settings.tagline }}</p>
       <div class="footer__social">
         {% if settings.social_instagram_link != blank %}<a href="{{ settings.social_instagram_link }}" aria-label="Instagram">IG</a>{% endif %}

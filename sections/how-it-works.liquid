@@ -1,11 +1,14 @@
 <section class="how-it-works">
-  <div class="page-width">
-    <h2 class="how-it-works__heading">{{ section.settings.heading }}</h2>
-    <div class="how-it-works__steps">
+  <div class="how-it-works__heading-area">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+  <div class="how-it-works__content-area" style="background-color: {{ section.settings.band_color }};">
+    <div class="how-it-works__grid">
       {% for block in section.blocks %}
         <div class="how-it-works__step" {{ block.shopify_attributes }}>
-          <span class="how-it-works__step-number">{{ forloop.index }}</span>
-          <h3 class="how-it-works__step-title">{{ block.settings.title }}</h3>
+          <div class="how-it-works__icon-circle" style="background-color: {{ section.settings.icon_circle_color }};">
+            <span aria-hidden="true">{{ block.settings.emoji }}</span>
+          </div>
           <p class="how-it-works__step-text">{{ block.settings.text }}</p>
         </div>
       {% endfor %}
@@ -17,23 +20,26 @@
 {
   "name": "How it works",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Snack Bold in 3 Steps" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ready in Seconds. Bold for Hours." },
+    { "type": "color", "id": "band_color", "label": "Band background", "default": "#F7C2B8" },
+    { "type": "color", "id": "icon_circle_color", "label": "Icon circle color", "default": "#9D0101" }
   ],
   "blocks": [
     {
       "type": "step",
       "name": "Step",
       "settings": [
-        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "text", "id": "emoji", "label": "Emoji", "default": "🫙" },
         { "type": "textarea", "id": "text", "label": "Text" }
       ]
     }
   ],
   "default": {
     "blocks": [
-      { "type": "step", "settings": { "title": "Pick your flavour", "text": "Ghost, Imli, Momo, Devil or Hummus — choose your heat level." } },
-      { "type": "step", "settings": { "title": "Open the jar", "text": "No cooking, no prep. It's ready to eat straight away." } },
-      { "type": "step", "settings": { "title": "Pair & devour", "text": "Snacks, wraps, rice, eggs — one jar, endless combos." } }
+      { "type": "step", "settings": { "emoji": "🫙", "text": "Twist open the jar — no cooking, no prep needed." } },
+      { "type": "step", "settings": { "emoji": "🥄", "text": "Spoon out as much heat as you can handle." } },
+      { "type": "step", "settings": { "emoji": "🌯", "text": "Pair with snacks, wraps, rice, eggs or momos." } },
+      { "type": "step", "settings": { "emoji": "🔥", "text": "Reseal and refrigerate. Bold flavour, zero waste." } }
     ]
   },
   "presets": [

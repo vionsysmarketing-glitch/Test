@@ -7,13 +7,22 @@
   </div>
 
   {% for block in section.blocks %}
+    {% case block.settings.title %}
+      {% when 'Ghost Chutney' %}{% assign fallback = 'ghost-chutney.jpg' %}
+      {% when 'Imli Chutney' %}{% assign fallback = 'imli-chutney.jpg' %}
+      {% when 'Momo Chutney' %}{% assign fallback = 'momo-chutney.jpg' %}
+      {% when 'Chilli Flakes' %}{% assign fallback = 'chilli-flakes.jpg' %}
+      {% when 'Garam Masala Powder' %}{% assign fallback = 'garam-masala.jpg' %}
+      {% when 'Coriander Powder' %}{% assign fallback = 'coriander-powder.jpg' %}
+      {% else %}{% assign fallback = 'ghost-chutney.jpg' %}
+    {% endcase %}
     <div class="product-row {% cycle 'product-row--normal', 'product-row--reverse' %}" style="--card-light: {{ block.settings.color_light }}; --card-dark: {{ block.settings.color_dark }};" {{ block.shopify_attributes }}>
       <div class="page-width product-row__inner">
         <div class="product-row__media">
           {% if block.settings.image != blank %}
-            <img src="{{ block.settings.image | image_url: width: 700 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy" width="700" height="700">
+            <img src="{{ block.settings.image | image_url: width: 700 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="700" height="700">
           {% else %}
-            <div class="product-row__media-placeholder">{{ block.settings.title }}</div>
+            <img src="{{ fallback | asset_url }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="700" height="700">
           {% endif %}
         </div>
         <div class="product-row__content">
@@ -54,7 +63,7 @@
         { "type": "text", "id": "benefit_3", "label": "Benefit 3" },
         { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Now" },
         { "type": "url", "id": "link", "label": "Button link" },
-        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Defaults to the matching Hungry Dinosaur product photo based on title" },
         { "type": "color", "id": "color_light", "label": "Light background", "default": "#F7C9C2" },
         { "type": "color", "id": "color_dark", "label": "Dark accent", "default": "#9D0101" }
       ]
@@ -67,7 +76,7 @@
         "settings": {
           "title": "Ghost Chutney",
           "tagline": "For the heat-seekers",
-          "description": "Our hottest recipe, built on real ghost pepper and slow-roasted tomato. Homemade-style, no shortcuts, no mercy.",
+          "description": "Sil-batta prepared with real ghost pepper, garlic and slow-roasted tomato. Homemade-style, no shortcuts, no mercy.",
           "benefit_1": "Made with real ghost peppers",
           "benefit_2": "Zero preservatives",
           "benefit_3": "Ready to eat, straight from the jar",
@@ -79,7 +88,7 @@
         "type": "product",
         "settings": {
           "title": "Imli Chutney",
-          "tagline": "Sweet, sour, unforgettable",
+          "tagline": "Ghar wali meethi chutney",
           "description": "A tangy tamarind chutney that balances sweet jaggery with a citrusy punch. The one that goes with everything.",
           "benefit_1": "Hyperlocal tamarind & jaggery",
           "benefit_2": "No artificial flavours",
@@ -97,34 +106,47 @@
           "benefit_1": "Street-style spice blend",
           "benefit_2": "Small-batch roasted",
           "benefit_3": "Goes beyond momos: fries, eggs, rice",
-          "color_light": "#D7E8C0",
+          "color_light": "#F7C2B8",
+          "color_dark": "#9D0101"
+        }
+      },
+      {
+        "type": "product",
+        "settings": {
+          "title": "Chilli Flakes",
+          "tagline": "Export quality, sun-dried heat",
+          "description": "Crushed sun-dried red chillies with a smoky crunch. Sprinkle it on pizza, pasta, eggs — anything that needs a kick.",
+          "benefit_1": "Export-quality sun-dried chillies",
+          "benefit_2": "No fillers, no colouring",
+          "benefit_3": "Coarse crunch, bold heat",
+          "color_light": "#E8E2DC",
+          "color_dark": "#4A4A4A"
+        }
+      },
+      {
+        "type": "product",
+        "settings": {
+          "title": "Garam Masala Powder",
+          "tagline": "The soul of every curry",
+          "description": "A warm, aromatic blend of roasted whole spices ground fresh. One spoon transforms any dal, sabzi or curry.",
+          "benefit_1": "Small-batch roasted & ground",
+          "benefit_2": "No anti-caking agents",
+          "benefit_3": "Export-quality spice sourcing",
+          "color_light": "#E4D2BE",
+          "color_dark": "#5C3A21"
+        }
+      },
+      {
+        "type": "product",
+        "settings": {
+          "title": "Coriander Powder",
+          "tagline": "Fresh-ground, never stale",
+          "description": "Earthy, citrusy coriander powder ground from export-quality seeds. The everyday base note for Indian cooking.",
+          "benefit_1": "Export-quality coriander seeds",
+          "benefit_2": "Ground fresh, not stockpiled",
+          "benefit_3": "Everyday curry & marinade base",
+          "color_light": "#DCE8CC",
           "color_dark": "#4A6B1F"
-        }
-      },
-      {
-        "type": "product",
-        "settings": {
-          "title": "Devil Sour Creme",
-          "tagline": "Cool, tangy, dangerously good",
-          "description": "A creamy, sour-spiked dip with a devilish kick. Cools the fire while keeping the drama.",
-          "benefit_1": "Rich & creamy base",
-          "benefit_2": "Balanced heat, no burnout",
-          "benefit_3": "Great on wraps, tacos & fries",
-          "color_light": "#CFE0F7",
-          "color_dark": "#014C9D"
-        }
-      },
-      {
-        "type": "product",
-        "settings": {
-          "title": "Ghost Hummus",
-          "tagline": "Hummus with a haunting",
-          "description": "Classic chickpea hummus reimagined with a whisper of ghost pepper heat. Smooth on the outside, spicy on the inside.",
-          "benefit_1": "Protein-rich chickpea base",
-          "benefit_2": "Subtle, building heat",
-          "benefit_3": "Ready-to-eat, resealable jar",
-          "color_light": "#F5EAB0",
-          "color_dark": "#B8960C"
         }
       }
     ]

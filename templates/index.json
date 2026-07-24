@@ -5,6 +5,7 @@
     "mission": { "type": "mission" },
     "ingredients": { "type": "ingredients" },
     "how-it-works": { "type": "how-it-works" },
+    "lifestyle-banner": { "type": "lifestyle-banner" },
     "testimonials": { "type": "testimonials" },
     "newsletter": { "type": "newsletter" }
   },
@@ -14,6 +15,7 @@
     "mission",
     "ingredients",
     "how-it-works",
+    "lifestyle-banner",
     "testimonials",
     "newsletter"
   ]
