@@ -1,7 +1,7 @@
 {
   "sections": {
     "hero": { "type": "hero" },
-    "product-showcase": { "type": "product-showcase" },
+    "scroll-showcase": { "type": "scroll-showcase" },
     "mission": { "type": "mission" },
     "ingredients": { "type": "ingredients" },
     "how-it-works": { "type": "how-it-works" },
@@ -11,7 +11,7 @@
   },
   "order": [
     "hero",
-    "product-showcase",
+    "scroll-showcase",
     "mission",
     "ingredients",
     "how-it-works",

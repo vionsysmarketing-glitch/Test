@@ -405,6 +405,85 @@ h1, h2, h3, h4 {
 }
 .product-row__benefits svg { color: var(--card-dark, var(--color-primary)); flex-shrink: 0; }
 
+/* ---------- Scroll showcase (ulag-style scroll-driven product spotlight) ---------- */
+.scroll-showcase { padding-bottom: 2rem; }
+.scroll-showcase__track {
+  position: relative;
+  min-height: 100vh; /* JS expands this to (product count * 100vh); this is the no-JS fallback */
+}
+.scroll-showcase__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.scroll-showcase__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--bg-left) 0%, var(--bg-left) 50%, var(--bg-right) 50%, var(--bg-right) 100%);
+  transition: background 0.5s ease;
+  z-index: 0;
+}
+.scroll-showcase__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+.scroll-showcase__text { position: relative; min-height: 420px; }
+.scroll-showcase__panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.scroll-showcase__panel.is-active { opacity: 1; pointer-events: auto; }
+.scroll-showcase__title { font-size: clamp(1.9rem, 3.2vw, 2.6rem); margin-bottom: 0.6rem; }
+.scroll-showcase__tagline { font-family: var(--font-body); font-weight: 700; opacity: 0.75; margin: 0 0 1rem; }
+.scroll-showcase__desc { max-width: 440px; margin: 0 0 1.25rem; }
+.scroll-showcase__benefits { list-style: none; margin: 0 0 1.75rem; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.scroll-showcase__benefits li { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 0.95rem; }
+.scroll-showcase__benefits svg { flex-shrink: 0; }
+
+.scroll-showcase__dots {
+  position: absolute;
+  left: 0; bottom: -2.5rem;
+  display: flex;
+  gap: 0.6rem;
+}
+.scroll-showcase__dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(34,34,34,0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.scroll-showcase__dot.is-active { background: var(--color-text); transform: scale(1.3); }
+
+.scroll-showcase__media { position: relative; aspect-ratio: 1/1; }
+.scroll-showcase__image-slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.55);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+}
+.scroll-showcase__image-slide.is-active { opacity: 1; transform: scale(1); z-index: 1; }
+.scroll-showcase__image-slide img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 14px 18px rgba(0,0,0,0.18)); }
+
 /* ---------- Mission ---------- */
 .mission { padding: 5rem 0; text-align: center; }
 .mission__inner { max-width: 700px; margin: 0 auto; }
@@ -623,6 +702,17 @@ h1, h2, h3, h4 {
 
   .product-row__inner, .product-row--reverse .product-row__inner { grid-template-columns: 1fr; direction: ltr; }
   .product-row__media { max-width: 380px; margin: 0 auto; }
+
+  .scroll-showcase__inner { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
+  .scroll-showcase__text { min-height: 380px; order: 2; padding-bottom: 2rem; }
+  .scroll-showcase__media { width: 100%; max-width: 260px; margin: 0 auto; order: 1; }
+  .scroll-showcase__benefits { align-items: center; }
+  .scroll-showcase__dots { left: 50%; transform: translateX(-50%); bottom: 0; }
+  /* Stacked mobile layout puts text full-width across both gradient halves, so a
+     product's dark accent (used both as the title color and the right-half
+     background) can render invisible against itself. Match ulag's own mobile
+     pattern: flatten the split gradient to a single solid color. */
+  .scroll-showcase__bg { background: var(--bg-left); }
 
   .ingredients__grid { grid-template-columns: repeat(2, 1fr); }
   .how-it-works__grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }

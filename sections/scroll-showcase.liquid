@@ -1,4 +1,11 @@
-<section class="product-showcase" id="shop">
+{% capture colors_json %}[{% for block in section.blocks %}{"light":"{{ block.settings.color_light }}","dark":"{{ block.settings.color_dark }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endcapture %}
+<section
+  class="scroll-showcase"
+  id="ScrollShowcase"
+  data-scroll-showcase
+  style="--bg-left: {{ section.blocks.first.settings.color_light | default: '#FBEADF' }}; --bg-right: {{ section.blocks.first.settings.color_dark | default: '#9D0101' }};"
+  data-colors='{{ colors_json | strip_newlines | strip }}'
+>
   <div class="page-width">
     <div class="section-heading">
       <span class="section-heading__eyebrow">{{ section.settings.eyebrow }}</span>
@@ -6,46 +13,71 @@
     </div>
   </div>
 
-  {% for block in section.blocks %}
-    {% case block.settings.title %}
-      {% when 'Ghost Chutney' %}{% assign fallback = 'ghost-chutney.jpg' %}
-      {% when 'Imli Chutney' %}{% assign fallback = 'imli-chutney.jpg' %}
-      {% when 'Momo Chutney' %}{% assign fallback = 'momo-chutney.jpg' %}
-      {% when 'Chilli Flakes' %}{% assign fallback = 'chilli-flakes.jpg' %}
-      {% when 'Garam Masala Powder' %}{% assign fallback = 'garam-masala.jpg' %}
-      {% when 'Coriander Powder' %}{% assign fallback = 'coriander-powder.jpg' %}
-      {% else %}{% assign fallback = 'ghost-chutney.jpg' %}
-    {% endcase %}
-    <div class="product-row {% cycle 'product-row--normal', 'product-row--reverse' %}" style="--card-light: {{ block.settings.color_light }}; --card-dark: {{ block.settings.color_dark }};" {{ block.shopify_attributes }}>
-      <div class="page-width product-row__inner">
-        <div class="product-row__media">
-          {% if block.settings.image != blank %}
-            <img src="{{ block.settings.image | image_url: width: 700 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="700" height="700">
-          {% else %}
-            <img src="{{ fallback | asset_url }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="700" height="700">
-          {% endif %}
-        </div>
-        <div class="product-row__content">
-          <h3 class="product-row__title">{{ block.settings.title }}</h3>
-          <p class="product-row__tagline">{{ block.settings.tagline }}</p>
-          <p class="product-row__desc">{{ block.settings.description }}</p>
+  <div class="scroll-showcase__track" id="ScrollShowcaseTrack">
+    <div class="scroll-showcase__sticky">
+      <div class="scroll-showcase__bg" aria-hidden="true"></div>
+      <div class="scroll-showcase__inner page-width">
 
-          <ul class="product-row__benefits">
-            {% if block.settings.benefit_1 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_1 }}</li>{% endif %}
-            {% if block.settings.benefit_2 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_2 }}</li>{% endif %}
-            {% if block.settings.benefit_3 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_3 }}</li>{% endif %}
-          </ul>
+        <div class="scroll-showcase__text">
+          {% for block in section.blocks %}
+            {% case block.settings.title %}
+              {% when 'Ghost Chutney' %}{% assign fallback = 'ghost-chutney.jpg' %}
+              {% when 'Imli Chutney' %}{% assign fallback = 'imli-chutney.jpg' %}
+              {% when 'Momo Chutney' %}{% assign fallback = 'momo-chutney.jpg' %}
+              {% when 'Chilli Flakes' %}{% assign fallback = 'chilli-flakes.jpg' %}
+              {% when 'Garam Masala Powder' %}{% assign fallback = 'garam-masala.jpg' %}
+              {% when 'Coriander Powder' %}{% assign fallback = 'coriander-powder.jpg' %}
+              {% else %}{% assign fallback = 'ghost-chutney.jpg' %}
+            {% endcase %}
+            <div class="scroll-showcase__panel{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+              <h3 class="scroll-showcase__title" style="color: {{ block.settings.color_dark }};">{{ block.settings.title }}</h3>
+              <p class="scroll-showcase__tagline">{{ block.settings.tagline }}</p>
+              <p class="scroll-showcase__desc">{{ block.settings.description }}</p>
+              <ul class="scroll-showcase__benefits">
+                {% if block.settings.benefit_1 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_1 }}</li>{% endif %}
+                {% if block.settings.benefit_2 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_2 }}</li>{% endif %}
+                {% if block.settings.benefit_3 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_3 }}</li>{% endif %}
+              </ul>
+              <a href="{{ block.settings.link }}" class="btn btn--dark" style="--card-dark: {{ block.settings.color_dark }};">{{ block.settings.button_label | default: 'Shop Now' }}</a>
+            </div>
+          {% endfor %}
 
-          <a href="{{ block.settings.link }}" class="btn btn--dark">{{ block.settings.button_label | default: 'Shop Now' }}</a>
+          <div class="scroll-showcase__dots" role="tablist" aria-label="Products">
+            {% for block in section.blocks %}
+              <button type="button" class="scroll-showcase__dot{% if forloop.first %} is-active{% endif %}" data-dot="{{ forloop.index0 }}" aria-label="Show {{ block.settings.title }}"></button>
+            {% endfor %}
+          </div>
         </div>
+
+        <div class="scroll-showcase__media">
+          {% for block in section.blocks %}
+            {% case block.settings.title %}
+              {% when 'Ghost Chutney' %}{% assign fallback = 'ghost-chutney.jpg' %}
+              {% when 'Imli Chutney' %}{% assign fallback = 'imli-chutney.jpg' %}
+              {% when 'Momo Chutney' %}{% assign fallback = 'momo-chutney.jpg' %}
+              {% when 'Chilli Flakes' %}{% assign fallback = 'chilli-flakes.jpg' %}
+              {% when 'Garam Masala Powder' %}{% assign fallback = 'garam-masala.jpg' %}
+              {% when 'Coriander Powder' %}{% assign fallback = 'coriander-powder.jpg' %}
+              {% else %}{% assign fallback = 'ghost-chutney.jpg' %}
+            {% endcase %}
+            <div class="scroll-showcase__image-slide{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url: width: 700 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="700" height="700">
+              {% else %}
+                <img src="{{ fallback | asset_url }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="700" height="700">
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+
       </div>
     </div>
-  {% endfor %}
+  </div>
 </section>
 
 {% schema %}
 {
-  "name": "Product showcase",
+  "name": "Scroll showcase",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Lineup" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Meet the Pack" }
