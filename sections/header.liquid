@@ -10,7 +10,6 @@
       {% else %}
         <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" class="header__logo-image" width="44" height="44">
       {% endif %}
-      <span class="header__logo-text">{{ section.settings.logo_text | default: shop.name }}</span>
     </a>
 
     <nav class="header__nav" aria-label="Primary">
@@ -59,12 +58,6 @@
       "type": "image_picker",
       "id": "logo",
       "label": "Logo image"
-    },
-    {
-      "type": "text",
-      "id": "logo_text",
-      "label": "Logo text",
-      "default": "Hungry Dinosaur"
     }
   ],
   "blocks": [
