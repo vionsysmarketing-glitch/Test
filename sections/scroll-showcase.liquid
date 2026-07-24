@@ -1,9 +1,22 @@
-{% capture colors_json %}[{% for block in section.blocks %}{"light":"{{ block.settings.color_light }}","dark":"{{ block.settings.color_dark }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endcapture %}
+{% comment %}
+  Products are hardcoded directly here rather than driven by schema "default"
+  blocks. Shopify's default-block population proved unreliable in practice for
+  this section, silently rendering zero blocks with no error — hardcoding
+  removes that failure mode entirely. Settings (eyebrow/heading) stay editable.
+{% endcomment %}
+{% assign p_titles = 'Ghost Chutney|Imli Chutney|Momo Chutney|Chilli Flakes|Garam Masala Powder|Coriander Powder' | split: '|' %}
+{% assign p_taglines = 'For the heat-seekers|Ghar wali meethi chutney|The dip that made momos famous|Export quality, sun-dried heat|The soul of every curry|Fresh-ground, never stale' | split: '|' %}
+{% assign p_light = '#F7C9C2|#F3DFAE|#F7C2B8|#E8E2DC|#E4D2BE|#DCE8CC' | split: '|' %}
+{% assign p_dark = '#9D0101|#B5651D|#9D0101|#4A4A4A|#5C3A21|#4A6B1F' | split: '|' %}
+{% assign p_images = 'ghost-chutney.jpg|imli-chutney.jpg|momo-chutney.jpg|chilli-flakes.jpg|garam-masala.jpg|coriander-powder.jpg' | split: '|' %}
+
+{% capture colors_json %}[{% for title in p_titles %}{"light":"{{ p_light[forloop.index0] }}","dark":"{{ p_dark[forloop.index0] }}"}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endcapture %}
+
 <section
   class="scroll-showcase"
   id="ScrollShowcase"
   data-scroll-showcase
-  style="--bg-left: {{ section.blocks.first.settings.color_light | default: '#FBEADF' }}; --bg-right: {{ section.blocks.first.settings.color_dark | default: '#9D0101' }};"
+  style="--bg-left: {{ p_light[0] }}; --bg-right: {{ p_dark[0] }};"
   data-colors='{{ colors_json | strip_newlines | strip }}'
 >
   <div class="page-width">
@@ -19,53 +32,71 @@
       <div class="scroll-showcase__inner page-width">
 
         <div class="scroll-showcase__text">
-          {% for block in section.blocks %}
-            {% case block.settings.title %}
-              {% when 'Ghost Chutney' %}{% assign fallback = 'ghost-chutney.jpg' %}
-              {% when 'Imli Chutney' %}{% assign fallback = 'imli-chutney.jpg' %}
-              {% when 'Momo Chutney' %}{% assign fallback = 'momo-chutney.jpg' %}
-              {% when 'Chilli Flakes' %}{% assign fallback = 'chilli-flakes.jpg' %}
-              {% when 'Garam Masala Powder' %}{% assign fallback = 'garam-masala.jpg' %}
-              {% when 'Coriander Powder' %}{% assign fallback = 'coriander-powder.jpg' %}
-              {% else %}{% assign fallback = 'ghost-chutney.jpg' %}
-            {% endcase %}
-            <div class="scroll-showcase__panel{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-              <h3 class="scroll-showcase__title" style="color: {{ block.settings.color_dark }};">{{ block.settings.title }}</h3>
-              <p class="scroll-showcase__tagline">{{ block.settings.tagline }}</p>
-              <p class="scroll-showcase__desc">{{ block.settings.description }}</p>
-              <ul class="scroll-showcase__benefits">
-                {% if block.settings.benefit_1 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_1 }}</li>{% endif %}
-                {% if block.settings.benefit_2 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_2 }}</li>{% endif %}
-                {% if block.settings.benefit_3 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_3 }}</li>{% endif %}
-              </ul>
-              <a href="{{ block.settings.link }}" class="btn btn--dark" style="--card-dark: {{ block.settings.color_dark }};">{{ block.settings.button_label | default: 'Shop Now' }}</a>
+          {% for title in p_titles %}
+            {% assign i = forloop.index0 %}
+            <div class="scroll-showcase__panel{% if forloop.first %} is-active{% endif %}" data-slide="{{ i }}">
+              <h3 class="scroll-showcase__title" style="color: {{ p_dark[i] }};">{{ title }}</h3>
+              <p class="scroll-showcase__tagline">{{ p_taglines[i] }}</p>
+              {% case title %}
+                {% when 'Ghost Chutney' %}
+                  <p class="scroll-showcase__desc">Sil-batta prepared with real ghost pepper, garlic and slow-roasted tomato. Homemade-style, no shortcuts, no mercy.</p>
+                  <ul class="scroll-showcase__benefits">
+                    <li>{% render 'icon-check' %}Made with real ghost peppers</li>
+                    <li>{% render 'icon-check' %}Zero preservatives</li>
+                    <li>{% render 'icon-check' %}Ready to eat, straight from the jar</li>
+                  </ul>
+                {% when 'Imli Chutney' %}
+                  <p class="scroll-showcase__desc">A tangy tamarind chutney that balances sweet jaggery with a citrusy punch. The one that goes with everything.</p>
+                  <ul class="scroll-showcase__benefits">
+                    <li>{% render 'icon-check' %}Hyperlocal tamarind & jaggery</li>
+                    <li>{% render 'icon-check' %}No artificial flavours</li>
+                    <li>{% render 'icon-check' %}Perfect with snacks, chaat & momos</li>
+                  </ul>
+                {% when 'Momo Chutney' %}
+                  <p class="scroll-showcase__desc">Fiery, garlicky and a little smoky — the classic street-style momo dip, jarred for your fridge.</p>
+                  <ul class="scroll-showcase__benefits">
+                    <li>{% render 'icon-check' %}Street-style spice blend</li>
+                    <li>{% render 'icon-check' %}Small-batch roasted</li>
+                    <li>{% render 'icon-check' %}Goes beyond momos: fries, eggs, rice</li>
+                  </ul>
+                {% when 'Chilli Flakes' %}
+                  <p class="scroll-showcase__desc">Crushed sun-dried red chillies with a smoky crunch. Sprinkle it on pizza, pasta, eggs — anything that needs a kick.</p>
+                  <ul class="scroll-showcase__benefits">
+                    <li>{% render 'icon-check' %}Export-quality sun-dried chillies</li>
+                    <li>{% render 'icon-check' %}No fillers, no colouring</li>
+                    <li>{% render 'icon-check' %}Coarse crunch, bold heat</li>
+                  </ul>
+                {% when 'Garam Masala Powder' %}
+                  <p class="scroll-showcase__desc">A warm, aromatic blend of roasted whole spices ground fresh. One spoon transforms any dal, sabzi or curry.</p>
+                  <ul class="scroll-showcase__benefits">
+                    <li>{% render 'icon-check' %}Small-batch roasted & ground</li>
+                    <li>{% render 'icon-check' %}No anti-caking agents</li>
+                    <li>{% render 'icon-check' %}Export-quality spice sourcing</li>
+                  </ul>
+                {% when 'Coriander Powder' %}
+                  <p class="scroll-showcase__desc">Earthy, citrusy coriander powder ground from export-quality seeds. The everyday base note for Indian cooking.</p>
+                  <ul class="scroll-showcase__benefits">
+                    <li>{% render 'icon-check' %}Export-quality coriander seeds</li>
+                    <li>{% render 'icon-check' %}Ground fresh, not stockpiled</li>
+                    <li>{% render 'icon-check' %}Everyday curry & marinade base</li>
+                  </ul>
+              {% endcase %}
+              <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="btn btn--dark" style="--card-dark: {{ p_dark[i] }};">Shop Now</a>
             </div>
           {% endfor %}
 
           <div class="scroll-showcase__dots" role="tablist" aria-label="Products">
-            {% for block in section.blocks %}
-              <button type="button" class="scroll-showcase__dot{% if forloop.first %} is-active{% endif %}" data-dot="{{ forloop.index0 }}" aria-label="Show {{ block.settings.title }}"></button>
+            {% for title in p_titles %}
+              <button type="button" class="scroll-showcase__dot{% if forloop.first %} is-active{% endif %}" data-dot="{{ forloop.index0 }}" aria-label="Show {{ title }}"></button>
             {% endfor %}
           </div>
         </div>
 
         <div class="scroll-showcase__media">
-          {% for block in section.blocks %}
-            {% case block.settings.title %}
-              {% when 'Ghost Chutney' %}{% assign fallback = 'ghost-chutney.jpg' %}
-              {% when 'Imli Chutney' %}{% assign fallback = 'imli-chutney.jpg' %}
-              {% when 'Momo Chutney' %}{% assign fallback = 'momo-chutney.jpg' %}
-              {% when 'Chilli Flakes' %}{% assign fallback = 'chilli-flakes.jpg' %}
-              {% when 'Garam Masala Powder' %}{% assign fallback = 'garam-masala.jpg' %}
-              {% when 'Coriander Powder' %}{% assign fallback = 'coriander-powder.jpg' %}
-              {% else %}{% assign fallback = 'ghost-chutney.jpg' %}
-            {% endcase %}
-            <div class="scroll-showcase__image-slide{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}">
-              {% if block.settings.image != blank %}
-                <img src="{{ block.settings.image | image_url: width: 700 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="700" height="700">
-              {% else %}
-                <img src="{{ fallback | asset_url }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="700" height="700">
-              {% endif %}
+          {% for title in p_titles %}
+            {% assign i = forloop.index0 %}
+            <div class="scroll-showcase__image-slide{% if forloop.first %} is-active{% endif %}" data-slide="{{ i }}">
+              <img src="{{ p_images[i] | asset_url }}" alt="{{ title | escape }}" loading="lazy" width="700" height="700">
             </div>
           {% endfor %}
         </div>
@@ -80,108 +111,8 @@
   "name": "Scroll showcase",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Lineup" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Meet the Pack" }
-  ],
-  "blocks": [
-    {
-      "type": "product",
-      "name": "Product",
-      "settings": [
-        { "type": "text", "id": "title", "label": "Title", "default": "Ghost Chutney" },
-        { "type": "text", "id": "tagline", "label": "Tagline", "default": "For the heat-seekers" },
-        { "type": "textarea", "id": "description", "label": "Description" },
-        { "type": "text", "id": "benefit_1", "label": "Benefit 1" },
-        { "type": "text", "id": "benefit_2", "label": "Benefit 2" },
-        { "type": "text", "id": "benefit_3", "label": "Benefit 3" },
-        { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Now" },
-        { "type": "url", "id": "link", "label": "Button link" },
-        { "type": "image_picker", "id": "image", "label": "Image", "info": "Defaults to the matching Hungry Dinosaur product photo based on title" },
-        { "type": "color", "id": "color_light", "label": "Light background", "default": "#F7C9C2" },
-        { "type": "color", "id": "color_dark", "label": "Dark accent", "default": "#9D0101" }
-      ]
-    }
-  ],
-  "default": {
-    "blocks": [
-      {
-        "type": "product",
-        "settings": {
-          "title": "Ghost Chutney",
-          "tagline": "For the heat-seekers",
-          "description": "Sil-batta prepared with real ghost pepper, garlic and slow-roasted tomato. Homemade-style, no shortcuts, no mercy.",
-          "benefit_1": "Made with real ghost peppers",
-          "benefit_2": "Zero preservatives",
-          "benefit_3": "Ready to eat, straight from the jar",
-          "color_light": "#F7C9C2",
-          "color_dark": "#9D0101"
-        }
-      },
-      {
-        "type": "product",
-        "settings": {
-          "title": "Imli Chutney",
-          "tagline": "Ghar wali meethi chutney",
-          "description": "A tangy tamarind chutney that balances sweet jaggery with a citrusy punch. The one that goes with everything.",
-          "benefit_1": "Hyperlocal tamarind & jaggery",
-          "benefit_2": "No artificial flavours",
-          "benefit_3": "Perfect with snacks, chaat & momos",
-          "color_light": "#F3DFAE",
-          "color_dark": "#B5651D"
-        }
-      },
-      {
-        "type": "product",
-        "settings": {
-          "title": "Momo Chutney",
-          "tagline": "The dip that made momos famous",
-          "description": "Fiery, garlicky and a little smoky — the classic street-style momo dip, jarred for your fridge.",
-          "benefit_1": "Street-style spice blend",
-          "benefit_2": "Small-batch roasted",
-          "benefit_3": "Goes beyond momos: fries, eggs, rice",
-          "color_light": "#F7C2B8",
-          "color_dark": "#9D0101"
-        }
-      },
-      {
-        "type": "product",
-        "settings": {
-          "title": "Chilli Flakes",
-          "tagline": "Export quality, sun-dried heat",
-          "description": "Crushed sun-dried red chillies with a smoky crunch. Sprinkle it on pizza, pasta, eggs — anything that needs a kick.",
-          "benefit_1": "Export-quality sun-dried chillies",
-          "benefit_2": "No fillers, no colouring",
-          "benefit_3": "Coarse crunch, bold heat",
-          "color_light": "#E8E2DC",
-          "color_dark": "#4A4A4A"
-        }
-      },
-      {
-        "type": "product",
-        "settings": {
-          "title": "Garam Masala Powder",
-          "tagline": "The soul of every curry",
-          "description": "A warm, aromatic blend of roasted whole spices ground fresh. One spoon transforms any dal, sabzi or curry.",
-          "benefit_1": "Small-batch roasted & ground",
-          "benefit_2": "No anti-caking agents",
-          "benefit_3": "Export-quality spice sourcing",
-          "color_light": "#E4D2BE",
-          "color_dark": "#5C3A21"
-        }
-      },
-      {
-        "type": "product",
-        "settings": {
-          "title": "Coriander Powder",
-          "tagline": "Fresh-ground, never stale",
-          "description": "Earthy, citrusy coriander powder ground from export-quality seeds. The everyday base note for Indian cooking.",
-          "benefit_1": "Export-quality coriander seeds",
-          "benefit_2": "Ground fresh, not stockpiled",
-          "benefit_3": "Everyday curry & marinade base",
-          "color_light": "#DCE8CC",
-          "color_dark": "#4A6B1F"
-        }
-      }
-    ]
-  }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Meet the Pack" },
+    { "type": "url", "id": "shop_all_link", "label": "\"Shop Now\" link (all buttons)" }
+  ]
 }
 {% endschema %}
