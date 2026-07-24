@@ -1,0 +1,53 @@
+<section class="testimonials">
+  <div class="page-width testimonials__inner">
+    <div class="testimonials__trust">
+      <span class="testimonials__badge">🦖 Loved by spice-seekers</span>
+      <h2 class="testimonials__count">{{ section.settings.count }}<span class="testimonials__plus">+</span></h2>
+      <p class="testimonials__count-sub">{{ section.settings.count_label }}</p>
+      <p class="testimonials__tagline">{{ section.settings.tagline }}</p>
+      <div class="testimonials__avatars" aria-hidden="true">
+        {% for i in (1..5) %}<span class="testimonials__avatar testimonials__avatar--{{ i }}"></span>{% endfor %}
+      </div>
+    </div>
+
+    <div class="testimonials__grid">
+      {% for block in section.blocks %}
+        <blockquote class="testimonial-card" {{ block.shopify_attributes }}>
+          <p class="testimonial-card__quote">&ldquo;{{ block.settings.quote }}&rdquo;</p>
+          <footer class="testimonial-card__author">— {{ block.settings.author }}</footer>
+        </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    { "type": "text", "id": "count", "label": "Customer count", "default": "12,000" },
+    { "type": "text", "id": "count_label", "label": "Count label", "default": "happy taste buds and counting" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Real people. Real heat. Real cravings." }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Quote" },
+        { "type": "text", "id": "author", "label": "Author" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "testimonial", "settings": { "quote": "The Ghost Chutney lives up to its name. Absolutely addictive on everything.", "author": "Priya S." } },
+      { "type": "testimonial", "settings": { "quote": "Finally, a momo chutney that tastes like the street cart back home.", "author": "Arjun M." } },
+      { "type": "testimonial", "settings": { "quote": "Devil Sour Creme is my new go-to for wraps. Cool with just the right kick.", "author": "Fatima K." } }
+    ]
+  },
+  "presets": [
+    { "name": "Testimonials" }
+  ]
+}
+{% endschema %}

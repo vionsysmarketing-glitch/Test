@@ -1,0 +1,46 @@
+<section class="ingredients">
+  <div class="page-width">
+    <h2 class="ingredients__heading">{{ section.settings.heading }}</h2>
+    <div class="ingredients__grid">
+      {% for block in section.blocks %}
+        <div class="ingredients__item" {{ block.shopify_attributes }}>
+          <span class="ingredients__icon" aria-hidden="true">{{ block.settings.emoji }}</span>
+          <h3 class="ingredients__item-title">{{ block.settings.title }}</h3>
+          <p class="ingredients__item-text">{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingredients",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What's Inside, Matters" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "emoji", "label": "Emoji", "default": "🌶️" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "item", "settings": { "emoji": "🌶️", "title": "Hyperlocal Ingredients", "text": "Sourced from Indian farms and markets, not a lab." } },
+      { "type": "item", "settings": { "emoji": "🚫", "title": "Zero Preservatives", "text": "Nothing artificial, nothing you can't pronounce." } },
+      { "type": "item", "settings": { "emoji": "🔥", "title": "Small-Batch Made", "text": "Cooked in small batches for consistent, homemade-style taste." } },
+      { "type": "item", "settings": { "emoji": "🌍", "title": "Bold Global Twist", "text": "Classic Indian flavour, remixed for the world." } },
+      { "type": "item", "settings": { "emoji": "🥄", "title": "Ready to Eat", "text": "Straight from the jar to your plate. No cooking required." } }
+    ]
+  },
+  "presets": [
+    { "name": "Ingredients" }
+  ]
+}
+{% endschema %}

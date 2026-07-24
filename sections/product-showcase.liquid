@@ -1,0 +1,136 @@
+<section class="product-showcase" id="shop">
+  <div class="page-width">
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="section-heading__title">{{ section.settings.heading }}</h2>
+    </div>
+  </div>
+
+  {% for block in section.blocks %}
+    <div class="product-row {% cycle 'product-row--normal', 'product-row--reverse' %}" style="--card-light: {{ block.settings.color_light }}; --card-dark: {{ block.settings.color_dark }};" {{ block.shopify_attributes }}>
+      <div class="page-width product-row__inner">
+        <div class="product-row__media">
+          {% if block.settings.image != blank %}
+            <img src="{{ block.settings.image | image_url: width: 700 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy" width="700" height="700">
+          {% else %}
+            <div class="product-row__media-placeholder">{{ block.settings.title }}</div>
+          {% endif %}
+        </div>
+        <div class="product-row__content">
+          <h3 class="product-row__title">{{ block.settings.title }}</h3>
+          <p class="product-row__tagline">{{ block.settings.tagline }}</p>
+          <p class="product-row__desc">{{ block.settings.description }}</p>
+
+          <ul class="product-row__benefits">
+            {% if block.settings.benefit_1 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_1 }}</li>{% endif %}
+            {% if block.settings.benefit_2 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_2 }}</li>{% endif %}
+            {% if block.settings.benefit_3 != blank %}<li>{% render 'icon-check' %}{{ block.settings.benefit_3 }}</li>{% endif %}
+          </ul>
+
+          <a href="{{ block.settings.link }}" class="btn btn--dark">{{ block.settings.button_label | default: 'Shop Now' }}</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Product showcase",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Lineup" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Meet the Pack" }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Ghost Chutney" },
+        { "type": "text", "id": "tagline", "label": "Tagline", "default": "For the heat-seekers" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "text", "id": "benefit_1", "label": "Benefit 1" },
+        { "type": "text", "id": "benefit_2", "label": "Benefit 2" },
+        { "type": "text", "id": "benefit_3", "label": "Benefit 3" },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Now" },
+        { "type": "url", "id": "link", "label": "Button link" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "color", "id": "color_light", "label": "Light background", "default": "#F7C9C2" },
+        { "type": "color", "id": "color_dark", "label": "Dark accent", "default": "#9D0101" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "product",
+        "settings": {
+          "title": "Ghost Chutney",
+          "tagline": "For the heat-seekers",
+          "description": "Our hottest recipe, built on real ghost pepper and slow-roasted tomato. Homemade-style, no shortcuts, no mercy.",
+          "benefit_1": "Made with real ghost peppers",
+          "benefit_2": "Zero preservatives",
+          "benefit_3": "Ready to eat, straight from the jar",
+          "color_light": "#F7C9C2",
+          "color_dark": "#9D0101"
+        }
+      },
+      {
+        "type": "product",
+        "settings": {
+          "title": "Imli Chutney",
+          "tagline": "Sweet, sour, unforgettable",
+          "description": "A tangy tamarind chutney that balances sweet jaggery with a citrusy punch. The one that goes with everything.",
+          "benefit_1": "Hyperlocal tamarind & jaggery",
+          "benefit_2": "No artificial flavours",
+          "benefit_3": "Perfect with snacks, chaat & momos",
+          "color_light": "#F3DFAE",
+          "color_dark": "#B5651D"
+        }
+      },
+      {
+        "type": "product",
+        "settings": {
+          "title": "Momo Chutney",
+          "tagline": "The dip that made momos famous",
+          "description": "Fiery, garlicky and a little smoky — the classic street-style momo dip, jarred for your fridge.",
+          "benefit_1": "Street-style spice blend",
+          "benefit_2": "Small-batch roasted",
+          "benefit_3": "Goes beyond momos: fries, eggs, rice",
+          "color_light": "#D7E8C0",
+          "color_dark": "#4A6B1F"
+        }
+      },
+      {
+        "type": "product",
+        "settings": {
+          "title": "Devil Sour Creme",
+          "tagline": "Cool, tangy, dangerously good",
+          "description": "A creamy, sour-spiked dip with a devilish kick. Cools the fire while keeping the drama.",
+          "benefit_1": "Rich & creamy base",
+          "benefit_2": "Balanced heat, no burnout",
+          "benefit_3": "Great on wraps, tacos & fries",
+          "color_light": "#CFE0F7",
+          "color_dark": "#014C9D"
+        }
+      },
+      {
+        "type": "product",
+        "settings": {
+          "title": "Ghost Hummus",
+          "tagline": "Hummus with a haunting",
+          "description": "Classic chickpea hummus reimagined with a whisper of ghost pepper heat. Smooth on the outside, spicy on the inside.",
+          "benefit_1": "Protein-rich chickpea base",
+          "benefit_2": "Subtle, building heat",
+          "benefit_3": "Ready-to-eat, resealable jar",
+          "color_light": "#F5EAB0",
+          "color_dark": "#B8960C"
+        }
+      }
+    ]
+  },
+  "presets": [
+    { "name": "Product showcase" }
+  ]
+}
+{% endschema %}

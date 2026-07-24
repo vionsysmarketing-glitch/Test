@@ -1,0 +1,76 @@
+<section class="hero" style="--hero-bg-left: {{ section.settings.color_left }}; --hero-bg-right: {{ section.settings.color_right }};">
+  <div class="hero__half hero__half--left">
+    <div class="hero__leaf-badge">
+      <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
+    </div>
+    <h1 class="hero__title">{{ section.settings.heading }}</h1>
+    <p class="hero__subtitle">{{ section.settings.subheading }}</p>
+    <div class="hero__actions">
+      <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
+      <a href="{{ section.settings.secondary_link }}" class="btn btn--outline">{{ section.settings.secondary_label }}</a>
+    </div>
+
+    <div class="hero__swatches" role="list" aria-label="Flavours">
+      {% for block in section.blocks %}
+        <div class="hero__swatch" role="listitem" style="--swatch-color: {{ block.settings.color }};">
+          <span class="hero__swatch-dot"></span>
+          <span class="hero__swatch-label">{{ block.settings.label }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="hero__half hero__half--right">
+    <div class="hero__mascot" aria-hidden="true">🦖</div>
+    <div class="hero__image-card">
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | image_url: width: 900 }}" alt="{{ section.settings.image.alt | escape }}" loading="eager" width="900" height="900">
+      {% else %}
+        <div class="hero__image-placeholder">
+          <span>GHOST CHUTNEY</span>
+        </div>
+      {% endif %}
+      <div class="hero__badge-sale">New Batch</div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Small-batch. Big flavour." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Bold Flavour. Zero Boring." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Homemade-style chutneys, dips & spices made with hyperlocal Indian ingredients and a bold global twist. Ready to eat, impossible to put down." },
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Shop the Pack" },
+    { "type": "url", "id": "primary_link", "label": "Primary button link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Our Story" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
+    { "type": "image_picker", "id": "image", "label": "Hero image" },
+    { "type": "color", "id": "color_left", "label": "Left panel color", "default": "#FBEADF" },
+    { "type": "color", "id": "color_right", "label": "Right panel color", "default": "#9D0101" }
+  ],
+  "blocks": [
+    {
+      "type": "swatch",
+      "name": "Flavour swatch",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Ghost" },
+        { "type": "color", "id": "color", "label": "Color", "default": "#9D0101" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "swatch", "settings": { "label": "Ghost", "color": "#9D0101" } },
+      { "type": "swatch", "settings": { "label": "Imli", "color": "#B5651D" } },
+      { "type": "swatch", "settings": { "label": "Momo", "color": "#4A6B1F" } },
+      { "type": "swatch", "settings": { "label": "Devil", "color": "#014C9D" } },
+      { "type": "swatch", "settings": { "label": "Hummus", "color": "#B8960C" } }
+    ]
+  },
+  "presets": [
+    { "name": "Hero" }
+  ]
+}
+{% endschema %}

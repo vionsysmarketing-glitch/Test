@@ -1,0 +1,41 @@
+<section class="cart-page page-width">
+  <h1 class="cart-page__title">Your Cart</h1>
+
+  {% if cart.item_count == 0 %}
+    <p class="cart-page__empty">Your cart is empty. <a href="/collections/all">Go find your flavour</a>.</p>
+  {% else %}
+    {% form 'cart', cart %}
+      <table class="cart-page__table">
+        <thead>
+          <tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th></tr>
+        </thead>
+        <tbody>
+          {% for item in cart.items %}
+            <tr>
+              <td class="cart-page__product">
+                {% if item.image %}<img src="{{ item.image | image_url: width: 100 }}" alt="{{ item.image.alt | escape }}" width="100" height="100">{% endif %}
+                <span>{{ item.product.title }}</span>
+              </td>
+              <td>{{ item.price | money }}</td>
+              <td><input type="number" name="updates[]" value="{{ item.quantity }}" min="0" class="cart-page__qty"></td>
+              <td>{{ item.line_price | money }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div class="cart-page__footer">
+        <p class="cart-page__subtotal">Subtotal: {{ cart.total_price | money }}</p>
+        <button type="submit" name="update" class="btn btn--outline">Update Cart</button>
+        <button type="submit" name="checkout" class="btn btn--solid">Checkout</button>
+      </div>
+    {% endform %}
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Cart page",
+  "settings": []
+}
+{% endschema %}

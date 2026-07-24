@@ -1,0 +1,15 @@
+{
+  "current": {
+    "color_background": "#FBF3E7",
+    "color_text": "#241505",
+    "color_primary": "#9D0101",
+    "color_secondary": "#014C9D",
+    "color_accent": "#E6D624",
+    "font_heading": "fredoka_n4",
+    "font_body": "karla_n4",
+    "social_instagram_link": "https://instagram.com/hungrydinosaurfoods",
+    "social_facebook_link": "https://facebook.com",
+    "social_twitter_link": "https://twitter.com"
+  },
+  "presets": {}
+}

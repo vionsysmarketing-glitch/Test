@@ -1,0 +1,41 @@
+<section class="collection page-width">
+  <div class="collection__header">
+    <h1 class="collection__title">{{ collection.title }}</h1>
+    {% if collection.description != blank %}
+      <div class="collection__description">{{ collection.description }}</div>
+    {% endif %}
+  </div>
+
+  {% paginate collection.products by 24 %}
+    <div class="collection__grid">
+      {% for product in collection.products %}
+        <a href="{{ product.url }}" class="collection-card">
+          <div class="collection-card__media">
+            {% if product.featured_image %}
+              <img src="{{ product.featured_image | image_url: width: 500 }}" alt="{{ product.featured_image.alt | escape }}" loading="lazy" width="500" height="500">
+            {% else %}
+              <div class="product-row__media-placeholder">{{ product.title }}</div>
+            {% endif %}
+          </div>
+          <h3 class="collection-card__title">{{ product.title }}</h3>
+          <p class="collection-card__price">{{ product.price | money }}</p>
+        </a>
+      {% else %}
+        <p>No products found in this collection yet.</p>
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <div class="collection__pagination">
+        {{ paginate | default_pagination }}
+      </div>
+    {% endif %}
+  {% endpaginate %}
+</section>
+
+{% schema %}
+{
+  "name": "Collection page",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "hero": { "type": "hero" },
+    "product-showcase": { "type": "product-showcase" },
+    "mission": { "type": "mission" },
+    "ingredients": { "type": "ingredients" },
+    "how-it-works": { "type": "how-it-works" },
+    "testimonials": { "type": "testimonials" },
+    "newsletter": { "type": "newsletter" }
+  },
+  "order": [
+    "hero",
+    "product-showcase",
+    "mission",
+    "ingredients",
+    "how-it-works",
+    "testimonials",
+    "newsletter"
+  ]
+}

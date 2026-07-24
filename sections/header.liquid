@@ -1,0 +1,82 @@
+<header class="header" id="site-header">
+  <div class="header__inner page-width">
+    <button class="header__menu-toggle" id="MenuToggle" aria-expanded="false" aria-controls="MobileMenu" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="{{ routes.root_url }}" class="header__logo">
+      <span class="header__logo-mark" aria-hidden="true">🦖</span>
+      <span class="header__logo-text">{{ section.settings.logo_text | default: shop.name }}</span>
+    </a>
+
+    <nav class="header__nav" aria-label="Primary">
+      <ul class="header__nav-list">
+        {% for block in section.blocks %}
+          <li><a href="{{ block.settings.link }}" class="header__nav-link">{{ block.settings.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="header__icons">
+      <button class="header__icon-btn" id="SearchToggle" aria-label="Search">
+        {% render 'icon-search' %}
+      </button>
+      <a href="{{ routes.account_url }}" class="header__icon-btn" aria-label="Account">
+        {% render 'icon-account' %}
+      </a>
+      <a href="{{ routes.cart_url }}" class="header__icon-btn header__cart-btn" aria-label="Cart">
+        {% render 'icon-cart' %}
+        <span class="header__cart-count">{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="search-drawer" id="SearchDrawer" hidden>
+    <form action="{{ routes.search_url }}" method="get" class="search-drawer__form page-width">
+      <input type="search" name="q" placeholder="Search chutneys, dips & spices" class="search-drawer__input" value="{{ search.terms | escape }}">
+      <button type="submit" class="btn btn--solid">Search</button>
+    </form>
+  </div>
+
+  <nav class="mobile-menu" id="MobileMenu" hidden aria-label="Mobile">
+    <ul class="mobile-menu__list">
+      {% for block in section.blocks %}
+        <li><a href="{{ block.settings.link }}">{{ block.settings.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "Hungry Dinosaur"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nav_link",
+      "name": "Nav link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Home" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "nav_link", "settings": { "label": "Home", "link": "/" } },
+      { "type": "nav_link", "settings": { "label": "Shop All", "link": "/collections/all" } },
+      { "type": "nav_link", "settings": { "label": "Chutneys", "link": "/collections/chutney" } },
+      { "type": "nav_link", "settings": { "label": "Spices", "link": "/collections/spices" } },
+      { "type": "nav_link", "settings": { "label": "Our Story", "link": "/pages/our-story" } },
+      { "type": "nav_link", "settings": { "label": "Contact", "link": "/pages/contact" } }
+    ]
+  }
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+<section class="search-page page-width">
+  <h1 class="search-page__title">Search results for "{{ search.terms }}"</h1>
+
+  {% paginate search.results by 24 %}
+    <div class="collection__grid">
+      {% for item in search.results %}
+        <a href="{{ item.url }}" class="collection-card">
+          <div class="collection-card__media">
+            {% if item.featured_image %}
+              <img src="{{ item.featured_image | image_url: width: 500 }}" alt="{{ item.featured_image.alt | escape }}" loading="lazy" width="500" height="500">
+            {% else %}
+              <div class="product-row__media-placeholder">{{ item.title }}</div>
+            {% endif %}
+          </div>
+          <h3 class="collection-card__title">{{ item.title }}</h3>
+        </a>
+      {% else %}
+        <p>No results found.</p>
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <div class="collection__pagination">{{ paginate | default_pagination }}</div>
+    {% endif %}
+  {% endpaginate %}
+</section>
+
+{% schema %}
+{
+  "name": "Search page",
+  "settings": []
+}
+{% endschema %}

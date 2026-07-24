@@ -1,0 +1,74 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Hungry Dinosaur",
+    "theme_version": "1.0.0",
+    "theme_author": "Hungry Dinosaur Foods",
+    "theme_documentation_url": "https://hungrydinosaurfoods.com",
+    "theme_support_url": "https://hungrydinosaurfoods.com/pages/contact"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand palette"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#FBF3E7"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#241505"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary accent (Ghost Red)",
+        "default": "#9D0101"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary accent (Momo Blue)",
+        "default": "#014C9D"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent (Chilli Yellow)",
+        "default": "#E6D624"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading font",
+        "default": "fredoka_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body font",
+        "default": "karla_n4"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      { "type": "text", "id": "social_instagram_link", "label": "Instagram", "default": "https://instagram.com/hungrydinosaurfoods" },
+      { "type": "text", "id": "social_facebook_link", "label": "Facebook", "default": "https://facebook.com" },
+      { "type": "text", "id": "social_twitter_link", "label": "Twitter / X", "default": "https://twitter.com" }
+    ]
+  }
+]

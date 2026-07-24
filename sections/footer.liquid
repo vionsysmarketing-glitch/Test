@@ -1,0 +1,55 @@
+<footer class="footer">
+  <div class="page-width footer__inner">
+    <div class="footer__brand">
+      <a href="{{ routes.root_url }}" class="footer__logo">🦖 {{ section.settings.logo_text }}</a>
+      <p class="footer__tagline">{{ section.settings.tagline }}</p>
+      <div class="footer__social">
+        {% if settings.social_instagram_link != blank %}<a href="{{ settings.social_instagram_link }}" aria-label="Instagram">IG</a>{% endif %}
+        {% if settings.social_facebook_link != blank %}<a href="{{ settings.social_facebook_link }}" aria-label="Facebook">FB</a>{% endif %}
+        {% if settings.social_twitter_link != blank %}<a href="{{ settings.social_twitter_link }}" aria-label="Twitter">X</a>{% endif %}
+      </div>
+    </div>
+
+    <div class="footer__block">
+      <h2 class="footer__heading">Products</h2>
+      <ul class="footer__list">
+        <li><a href="/collections/chutney">Chutneys</a></li>
+        <li><a href="/collections/spices">Spices</a></li>
+        <li><a href="/collections/all">Shop All</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__block">
+      <h2 class="footer__heading">Policy</h2>
+      <ul class="footer__list">
+        <li><a href="/policies/refund-policy">Refund Policy</a></li>
+        <li><a href="/policies/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/policies/terms-of-service">Terms of Service</a></li>
+        <li><a href="/policies/shipping-policy">Shipping Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__block">
+      <h2 class="footer__heading">Contact</h2>
+      <ul class="footer__list">
+        <li><a href="/pages/get-quote">Get a Quote</a></li>
+        <li><a href="/pages/contact">Contact Us</a></li>
+        {% if shop.email %}<li><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>{% endif %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom page-width">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text", "id": "logo_text", "label": "Logo text", "default": "Hungry Dinosaur Foods" },
+    { "type": "textarea", "id": "tagline", "label": "Tagline", "default": "Bold flavours. Zero boring. One bite and you're hooked." }
+  ]
+}
+{% endschema %}

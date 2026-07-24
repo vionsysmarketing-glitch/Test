@@ -1,0 +1,26 @@
+<section class="mission">
+  <div class="page-width mission__inner">
+    <h2 class="mission__heading">{{ section.settings.heading }}</h2>
+    <div class="mission__body">{{ section.settings.body }}</div>
+    <p class="mission__punchline">{{ section.settings.punchline }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Mission",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our Mission" },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>To bring a new generation of chutneys and dips to your table. Made with hyperlocal Indian ingredients, spiked with a bold global twist, and packed in fun, convenient, ready-to-eat formats.</p><p>So if you love your food with a little drama, a lot of spice, and zero boredom, you're one of us.</p>"
+    },
+    { "type": "text", "id": "punchline", "label": "Punchline", "default": "One bite. And you will be hooked!" }
+  ],
+  "presets": [
+    { "name": "Mission" }
+  ]
+}
+{% endschema %}
