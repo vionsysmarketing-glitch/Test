@@ -278,6 +278,44 @@ h1, h2, h3, h4 {
     var(--hero-stage-color, #6E1423);
 }
 
+/* Slowly-rotating dashed rings behind the product — dashed (not solid)
+   so the continuous rotation actually reads as motion instead of a
+   static circle, at two different speeds/directions for a gentle orbit
+   feel rather than a mechanical spin. */
+.hero__stage {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+.hero__stage::before,
+.hero__stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed var(--hero-stage-color-alt, #C9A227);
+  opacity: 0.5;
+  animation: hero-stage-spin 40s linear infinite;
+}
+.hero__stage::after {
+  inset: 9%;
+  opacity: 0.32;
+  animation-duration: 55s;
+  animation-direction: reverse;
+}
+@keyframes hero-stage-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__stage::before, .hero__stage::after { animation: none; }
+}
+
 /* Big faint line-art watermark for texture/depth behind the headline —
    the left-side answer to the sunburst medallion on the right, so both
    halves carry the same graphic energy instead of one being a plain
