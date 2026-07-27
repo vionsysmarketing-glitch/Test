@@ -462,6 +462,15 @@ h1, h2, h3, h4 {
 
 /* ---------- Scroll showcase (ulag-style scroll-driven product spotlight) ---------- */
 .scroll-showcase { padding-bottom: 2rem; }
+.scroll-showcase__wave {
+  display: block;
+  width: 100%;
+  height: 44px;
+  position: relative;
+  z-index: 3;
+}
+.scroll-showcase__wave--top { margin-bottom: -30px; }
+.scroll-showcase__wave--bottom { margin-top: -30px; }
 .scroll-showcase__track {
   position: relative;
   min-height: 100vh; /* JS expands this to (product count * 100vh); this is the no-JS fallback */

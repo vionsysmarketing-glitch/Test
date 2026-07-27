@@ -26,6 +26,10 @@
     </div>
   </div>
 
+  <svg class="scroll-showcase__wave scroll-showcase__wave--top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,60 C240,10 480,50 720,28 C960,6 1200,45 1440,20 L1440,60 Z" fill="{{ section.settings.wave_color | default: '#FBF3E7' }}"></path>
+  </svg>
+
   <div class="scroll-showcase__track" id="ScrollShowcaseTrack">
     <div class="scroll-showcase__sticky">
       <div class="scroll-showcase__bg" aria-hidden="true"></div>
@@ -104,6 +108,10 @@
       </div>
     </div>
   </div>
+
+  <svg class="scroll-showcase__wave scroll-showcase__wave--bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 C240,50 480,10 720,32 C960,54 1200,15 1440,40 L1440,0 Z" fill="{{ section.settings.wave_color | default: '#FBF3E7' }}"></path>
+  </svg>
 </section>
 
 {% schema %}
@@ -112,7 +120,8 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Lineup" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Meet the Pack" },
-    { "type": "url", "id": "shop_all_link", "label": "\"Shop Now\" link (all buttons)" }
+    { "type": "url", "id": "shop_all_link", "label": "\"Shop Now\" link (all buttons)" },
+    { "type": "color", "id": "wave_color", "label": "Wave divider color", "default": "#FBF3E7", "info": "Should match the page background" }
   ]
 }
 {% endschema %}
