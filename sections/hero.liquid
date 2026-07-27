@@ -4,34 +4,29 @@
       <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
     </div>
     <h1 class="hero__title hero__title--compact">{{ section.settings.heading }}</h1>
-    <p class="hero__subtitle">{{ section.settings.subheading }}</p>
     <div class="hero__actions">
       <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
       <a href="{{ section.settings.secondary_link }}" class="btn btn--outline">{{ section.settings.secondary_label }}</a>
     </div>
 
     {% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
-    <div class="hero__swatches" role="list" aria-label="Flavours">
-      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
-        <span class="hero__swatch-dot"><img src="{{ 'ghost-chutney.jpg' | asset_url }}" alt="Ghost" width="34" height="34" loading="lazy"></span>
-        <span class="hero__swatch-label">Ghost</span>
-      </a>
-      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
-        <span class="hero__swatch-dot"><img src="{{ 'imli-chutney.jpg' | asset_url }}" alt="Imli" width="34" height="34" loading="lazy"></span>
-        <span class="hero__swatch-label">Imli</span>
-      </a>
-      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
-        <span class="hero__swatch-dot"><img src="{{ 'momo-chutney.jpg' | asset_url }}" alt="Momo" width="34" height="34" loading="lazy"></span>
-        <span class="hero__swatch-label">Momo</span>
-      </a>
-      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
-        <span class="hero__swatch-dot"><img src="{{ 'chilli-flakes.jpg' | asset_url }}" alt="Chilli" width="34" height="34" loading="lazy"></span>
-        <span class="hero__swatch-label">Chilli</span>
-      </a>
-      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__swatch" role="listitem">
-        <span class="hero__swatch-dot"><img src="{{ 'garam-masala.jpg' | asset_url }}" alt="Masala" width="34" height="34" loading="lazy"></span>
-        <span class="hero__swatch-label">Masala</span>
-      </a>
+    <div class="hero__features">
+      <div class="hero__feature">
+        <span class="hero__feature-icon">{% render 'icon-leaf' %}</span>
+        <span class="hero__feature-label">Natural Ingredients</span>
+      </div>
+      <div class="hero__feature">
+        <span class="hero__feature-icon">{% render 'icon-shield' %}</span>
+        <span class="hero__feature-label">Zero Preservatives</span>
+      </div>
+      <div class="hero__feature">
+        <span class="hero__feature-icon">{% render 'icon-flame' %}</span>
+        <span class="hero__feature-label">Small-Batch Made</span>
+      </div>
+      <div class="hero__feature">
+        <span class="hero__feature-icon">{% render 'icon-truck' %}</span>
+        <span class="hero__feature-label">Free Shipping</span>
+      </div>
     </div>
   </div>
 
@@ -39,12 +34,12 @@
     <div class="hero__range">
       <span class="hero__range-label">{{ section.settings.range_label }}</span>
       <div class="hero__range-grid">
-        <div class="hero__range-card"><img src="{{ 'ghost-chutney.jpg' | asset_url }}" alt="Ghost Chutney" loading="eager" width="220" height="220"><span>Ghost Chutney</span></div>
-        <div class="hero__range-card"><img src="{{ 'imli-chutney.jpg' | asset_url }}" alt="Imli Chutney" loading="eager" width="220" height="220"><span>Imli Chutney</span></div>
-        <div class="hero__range-card"><img src="{{ 'momo-chutney.jpg' | asset_url }}" alt="Momo Chutney" loading="eager" width="220" height="220"><span>Momo Chutney</span></div>
-        <div class="hero__range-card"><img src="{{ 'chilli-flakes.jpg' | asset_url }}" alt="Chilli Flakes" loading="lazy" width="220" height="220"><span>Chilli Flakes</span></div>
-        <div class="hero__range-card"><img src="{{ 'garam-masala.jpg' | asset_url }}" alt="Garam Masala Powder" loading="lazy" width="220" height="220"><span>Garam Masala</span></div>
-        <div class="hero__range-card"><img src="{{ 'coriander-powder.jpg' | asset_url }}" alt="Coriander Powder" loading="lazy" width="220" height="220"><span>Coriander Powder</span></div>
+        <a href="{{ section.settings.ghost_link | default: '/products/ghost-chutney' }}" class="hero__range-card"><img src="{{ 'ghost-chutney.jpg' | asset_url }}" alt="Ghost Chutney" loading="eager" width="220" height="220"><span>Ghost Chutney</span></a>
+        <a href="{{ section.settings.imli_link | default: '/products/imli-chutney' }}" class="hero__range-card"><img src="{{ 'imli-chutney.jpg' | asset_url }}" alt="Imli Chutney" loading="eager" width="220" height="220"><span>Imli Chutney</span></a>
+        <a href="{{ section.settings.momo_link | default: '/products/momo-chutney' }}" class="hero__range-card"><img src="{{ 'momo-chutney.jpg' | asset_url }}" alt="Momo Chutney" loading="eager" width="220" height="220"><span>Momo Chutney</span></a>
+        <a href="{{ section.settings.chilli_link | default: '/products/chilli-flakes' }}" class="hero__range-card"><img src="{{ 'chilli-flakes.jpg' | asset_url }}" alt="Chilli Flakes" loading="lazy" width="220" height="220"><span>Chilli Flakes</span></a>
+        <a href="{{ section.settings.masala_link | default: '/products/garam-masala-powder' }}" class="hero__range-card"><img src="{{ 'garam-masala.jpg' | asset_url }}" alt="Garam Masala Powder" loading="lazy" width="220" height="220"><span>Garam Masala</span></a>
+        <a href="{{ section.settings.coriander_link | default: '/products/coriander-powder' }}" class="hero__range-card"><img src="{{ 'coriander-powder.jpg' | asset_url }}" alt="Coriander Powder" loading="lazy" width="220" height="220"><span>Coriander Powder</span></a>
       </div>
     </div>
   </div>
@@ -56,7 +51,6 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Small-batch. Big flavour." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Bold Flavour. Zero Boring." },
-    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Homemade-style chutneys, dips & spices made with hyperlocal Indian ingredients and a bold global twist. Ready to eat, impossible to put down." },
     { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Shop the Pack" },
     { "type": "url", "id": "primary_link", "label": "Primary button link" },
     { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Our Story" },
@@ -64,7 +58,13 @@
     { "type": "text", "id": "range_label", "label": "Product range label", "default": "The Full Range" },
     { "type": "color", "id": "color_left", "label": "Left panel color", "default": "#FBEADF" },
     { "type": "color", "id": "color_right", "label": "Right panel color", "default": "#9D0101" },
-    { "type": "url", "id": "shop_all_link", "label": "Flavour swatches link" }
+    { "type": "header", "content": "Product links" },
+    { "type": "url", "id": "ghost_link", "label": "Ghost Chutney link", "info": "Defaults to /products/ghost-chutney" },
+    { "type": "url", "id": "imli_link", "label": "Imli Chutney link", "info": "Defaults to /products/imli-chutney" },
+    { "type": "url", "id": "momo_link", "label": "Momo Chutney link", "info": "Defaults to /products/momo-chutney" },
+    { "type": "url", "id": "chilli_link", "label": "Chilli Flakes link", "info": "Defaults to /products/chilli-flakes" },
+    { "type": "url", "id": "masala_link", "label": "Garam Masala link", "info": "Defaults to /products/garam-masala-powder" },
+    { "type": "url", "id": "coriander_link", "label": "Coriander Powder link", "info": "Defaults to /products/coriander-powder" }
   ]
 }
 {% endschema %}
