@@ -1,4 +1,8 @@
-<section class="hero" style="--hero-bg: {{ section.settings.background_color }}; --hero-pattern: url('{{ 'hero-pattern.svg' | asset_url }}');">
+<section class="hero" style="--hero-bg: {{ section.settings.background_color }};">
+  <div class="hero__deco hero__deco--1" style="color: #9D0101;">{% render 'deco-chili' %}</div>
+  <div class="hero__deco hero__deco--2" style="color: #4A6B1F;">{% render 'deco-leaf-branch' %}</div>
+  <div class="hero__deco hero__deco--3" style="color: #B5651D;">{% render 'deco-tamarind' %}</div>
+
   <div class="hero__half hero__half--left">
     <div class="hero__leaf-badge">
       <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
@@ -31,6 +35,10 @@
   </div>
 
   <div class="hero__half hero__half--right">
+    <div class="hero__stage" aria-hidden="true"></div>
+    <div class="hero__deco hero__deco--on-stage hero__deco--4" style="color: #FBF3E7;">{% render 'deco-swirl' %}</div>
+    <div class="hero__deco hero__deco--on-stage hero__deco--5" style="color: #FBF3E7;">{% render 'deco-chili' %}</div>
+    <div class="hero__deco hero__deco--on-stage hero__deco--6" style="color: #FBF3E7;">{% render 'deco-leaf-branch' %}</div>
     <div class="hero__mosaic">
       <a href="{{ section.settings.ghost_link | default: '/products/ghost-chutney' }}" class="hero__spotlight">
         <span class="hero__spotlight-badge">🔥 Spiciest</span>
