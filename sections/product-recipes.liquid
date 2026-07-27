@@ -1,8 +1,12 @@
 {% comment %}
   Per-product recipe ideas, hardcoded the same way as the benefits/tagline
-  content in main-product.liquid and scroll-showcase.liquid — same six
-  products, with a generic 3-recipe fallback for anything not in the list
-  so a new product never renders an empty section.
+  content in main-product.liquid — with a generic 3-recipe fallback for
+  anything not in the list so a new product never renders an empty section.
+
+  `when` values are the live store's actual product.title (pulled from
+  https://hungrydinosaurfoods.com/collections/all/products.json), not the
+  tidier "Title Case" naming used elsewhere in this theme's own copy — see
+  the longer note in main-product.liquid for why that distinction matters.
 {% endcomment %}
 {% assign recipe_1_title = 'Everyday Dal Tadka' %}
 {% assign recipe_1_text = 'Stir a spoon in at the end of cooking for restaurant-style aroma in your dal or sabzi.' %}
@@ -12,48 +16,62 @@
 {% assign recipe_3_text = 'Toss through hot fried rice or noodles for an instant flavour lift.' %}
 
 {% case product.title %}
-  {% when 'Ghost Chutney' %}
+  {% when 'GHOST CHUTNEY' %}
     {% assign recipe_1_title = 'Ghost Pepper Fried Rice' %}
     {% assign recipe_1_text = 'Toss leftover rice in hot oil with a spoon of Ghost Chutney, scrambled egg, and spring onion for a fiery fried rice in minutes.' %}
     {% assign recipe_2_title = 'Spicy Chutney Sandwich' %}
     {% assign recipe_2_text = 'Spread a thin layer between buttered bread with cucumber and onion for a fiery desi-style sandwich.' %}
     {% assign recipe_3_title = 'Ghost Chutney Wings' %}
     {% assign recipe_3_text = 'Toss fried or baked chicken wings in melted butter mixed with a spoon of chutney for a fiery glaze.' %}
-  {% when 'Imli Chutney' %}
+  {% when 'IMLI CHUTNEY' %}
     {% assign recipe_1_title = 'Classic Chaat Topper' %}
     {% assign recipe_1_text = 'Drizzle over papdi chaat, bhel puri, or dahi vada for the tangy-sweet finish every chaat needs.' %}
     {% assign recipe_2_title = 'Tamarind Glazed Paneer' %}
     {% assign recipe_2_text = 'Toss pan-seared paneer cubes in warmed Imli Chutney for a quick sweet-tangy glaze.' %}
     {% assign recipe_3_title = 'Momo &amp; Samosa Dip Duo' %}
     {% assign recipe_3_text = 'Pair with Momo Chutney for a two-sauce dipping platter alongside steamed momos or samosas.' %}
-  {% when 'Momo Chutney' %}
+  {% when 'MOMO CHUTNEY' %}
     {% assign recipe_1_title = 'Classic Momo Dip' %}
     {% assign recipe_1_text = 'Serve warm alongside steamed or pan-fried momos for the street-style combo it was made for.' %}
     {% assign recipe_2_title = 'Spicy Fried Eggs' %}
     {% assign recipe_2_text = 'Spoon over fried or scrambled eggs for a spicy weekend breakfast upgrade.' %}
     {% assign recipe_3_title = 'Smoky Noodle Toss' %}
     {% assign recipe_3_text = 'Stir a spoon into hot noodles or fried rice for an instant smoky, garlicky kick.' %}
-  {% when 'Chilli Flakes' %}
+  {% when 'Chilli Flakes (Export Quality)' %}
     {% assign recipe_1_title = 'Pizza &amp; Pasta Topper' %}
     {% assign recipe_1_text = 'Sprinkle over pizza, pasta, or garlic bread for bold, coarse heat in every bite.' %}
     {% assign recipe_2_title = 'Chilli-Garlic Roasted Veggies' %}
     {% assign recipe_2_text = 'Toss roasted potatoes or vegetables with olive oil and a spoon of chilli flakes before baking.' %}
     {% assign recipe_3_title = 'Spiced Egg Bhurji' %}
     {% assign recipe_3_text = 'Stir into masala scrambled eggs (bhurji) for extra crunch and colour.' %}
-  {% when 'Garam Masala Powder' %}
+  {% when 'Garam Masala (Export Quality)' %}
     {% assign recipe_1_title = 'Everyday Dal Tadka' %}
     {% assign recipe_1_text = 'Stir a pinch into hot ghee tempering (tadka) at the end for restaurant-style aroma in your dal.' %}
     {% assign recipe_2_title = 'Garam Masala Chicken Curry' %}
     {% assign recipe_2_text = 'Add a spoon in the final few minutes of cooking any chicken or vegetable curry.' %}
     {% assign recipe_3_title = 'Spiced Chai Twist' %}
     {% assign recipe_3_text = 'A tiny pinch in your evening chai for a warm, aromatic spin on the classic.' %}
-  {% when 'Coriander Powder' %}
+  {% when 'Coriander powder (Export Quality)' %}
     {% assign recipe_1_title = 'Everyday Curry Base' %}
     {% assign recipe_1_text = 'Bloom a spoon in hot oil with onions and tomatoes to start almost any Indian curry.' %}
     {% assign recipe_2_title = 'Dhaniya Jeera Aloo' %}
     {% assign recipe_2_text = 'Toss boiled potatoes with coriander powder, cumin, and a squeeze of lemon for a quick sabzi.' %}
     {% assign recipe_3_title = 'Marinade Booster' %}
     {% assign recipe_3_text = 'Mix into yogurt-based marinades for tandoori-style grilled paneer or vegetables.' %}
+  {% when 'Red Chili Powder (Export Quality)' %}
+    {% assign recipe_1_title = 'Classic Curry Base' %}
+    {% assign recipe_1_text = 'Bloom a spoon in hot oil with onions for deep red colour and heat in any curry.' %}
+    {% assign recipe_2_title = 'Tandoori Marinade' %}
+    {% assign recipe_2_text = 'Mix into yogurt with ginger-garlic paste for a fiery tandoori-style marinade.' %}
+    {% assign recipe_3_title = 'Spiced Roasted Peanuts' %}
+    {% assign recipe_3_text = 'Toss roasted peanuts or makhana with a pinch for a spicy, crunchy snack.' %}
+  {% when 'Turmeric Powder (Export Quality)' %}
+    {% assign recipe_1_title = 'Golden Milk (Haldi Doodh)' %}
+    {% assign recipe_1_text = 'Whisk a pinch into warm milk with black pepper for a soothing bedtime drink.' %}
+    {% assign recipe_2_title = 'Everyday Curry Base' %}
+    {% assign recipe_2_text = 'Add at the start of cooking with onions for colour and warmth in any dal or sabzi.' %}
+    {% assign recipe_3_title = 'Turmeric Rice' %}
+    {% assign recipe_3_text = 'Stir into rice while cooking for a fragrant, golden side dish.' %}
 {% endcase %}
 
 <section class="product-recipes page-width">

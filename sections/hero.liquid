@@ -86,9 +86,9 @@
     {% assign slide_titles = 'Garam Masala Powder|Chilli Flakes|Dhaniya Powder' | split: '|' %}
     {% assign slide_tags = '★ Best Seller|🔥 Customer Favorite|🌿 Everyday Staple' | split: '|' %}
     {% assign slide_images = 'garam-masala.jpg|chilli-flakes.jpg|coriander-powder.jpg' | split: '|' %}
-    {% assign masala_product = collections.all.products | where: 'title', 'Garam Masala Powder' | first %}
-    {% assign chilli_product = collections.all.products | where: 'title', 'Chilli Flakes' | first %}
-    {% assign coriander_product = collections.all.products | where: 'title', 'Coriander Powder' | first %}
+    {% assign masala_product = collections.all.products | where: 'title', 'Garam Masala (Export Quality)' | first %}
+    {% assign chilli_product = collections.all.products | where: 'title', 'Chilli Flakes (Export Quality)' | first %}
+    {% assign coriander_product = collections.all.products | where: 'title', 'Coriander powder (Export Quality)' | first %}
     {% assign safe_fallback = section.settings.shop_all_link | default: '/collections/all' %}
     {% assign slide_links = section.settings.masala_link | default: masala_product.url | default: safe_fallback %}
     {% assign slide_links_2 = section.settings.chilli_link | default: chilli_product.url | default: safe_fallback %}

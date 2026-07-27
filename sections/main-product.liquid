@@ -1,10 +1,20 @@
 {% comment %}
   Per-product tagline/benefits/usage-tip content is hardcoded here (same
-  six products, same taglines/benefit copy as scroll-showcase.liquid) —
+  pattern as scroll-showcase.liquid and product-recipes.liquid) —
   Shopify's schema "default" blocks proved unreliable elsewhere in this
-  theme, so this follows the same established pattern rather than relying
+  theme, so this follows the same established approach rather than relying
   on metafields. Any product not in this list still gets a sensible
   generic fallback below instead of breaking.
+
+  IMPORTANT: these `when` values are matched against the live store's
+  actual product.title, which is NOT the tidy "Title Case" naming used
+  elsewhere in this theme's own copy — it's whatever the merchant has in
+  Shopify Admin right now (e.g. all-caps chutney names, "(Export Quality)"
+  suffixes on the spice powders). Pulled directly from
+  https://hungrydinosaurfoods.com/collections/all/products.json to get
+  these exact, so double-check against that source again if a product is
+  renamed later — a near-miss here silently falls through to the generic
+  copy above instead of erroring, so it fails quietly, not loudly.
 {% endcomment %}
 {% assign eyebrow = 'Our Products' %}
 {% assign spice_tag = '' %}
@@ -16,7 +26,7 @@
 {% assign benefit_3 = 'Small-batch quality, every jar' %}
 
 {% case product.title %}
-  {% when 'Ghost Chutney' %}
+  {% when 'GHOST CHUTNEY' %}
     {% assign eyebrow = 'Chutneys' %}
     {% assign spice_tag = '🌶️🌶️🌶️ Extra Hot' %}
     {% assign accent = '#9D0101' %}
@@ -25,7 +35,7 @@
     {% assign benefit_1 = 'Made with real ghost peppers' %}
     {% assign benefit_2 = 'Zero preservatives' %}
     {% assign benefit_3 = 'Ready to eat, straight from the jar' %}
-  {% when 'Imli Chutney' %}
+  {% when 'IMLI CHUTNEY' %}
     {% assign eyebrow = 'Chutneys' %}
     {% assign spice_tag = '🌶️ Mild &amp; Tangy' %}
     {% assign accent = '#B5651D' %}
@@ -34,7 +44,7 @@
     {% assign benefit_1 = 'Hyperlocal tamarind &amp; jaggery' %}
     {% assign benefit_2 = 'No artificial flavours' %}
     {% assign benefit_3 = 'Perfect with snacks, chaat &amp; momos' %}
-  {% when 'Momo Chutney' %}
+  {% when 'MOMO CHUTNEY' %}
     {% assign eyebrow = 'Chutneys' %}
     {% assign spice_tag = '🌶️🌶️ Medium Heat' %}
     {% assign accent = '#9D0101' %}
@@ -43,7 +53,7 @@
     {% assign benefit_1 = 'Street-style spice blend' %}
     {% assign benefit_2 = 'Small-batch roasted' %}
     {% assign benefit_3 = 'Goes beyond momos: fries, eggs, rice' %}
-  {% when 'Chilli Flakes' %}
+  {% when 'Chilli Flakes (Export Quality)' %}
     {% assign eyebrow = 'Spice Powders' %}
     {% assign spice_tag = '🌶️🌶️ Medium Heat' %}
     {% assign accent = '#4A4A4A' %}
@@ -52,7 +62,7 @@
     {% assign benefit_1 = 'Export-quality sun-dried chillies' %}
     {% assign benefit_2 = 'No fillers, no colouring' %}
     {% assign benefit_3 = 'Coarse crunch, bold heat' %}
-  {% when 'Garam Masala Powder' %}
+  {% when 'Garam Masala (Export Quality)' %}
     {% assign eyebrow = 'Spice Powders' %}
     {% assign spice_tag = '🌿 Aromatic Blend' %}
     {% assign accent = '#5C3A21' %}
@@ -61,7 +71,7 @@
     {% assign benefit_1 = 'Small-batch roasted &amp; ground' %}
     {% assign benefit_2 = 'No anti-caking agents' %}
     {% assign benefit_3 = 'Export-quality spice sourcing' %}
-  {% when 'Coriander Powder' %}
+  {% when 'Coriander powder (Export Quality)' %}
     {% assign eyebrow = 'Spice Powders' %}
     {% assign spice_tag = '🌿 Everyday Staple' %}
     {% assign accent = '#4A6B1F' %}
@@ -70,6 +80,24 @@
     {% assign benefit_1 = 'Export-quality coriander seeds' %}
     {% assign benefit_2 = 'Ground fresh, not stockpiled' %}
     {% assign benefit_3 = 'Everyday curry &amp; marinade base' %}
+  {% when 'Red Chili Powder (Export Quality)' %}
+    {% assign eyebrow = 'Spice Powders' %}
+    {% assign spice_tag = '🌶️🌶️🌶️ Fiery Hot' %}
+    {% assign accent = '#9D0101' %}
+    {% assign tagline = 'Pure heat, finely ground' %}
+    {% assign usage_tip = 'Stir into curries and marinades, or sprinkle over snacks for deep colour and heat.' %}
+    {% assign benefit_1 = 'Export-quality sun-dried red chillies' %}
+    {% assign benefit_2 = 'No artificial colouring' %}
+    {% assign benefit_3 = 'Fine grind for even heat in every dish' %}
+  {% when 'Turmeric Powder (Export Quality)' %}
+    {% assign eyebrow = 'Spice Powders' %}
+    {% assign spice_tag = '🌿 Golden &amp; Earthy' %}
+    {% assign accent = '#C9A227' %}
+    {% assign tagline = 'The golden root of every kitchen' %}
+    {% assign usage_tip = 'Add a pinch to hot oil at the start of cooking to build colour and warmth in any dish.' %}
+    {% assign benefit_1 = 'Export-quality dried turmeric root' %}
+    {% assign benefit_2 = 'No fillers, pure ground turmeric' %}
+    {% assign benefit_3 = 'Rich golden colour, earthy aroma' %}
 {% endcase %}
 
 <section class="product-page page-width">
