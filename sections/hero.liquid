@@ -9,6 +9,20 @@
   <div class="hero__deco hero__deco--2" style="color: #FFE8CF; --deco-float-duration: 6.5s; --deco-float-delay: -0.9s;">{% render 'deco-leaf-branch' %}</div>
   <div class="hero__deco hero__deco--3" style="color: #FFFFFF; --deco-float-duration: 4.8s; --deco-float-delay: -3.9s;">{% render 'deco-tamarind' %}</div>
 
+  {% comment %}
+    A flat vertical line where the two panel colors meet reads as a plain
+    CSS accident rather than a design choice. This mirrors the wave
+    dividers already used between sections elsewhere in the theme, just
+    oriented vertically — two complementary fills sharing one curve (so
+    they tile with no gap/overlap) instead of a straight seam. Desktop
+    only: the two panels stack vertically on mobile, so there's no
+    vertical seam to soften there.
+  {% endcomment %}
+  <svg class="hero__seam" viewBox="0 0 120 560" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L60,0 C90,35 90,105 60,140 C30,175 30,245 60,280 C90,315 90,385 60,420 C30,455 30,525 60,560 L0,560 Z" style="fill: var(--hero-bg);"></path>
+    <path d="M120,0 L60,0 C90,35 90,105 60,140 C30,175 30,245 60,280 C90,315 90,385 60,420 C30,455 30,525 60,560 L120,560 Z" style="fill: var(--hero-stage-color);"></path>
+  </svg>
+
   <div class="hero__half hero__half--left">
     <div class="hero__left-ring" aria-hidden="true"></div>
     <div class="hero__watermark" aria-hidden="true">{% render 'deco-swirl' %}</div>
