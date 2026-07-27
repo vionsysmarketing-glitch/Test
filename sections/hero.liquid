@@ -1,13 +1,21 @@
+{% assign heading_words = section.settings.heading | split: ' ' %}
+{% assign heading_word_count = heading_words.size %}
+{% assign heading_lead_count = heading_word_count | minus: 1 %}
+{% assign heading_lead = heading_words | slice: 0, heading_lead_count | join: ' ' %}
+{% assign heading_last = heading_words | last %}
+
 <section class="hero" style="--hero-bg: {{ section.settings.background_color }}; --hero-stage-color: {{ section.settings.stage_color }}; --hero-stage-color-alt: {{ section.settings.stage_color_alt }};">
-  <div class="hero__deco hero__deco--1" style="color: #9D0101;">{% render 'deco-chili' %}</div>
-  <div class="hero__deco hero__deco--2" style="color: #4A6B1F;">{% render 'deco-leaf-branch' %}</div>
-  <div class="hero__deco hero__deco--3" style="color: #B5651D;">{% render 'deco-tamarind' %}</div>
+  <div class="hero__deco hero__deco--1" style="color: #FFFFFF;">{% render 'deco-chili' %}</div>
+  <div class="hero__deco hero__deco--2" style="color: #FFE8CF;">{% render 'deco-leaf-branch' %}</div>
+  <div class="hero__deco hero__deco--3" style="color: #FFFFFF;">{% render 'deco-tamarind' %}</div>
 
   <div class="hero__half hero__half--left">
+    <div class="hero__watermark" aria-hidden="true">{% render 'deco-swirl' %}</div>
+
     <div class="hero__leaf-badge">
       <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
     </div>
-    <h1 class="hero__title hero__title--compact">{{ section.settings.heading }}</h1>
+    <h1 class="hero__title hero__title--compact">{{ heading_lead }} <span class="hero__title-accent">{{ heading_last }}</span></h1>
     <div class="hero__actions">
       <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
       <a href="{{ section.settings.secondary_link }}" class="btn btn--outline">{{ section.settings.secondary_label }}</a>
@@ -83,7 +91,7 @@
     { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Our Story" },
     { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
     { "type": "text", "id": "range_label", "label": "CTA card text", "default": "Shop the Full Range" },
-    { "type": "color", "id": "background_color", "label": "Section background", "default": "#FBF3E7" },
+    { "type": "color", "id": "background_color", "label": "Left panel color", "default": "#014C9D", "info": "Bold flat color behind the headline — pairs with the orange product panel for a strong duotone" },
     { "type": "color", "id": "stage_color", "label": "Product panel accent color", "default": "#FF5A36", "info": "The bold color block behind the floating products" },
     { "type": "color", "id": "stage_color_alt", "label": "Product panel sunburst color", "default": "#FFC93C", "info": "The second color used for the sunburst rays behind the hero product" },
     { "type": "color", "id": "wave_color", "label": "Bottom wave color", "default": "#FBF3E7", "info": "Should match the page background so the section blends in on scroll" },
