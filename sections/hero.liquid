@@ -1,4 +1,4 @@
-<section class="hero" style="--hero-bg: {{ section.settings.background_color }}; --hero-stage-color: {{ section.settings.stage_color }};">
+<section class="hero" style="--hero-bg: {{ section.settings.background_color }}; --hero-stage-color: {{ section.settings.stage_color }}; --hero-stage-color-alt: {{ section.settings.stage_color_alt }};">
   <div class="hero__deco hero__deco--1" style="color: #9D0101;">{% render 'deco-chili' %}</div>
   <div class="hero__deco hero__deco--2" style="color: #4A6B1F;">{% render 'deco-leaf-branch' %}</div>
   <div class="hero__deco hero__deco--3" style="color: #B5651D;">{% render 'deco-tamarind' %}</div>
@@ -36,31 +36,29 @@
 
   <div class="hero__half hero__half--right">
     <div class="hero__stage" aria-hidden="true"></div>
-    <div class="hero__deco hero__deco--4" style="color: #FFF3E4;">{% render 'deco-swirl' %}</div>
-    <div class="hero__deco hero__deco--5" style="color: #FFF3E4;">{% render 'deco-chili' %}</div>
-    <div class="hero__deco hero__deco--6" style="color: #FFF3E4;">{% render 'deco-leaf-branch' %}</div>
+    <div class="hero__deco hero__deco--4" style="color: #FFE8CF;">{% render 'deco-swirl' %}</div>
+    <div class="hero__deco hero__deco--5" style="color: #FFE8CF;">{% render 'deco-chili' %}</div>
+    <div class="hero__deco hero__deco--6" style="color: #FFE8CF;">{% render 'deco-leaf-branch' %}</div>
 
+    {% comment %}
+      Only the three "clean" product photos (plain white studio background)
+      are used here — the chutney jars are shot with a grey lifestyle
+      backdrop that shows as a visible mismatched box inside a circular
+      badge, so they're kept out of this cluster.
+    {% endcomment %}
     <div class="hero__product-cluster">
-      <a href="{{ section.settings.ghost_link | default: '/products/ghost-chutney' }}" class="hero__spotlight-float">
-        <span class="hero__spotlight-badge">🔥 Spiciest</span>
-        <img src="{{ 'ghost-chutney.jpg' | asset_url }}" alt="Ghost Chutney" loading="eager" width="280" height="280">
-        <span class="hero__spotlight-title">Ghost Chutney</span>
-      </a>
-      <a href="{{ section.settings.imli_link | default: '/products/imli-chutney' }}" class="hero__orbit hero__orbit--imli">
-        <img src="{{ 'imli-chutney.jpg' | asset_url }}" alt="Imli Chutney" loading="lazy" width="130" height="130">
-        <span>Imli</span>
-      </a>
-      <a href="{{ section.settings.momo_link | default: '/products/momo-chutney' }}" class="hero__orbit hero__orbit--momo">
-        <img src="{{ 'momo-chutney.jpg' | asset_url }}" alt="Momo Chutney" loading="lazy" width="120" height="120">
-        <span>Momo</span>
+      <a href="{{ section.settings.masala_link | default: '/products/garam-masala-powder' }}" class="hero__spotlight-float">
+        <span class="hero__spotlight-badge">⭐ Best Seller</span>
+        <img src="{{ 'garam-masala.jpg' | asset_url }}" alt="Garam Masala Powder" loading="eager" width="300" height="300">
+        <span class="hero__spotlight-title">Garam Masala Powder</span>
       </a>
       <a href="{{ section.settings.chilli_link | default: '/products/chilli-flakes' }}" class="hero__orbit hero__orbit--chilli">
-        <img src="{{ 'chilli-flakes.jpg' | asset_url }}" alt="Chilli Flakes" loading="lazy" width="120" height="120">
-        <span>Chilli</span>
+        <img src="{{ 'chilli-flakes.jpg' | asset_url }}" alt="Chilli Flakes" loading="lazy" width="150" height="150">
+        <span>Chilli Flakes</span>
       </a>
-      <a href="{{ section.settings.masala_link | default: '/products/garam-masala-powder' }}" class="hero__orbit hero__orbit--masala">
-        <img src="{{ 'garam-masala.jpg' | asset_url }}" alt="Garam Masala Powder" loading="lazy" width="130" height="130">
-        <span>Masala</span>
+      <a href="{{ section.settings.coriander_link | default: '/products/coriander-powder' }}" class="hero__orbit hero__orbit--coriander">
+        <img src="{{ 'coriander-powder.jpg' | asset_url }}" alt="Dhaniya Powder" loading="lazy" width="150" height="150">
+        <span>Dhaniya Powder</span>
       </a>
     </div>
 
@@ -87,14 +85,13 @@
     { "type": "text", "id": "range_label", "label": "CTA card text", "default": "Shop the Full Range" },
     { "type": "color", "id": "background_color", "label": "Section background", "default": "#FBF3E7" },
     { "type": "color", "id": "stage_color", "label": "Product panel accent color", "default": "#FF5A36", "info": "The bold color block behind the floating products" },
+    { "type": "color", "id": "stage_color_alt", "label": "Product panel sunburst color", "default": "#FFC93C", "info": "The second color used for the sunburst rays behind the hero product" },
     { "type": "color", "id": "wave_color", "label": "Bottom wave color", "default": "#FBF3E7", "info": "Should match the page background so the section blends in on scroll" },
     { "type": "url", "id": "shop_all_link", "label": "\"Shop the Full Range\" link" },
     { "type": "header", "content": "Product links" },
-    { "type": "url", "id": "ghost_link", "label": "Ghost Chutney link", "info": "Defaults to /products/ghost-chutney" },
-    { "type": "url", "id": "imli_link", "label": "Imli Chutney link", "info": "Defaults to /products/imli-chutney" },
-    { "type": "url", "id": "momo_link", "label": "Momo Chutney link", "info": "Defaults to /products/momo-chutney" },
+    { "type": "url", "id": "masala_link", "label": "Garam Masala Powder link", "info": "Defaults to /products/garam-masala-powder" },
     { "type": "url", "id": "chilli_link", "label": "Chilli Flakes link", "info": "Defaults to /products/chilli-flakes" },
-    { "type": "url", "id": "masala_link", "label": "Garam Masala link", "info": "Defaults to /products/garam-masala-powder" }
+    { "type": "url", "id": "coriander_link", "label": "Dhaniya Powder link", "info": "Defaults to /products/coriander-powder" }
   ]
 }
 {% endschema %}
