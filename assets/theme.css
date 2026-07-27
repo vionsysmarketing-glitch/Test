@@ -270,16 +270,22 @@ h1, h2, h3, h4 {
 }
 .hero__half--right {
   align-items: center;
-  /* Bold two-tone diagonal color block — a hard-edged geometric split
-     (not a texture layered on top of a flat fill) so the panel reads as
-     a deliberate graphic device instead of a plain color field. */
-  background: linear-gradient(
-    128deg,
-    var(--hero-stage-color-alt, #FFC93C) 0%,
-    var(--hero-stage-color-alt, #FFC93C) 44%,
-    var(--hero-stage-color, #FF5A36) 44%,
-    var(--hero-stage-color, #FF5A36) 100%
-  );
+  background: var(--hero-stage-color, #FF5A36);
+}
+
+/* Jagged "impact burst" behind the product — a comic-book pow/starburst
+   silhouette instead of a flat cut or a ring of thin rays, so the panel
+   has real graphic energy without turning into busy stripes. */
+.hero__stage {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 118%;
+  max-width: 720px;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%) rotate(6deg);
+  background: var(--hero-stage-color-alt, #FFC93C);
+  clip-path: polygon(50.00% 0.00%, 57.02% 14.69%, 69.13% 3.81%, 70.00% 20.07%, 85.36% 14.64%, 79.93% 30.00%, 96.19% 30.87%, 85.31% 42.98%, 100.00% 50.00%, 85.31% 57.02%, 96.19% 69.13%, 79.93% 70.00%, 85.36% 85.36%, 70.00% 79.93%, 69.13% 96.19%, 57.02% 85.31%, 50.00% 100.00%, 42.98% 85.31%, 30.87% 96.19%, 30.00% 79.93%, 14.64% 85.36%, 20.07% 70.00%, 3.81% 69.13%, 14.69% 57.02%, 0.00% 50.00%, 14.69% 42.98%, 3.81% 30.87%, 20.07% 30.00%, 14.64% 14.64%, 30.00% 20.07%, 30.87% 3.81%, 42.98% 14.69%);
+  z-index: 0;
 }
 
 /* Big faint line-art watermark for texture/depth behind the headline —
