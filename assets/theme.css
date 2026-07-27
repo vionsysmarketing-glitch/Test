@@ -462,15 +462,19 @@ h1, h2, h3, h4 {
 
 /* ---------- Scroll showcase (ulag-style scroll-driven product spotlight) ---------- */
 .scroll-showcase { padding-bottom: 2rem; }
-.scroll-showcase__wave {
+/* Entry wave sits in normal flow directly above the track, filled with the
+   first product's own color — since that color matches the track's top
+   edge exactly, there's no overlap math needed and no gap possible. A
+   version overlaying the sticky panel from outside was tried first but sits
+   exactly where the sticky header (z-index 100) covers it, hiding it
+   entirely; this avoids that region altogether. */
+.scroll-showcase__wave-entry {
   display: block;
   width: 100%;
-  height: 44px;
-  position: relative;
-  z-index: 3;
+  height: 50px;
 }
-.scroll-showcase__wave--top { margin-bottom: -30px; }
-.scroll-showcase__wave--bottom { margin-top: -30px; }
+.scroll-showcase__wave-entry-stop--left { stop-color: var(--bg-left); }
+.scroll-showcase__wave-entry-stop--right { stop-color: var(--bg-right); }
 .scroll-showcase__track {
   position: relative;
   min-height: 100vh; /* JS expands this to (product count * 100vh); this is the no-JS fallback */
@@ -490,6 +494,20 @@ h1, h2, h3, h4 {
   transition: background 0.5s ease;
   z-index: 0;
 }
+/* This one lives inside the sticky panel itself (not a separate flow
+   sibling with negative-margin overlap) so it's always pixel-perfect
+   aligned with the color panel's own rendered edge — no cross-element
+   margin math needed. Safe at the bottom since nothing else occupies that
+   screen position (unlike the top, which the sticky header covers). */
+.scroll-showcase__wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+  display: block;
+}
+.scroll-showcase__wave--bottom { bottom: 0; }
 .scroll-showcase__inner {
   position: relative;
   z-index: 1;
@@ -863,6 +881,7 @@ h1, h2, h3, h4 {
      background) can render invisible against itself. Match ulag's own mobile
      pattern: flatten the split gradient to a single solid color. */
   .scroll-showcase__bg { background: var(--bg-left); }
+  .scroll-showcase__wave-entry-stop--right { stop-color: var(--bg-left); }
 
   .ingredients__grid { grid-template-columns: repeat(2, 1fr); row-gap: 2.5rem; }
   .ingredients__item--1, .ingredients__item--2, .ingredients__item--3, .ingredients__item--4, .ingredients__item--5 {
