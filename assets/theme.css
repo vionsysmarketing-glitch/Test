@@ -1076,6 +1076,53 @@ h1, h2, h3, h4 {
   opacity: 0.7;
 }
 
+/* ---------- Product recommendations ("You may also like") ---------- */
+/* Only rendered once JS swaps in Shopify's fetched recommendation markup
+   (see initProductRecommendations in theme.js) — empty until then, so
+   there's no fixed height/padding baked in here that would leave a blank
+   gap on products with no recommendations. */
+.product-recs { padding-bottom: 1rem; }
+.product-recs__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding-bottom: 4rem; }
+.product-recs__card { display: block; }
+.product-recs__media {
+  aspect-ratio: 1 / 1;
+  background: rgba(0,0,0,0.03);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-recs__card:hover .product-recs__media { transform: translateY(-4px); box-shadow: 0 14px 26px rgba(0,0,0,0.16); }
+.product-recs__media img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; }
+.product-recs__title { font-size: 1rem; margin-bottom: 0.35rem; color: var(--color-text); }
+.product-recs__price-row { display: flex; align-items: baseline; gap: 0.5rem; }
+.product-recs__price { font-weight: 700; color: var(--color-primary); }
+.product-recs__price-compare { font-size: 0.85rem; color: rgba(34,34,34,0.45); text-decoration: line-through; }
+
+/* ---------- Product recipes ("How to use it") ---------- */
+.product-recipes { padding: 3rem 0 4.5rem; }
+.product-recipes__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+.product-recipe-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 1.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-recipe-card:hover { transform: translateY(-4px); box-shadow: 0 14px 26px rgba(0,0,0,0.16); }
+.product-recipe-card__icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(157, 1, 1, 0.08);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+.product-recipe-card__icon svg { width: 22px; height: 22px; }
+.product-recipe-card__title { font-size: 1.1rem; color: var(--color-primary); margin-bottom: 0.5rem; }
+.product-recipe-card__text { font-size: 0.9rem; color: var(--color-text); opacity: 0.85; line-height: 1.5; }
+
 .collection__header { padding: 3rem 0 2rem; text-align: center; }
 .collection__title { color: var(--color-primary); font-size: 2rem; }
 .collection__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding-bottom: 3rem; }
@@ -1158,6 +1205,8 @@ h1, h2, h3, h4 {
   .collection__grid { grid-template-columns: repeat(2, 1fr); }
   .product-page { grid-template-columns: 1fr; }
   .blog-page__grid { grid-template-columns: 1fr; }
+  .product-recs__grid { grid-template-columns: repeat(2, 1fr); }
+  .product-recipes__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
 }
 
 @media screen and (max-width: 599px) {

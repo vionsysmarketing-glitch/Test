@@ -1,6 +1,8 @@
 {
   "sections": {
-    "main": { "type": "main-product" }
+    "main": { "type": "main-product" },
+    "recipes": { "type": "product-recipes" },
+    "recommendations": { "type": "product-recommendations" }
   },
-  "order": ["main"]
+  "order": ["main", "recipes", "recommendations"]
 }

@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initScrollShowcase();
   initHeroProductSlider();
   initQuantityStepper();
+  initProductRecommendations();
 });
 
 function initScrollShowcase() {
@@ -186,4 +187,30 @@ function initQuantityStepper() {
       setValue(parseInt(input.value, 10) || 1);
     });
   });
+}
+
+function initProductRecommendations() {
+  var root = document.querySelector('[data-product-recommendations]');
+  if (!root) return;
+
+  var url = root.getAttribute('data-url');
+  if (!url) return;
+
+  fetch(url)
+    .then(function (response) { return response.text(); })
+    .then(function (html) {
+      var parsed = new DOMParser().parseFromString(html, 'text/html');
+      var fetchedRoot = parsed.querySelector('[data-product-recommendations]');
+      // Shopify only returns real markup here once it has recommendations to
+      // show for this product — an empty/missing result just means none were
+      // found, not an error, so leave the section empty rather than showing
+      // a broken or misleading placeholder.
+      if (fetchedRoot && fetchedRoot.innerHTML.trim()) {
+        root.innerHTML = fetchedRoot.innerHTML;
+      }
+    })
+    .catch(function () {
+      // Network hiccup or recommendations unavailable — fail silently and
+      // leave the section empty rather than surfacing a broken UI.
+    });
 }
