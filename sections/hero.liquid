@@ -51,6 +51,10 @@
       </div>
     </div>
   </div>
+
+  <svg class="hero__wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 C240,50 480,10 720,32 C960,54 1200,15 1440,40 L1440,60 L0,60 Z" fill="{{ section.settings.wave_color | default: '#FBF3E7' }}"></path>
+  </svg>
 </section>
 
 {% schema %}
@@ -65,6 +69,7 @@
     { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
     { "type": "text", "id": "range_label", "label": "CTA card text", "default": "Shop the Full Range" },
     { "type": "color", "id": "background_color", "label": "Section background", "default": "#FBF3E7" },
+    { "type": "color", "id": "wave_color", "label": "Bottom wave color", "default": "#FBF3E7", "info": "Should match the page background so the section blends in on scroll" },
     { "type": "url", "id": "shop_all_link", "label": "\"Shop the Full Range\" link" },
     { "type": "header", "content": "Product links" },
     { "type": "url", "id": "ghost_link", "label": "Ghost Chutney link", "info": "Defaults to /products/ghost-chutney" },
