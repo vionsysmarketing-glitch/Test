@@ -254,23 +254,19 @@ h1, h2, h3, h4 {
 /* ---------- Hero ---------- */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 1fr;
   min-height: 560px;
   position: relative;
+  background: var(--hero-bg, #FBF3E7);
+  background-image:
+    radial-gradient(circle at 90% 10%, rgba(230, 214, 36, 0.4), transparent 40%),
+    radial-gradient(circle at 8% 95%, rgba(157, 1, 1, 0.12), transparent 45%),
+    radial-gradient(rgba(34,34,34,0.05) 1.5px, transparent 1.5px);
+  background-size: auto, auto, 20px 20px;
+  overflow: hidden;
 }
 .hero__half { display: flex; flex-direction: column; justify-content: center; padding: 4rem 3.5rem; position: relative; z-index: 1; }
-.hero__half--left {
-  background: var(--hero-bg-left, #FBEADF);
-  background-image:
-    radial-gradient(circle at 85% 15%, rgba(230, 214, 36, 0.35), transparent 42%),
-    radial-gradient(circle at 10% 90%, rgba(157, 1, 1, 0.12), transparent 45%);
-  overflow: hidden;
-}
-.hero__half--right {
-  background: var(--hero-bg-right, #9D0101);
-  align-items: center;
-  overflow: hidden;
-}
+.hero__half--right { align-items: center; }
 .hero__leaf-badge {
   display: inline-flex;
   align-items: center;
@@ -385,15 +381,6 @@ h1, h2, h3, h4 {
 .hero__mini-card:hover { transform: translateY(-3px); }
 .hero__mini-card img { width: 100%; flex: 1; object-fit: contain; min-height: 0; }
 .hero__mini-card span { display: block; margin-top: 0.2rem; font-size: 0.6rem; font-weight: 700; text-align: center; color: var(--color-text); }
-
-.hero__wave {
-  position: absolute;
-  left: 0; bottom: -1px;
-  width: 100%;
-  height: 60px;
-  z-index: 2;
-  display: block;
-}
 
 /* ---------- Section heading (shared) ---------- */
 .section-heading { text-align: center; padding: 4.5rem 0 2.5rem; }
@@ -847,10 +834,9 @@ h1, h2, h3, h4 {
 
   .hero { grid-template-columns: 1fr; }
   .hero__half { padding: 3rem 1.75rem; }
-  .hero__half--right { padding: 2rem 1.75rem 4rem; min-height: 0; }
+  .hero__half--right { padding: 2rem 1.75rem 3rem; min-height: 0; }
   .hero__mosaic { max-width: 420px; margin: 0 auto; }
   .hero__spotlight-title { font-size: 1rem; }
-  .hero__wave { height: 40px; }
 
   .product-row__inner, .product-row--reverse .product-row__inner { grid-template-columns: 1fr; direction: ltr; }
   .product-row__media { max-width: 380px; margin: 0 auto; }

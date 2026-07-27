@@ -1,4 +1,4 @@
-<section class="hero" style="--hero-bg-left: {{ section.settings.color_left }}; --hero-bg-right: {{ section.settings.color_right }};">
+<section class="hero" style="--hero-bg: {{ section.settings.background_color }};">
   <div class="hero__half hero__half--left">
     <div class="hero__leaf-badge">
       <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
@@ -51,10 +51,6 @@
       </div>
     </div>
   </div>
-
-  <svg class="hero__wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,32 C240,80 480,0 720,24 C960,48 1200,8 1440,40 L1440,80 L0,80 Z" fill="{{ section.settings.wave_color | default: '#FBF3E7' }}"></path>
-  </svg>
 </section>
 
 {% schema %}
@@ -68,9 +64,7 @@
     { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Our Story" },
     { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
     { "type": "text", "id": "range_label", "label": "CTA card text", "default": "Shop the Full Range" },
-    { "type": "color", "id": "color_left", "label": "Left panel color", "default": "#FBEADF" },
-    { "type": "color", "id": "color_right", "label": "Right panel color", "default": "#9D0101" },
-    { "type": "color", "id": "wave_color", "label": "Bottom wave color", "default": "#FBF3E7", "info": "Should match the page background so the section blends in on scroll" },
+    { "type": "color", "id": "background_color", "label": "Section background", "default": "#FBF3E7" },
     { "type": "url", "id": "shop_all_link", "label": "\"Shop the Full Range\" link" },
     { "type": "header", "content": "Product links" },
     { "type": "url", "id": "ghost_link", "label": "Ghost Chutney link", "info": "Defaults to /products/ghost-chutney" },
