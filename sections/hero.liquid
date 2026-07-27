@@ -51,19 +51,58 @@
     <div class="hero__deco hero__deco--6" style="color: #4A6B1F;">{% render 'deco-leaf-branch' %}</div>
 
     {% comment %}
-      One clean product photo (plain white studio background) stands in
-      for the whole Masala/spice-powder category. No frame, no card, no
-      dark background — just the product floating on a soft neutral
-      field with plain typography, a minimal editorial-style feature
-      instead of a graphic shape.
+      Same clean, no-card/no-circle/no-dark-panel product feature as
+      before, but now auto-advancing through the three spice-powder
+      products instead of showing just one — an automatic slider for the
+      Masala range. JS toggles "is-active" on the matching slide/caption/
+      dot; markup falls back to showing just the first product if JS
+      never runs (progressive enhancement, same pattern as the "Meet the
+      Pack" scroll showcase).
     {% endcomment %}
-    <a href="{{ section.settings.category_link | default: '/collections/spices' }}" class="hero__feature-product">
+    {% assign slide_titles = 'Garam Masala Powder|Chilli Flakes|Dhaniya Powder' | split: '|' %}
+    {% assign slide_tags = '★ Best Seller|🔥 Customer Favorite|🌿 Everyday Staple' | split: '|' %}
+    {% assign slide_images = 'garam-masala.jpg|chilli-flakes.jpg|coriander-powder.jpg' | split: '|' %}
+    {% assign slide_links = section.settings.masala_link | default: '/products/garam-masala-powder' %}
+    {% assign slide_links_2 = section.settings.chilli_link | default: '/products/chilli-flakes' %}
+    {% assign slide_links_3 = section.settings.coriander_link | default: '/products/coriander-powder' %}
+
+    <div class="hero__feature-slider" data-hero-slider>
       <span class="hero__feature-product-eyebrow">{{ section.settings.category_label }}</span>
-      <span class="hero__feature-product-shadow" aria-hidden="true"></span>
-      <img class="hero__feature-product-image" src="{{ 'garam-masala.jpg' | asset_url }}" alt="Garam Masala Powder" loading="eager" width="320" height="320">
-      <span class="hero__feature-product-name">Garam Masala Powder</span>
-      <span class="hero__feature-product-tag">★ Best Seller</span>
-    </a>
+
+      <div class="hero__feature-slide-viewport">
+        <div class="hero__feature-slide is-active" data-slide="0">
+          <span class="hero__feature-product-shadow" aria-hidden="true"></span>
+          <img class="hero__feature-product-image" src="{{ slide_images[0] | asset_url }}" alt="{{ slide_titles[0] }}" loading="eager" width="320" height="256">
+        </div>
+        <div class="hero__feature-slide" data-slide="1">
+          <span class="hero__feature-product-shadow" aria-hidden="true"></span>
+          <img class="hero__feature-product-image" src="{{ slide_images[1] | asset_url }}" alt="{{ slide_titles[1] }}" loading="lazy" width="320" height="256">
+        </div>
+        <div class="hero__feature-slide" data-slide="2">
+          <span class="hero__feature-product-shadow" aria-hidden="true"></span>
+          <img class="hero__feature-product-image" src="{{ slide_images[2] | asset_url }}" alt="{{ slide_titles[2] }}" loading="lazy" width="320" height="256">
+        </div>
+      </div>
+
+      <a href="{{ slide_links }}" class="hero__feature-caption is-active" data-caption="0">
+        <span class="hero__feature-product-name">{{ slide_titles[0] }}</span>
+        <span class="hero__feature-product-tag">{{ slide_tags[0] }}</span>
+      </a>
+      <a href="{{ slide_links_2 }}" class="hero__feature-caption" data-caption="1">
+        <span class="hero__feature-product-name">{{ slide_titles[1] }}</span>
+        <span class="hero__feature-product-tag">{{ slide_tags[1] }}</span>
+      </a>
+      <a href="{{ slide_links_3 }}" class="hero__feature-caption" data-caption="2">
+        <span class="hero__feature-product-name">{{ slide_titles[2] }}</span>
+        <span class="hero__feature-product-tag">{{ slide_tags[2] }}</span>
+      </a>
+
+      <div class="hero__feature-dots" role="tablist" aria-label="Featured spice powders">
+        <button type="button" class="hero__feature-dot is-active" data-dot="0" aria-label="Show {{ slide_titles[0] }}"></button>
+        <button type="button" class="hero__feature-dot" data-dot="1" aria-label="Show {{ slide_titles[1] }}"></button>
+        <button type="button" class="hero__feature-dot" data-dot="2" aria-label="Show {{ slide_titles[2] }}"></button>
+      </div>
+    </div>
 
     <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__range-pill">
       {{ section.settings.range_label }} <span aria-hidden="true">→</span>
@@ -91,9 +130,11 @@
     { "type": "color", "id": "stage_color_alt", "label": "Product label accent color", "default": "#9D0101", "info": "Used for the category/best-seller text labels" },
     { "type": "color", "id": "wave_color", "label": "Bottom wave color", "default": "#FBF3E7", "info": "Should match the page background so the section blends in on scroll" },
     { "type": "url", "id": "shop_all_link", "label": "\"Shop the Full Range\" link" },
-    { "type": "header", "content": "Featured product" },
+    { "type": "header", "content": "Featured product slider" },
     { "type": "text", "id": "category_label", "label": "Category label", "default": "Spice Powders" },
-    { "type": "url", "id": "category_link", "label": "Featured product/category link", "info": "Defaults to /collections/spices — a single product photo standing in as a category entry point" }
+    { "type": "url", "id": "masala_link", "label": "Garam Masala Powder link", "info": "Defaults to /products/garam-masala-powder" },
+    { "type": "url", "id": "chilli_link", "label": "Chilli Flakes link", "info": "Defaults to /products/chilli-flakes" },
+    { "type": "url", "id": "coriander_link", "label": "Dhaniya Powder link", "info": "Defaults to /products/coriander-powder" }
   ]
 }
 {% endschema %}

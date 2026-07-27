@@ -389,21 +389,21 @@ h1, h2, h3, h4 {
 }
 .hero__feature-label { font-size: 0.78rem; font-weight: 700; color: #fff; max-width: 90px; line-height: 1.25; }
 
-/* Minimal floating product: no card, no circle, no frame — just the jar
-   itself (drop-shadowed, slightly tilted) grounded by a soft blurred
-   shadow, with plain small-caps typography doing the rest. An editorial/
-   DTC-style feature standing in for the whole Masala/spice-powder
-   category, rather than a graphic shape. */
-.hero__feature-product {
+/* Minimal floating product, now auto-sliding through the three spice
+   powders — no card, no circle, no frame either way. Images and
+   captions are two separate crossfading stacks (same pattern as the
+   "Meet the Pack" scroll showcase's text/media split), synced by index
+   via JS so a caption's length changing doesn't reflow the image. */
+.hero__feature-slider {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  text-decoration: none;
 }
 .hero__feature-product-eyebrow {
+  display: block;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.78rem;
@@ -412,12 +412,29 @@ h1, h2, h3, h4 {
   color: var(--hero-stage-color-alt, #9D0101);
   margin-bottom: 1.5rem;
 }
+
+.hero__feature-slide-viewport {
+  position: relative;
+  width: min(320px, 68vw);
+  aspect-ratio: 940 / 751;
+}
+.hero__feature-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.97) translateY(6px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.hero__feature-slide.is-active { opacity: 1; transform: scale(1) translateY(0); }
 .hero__feature-product-shadow {
   position: absolute;
-  top: 52%;
+  top: 62%;
   left: 50%;
-  width: 220px;
-  height: 40px;
+  width: 60%;
+  height: 12%;
   transform: translate(-50%, -50%);
   background: rgba(20, 12, 4, 0.22);
   border-radius: 50%;
@@ -429,31 +446,54 @@ h1, h2, h3, h4 {
      (no transparency), so a CSS drop-shadow would trace the image's
      rectangular bounding box, not the jar — showing up as a visible
      white box with a shadowed edge instead of hugging the product. The
-     panel color is matched to the photo's own white background instead,
-     so the rectangle disappears and only the photo's own studio shadow
-     (baked into the shot) and the blurred ground-shadow below read. */
-  width: min(320px, 68%);
+     panel color is matched to the photos' own white background instead,
+     so the rectangle disappears and only their baked-in studio shadow
+     plus the blurred ground-shadow above read. */
+  width: 82%;
   height: auto;
   object-fit: contain;
   transform: rotate(-4deg);
-  transition: transform 0.25s ease;
 }
-.hero__feature-product:hover .hero__feature-product-image { transform: rotate(-4deg) translateY(-6px); }
+
+.hero__feature-caption {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  animation: hero-caption-in 0.5s ease;
+}
+.hero__feature-caption.is-active { display: flex; }
+@keyframes hero-caption-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .hero__feature-product-name {
-  margin-top: 1.75rem;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: clamp(1.3rem, 2.2vw, 1.6rem);
   color: var(--color-text);
 }
 .hero__feature-product-tag {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.03em;
   color: var(--hero-stage-color-alt, #9D0101);
 }
+
+.hero__feature-dots { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
+.hero__feature-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(157, 1, 1, 0.25);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.hero__feature-dot.is-active { background: var(--hero-stage-color-alt, #9D0101); transform: scale(1.2); }
 
 .hero__range-pill {
   position: relative;
