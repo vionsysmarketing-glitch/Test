@@ -75,12 +75,24 @@
       never runs (progressive enhancement, same pattern as the "Meet the
       Pack" scroll showcase).
     {% endcomment %}
+    {% comment %}
+      Link fallbacks are resolved by looking up the real product by title
+      (collections.all always has the merchant's actual URL/handle) rather
+      than guessing a handle like '/products/chilli-flakes' — real store
+      handles often carry extra suffixes (e.g. "chilli-flakes-export-quality")
+      that a guessed default can't predict, and a wrong guess 404s instead
+      of failing safely. Falls through to the shop-all link, never a dead end.
+    {% endcomment %}
     {% assign slide_titles = 'Garam Masala Powder|Chilli Flakes|Dhaniya Powder' | split: '|' %}
     {% assign slide_tags = '★ Best Seller|🔥 Customer Favorite|🌿 Everyday Staple' | split: '|' %}
     {% assign slide_images = 'garam-masala.jpg|chilli-flakes.jpg|coriander-powder.jpg' | split: '|' %}
-    {% assign slide_links = section.settings.masala_link | default: '/products/garam-masala-powder' %}
-    {% assign slide_links_2 = section.settings.chilli_link | default: '/products/chilli-flakes' %}
-    {% assign slide_links_3 = section.settings.coriander_link | default: '/products/coriander-powder' %}
+    {% assign masala_product = collections.all.products | where: 'title', 'Garam Masala Powder' | first %}
+    {% assign chilli_product = collections.all.products | where: 'title', 'Chilli Flakes' | first %}
+    {% assign coriander_product = collections.all.products | where: 'title', 'Coriander Powder' | first %}
+    {% assign safe_fallback = section.settings.shop_all_link | default: '/collections/all' %}
+    {% assign slide_links = section.settings.masala_link | default: masala_product.url | default: safe_fallback %}
+    {% assign slide_links_2 = section.settings.chilli_link | default: chilli_product.url | default: safe_fallback %}
+    {% assign slide_links_3 = section.settings.coriander_link | default: coriander_product.url | default: safe_fallback %}
 
     <div class="hero__feature-slider" data-hero-slider>
       <span class="hero__feature-product-eyebrow">{{ section.settings.category_label }}</span>
