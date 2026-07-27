@@ -345,6 +345,28 @@ h1, h2, h3, h4 {
 .hero__deco--3 { top: 60%; left: 33%; width: 50px; height: 50px; opacity: 0.4; transform: rotate(-20deg); }
 .hero__deco--4 { top: 6%; left: 8%; width: 46px; height: 46px; opacity: 0.4; transform: rotate(8deg); }
 .hero__deco--6 { bottom: 7%; right: 5%; width: 42px; height: 42px; opacity: 0.4; transform: rotate(-15deg); }
+.hero__deco--7 { top: 42%; left: 45%; width: 40px; height: 40px; opacity: 0.3; transform: rotate(20deg); }
+.hero__deco--8 { bottom: 5%; left: 44%; width: 48px; height: 48px; opacity: 0.28; transform: rotate(-8deg) scaleX(-1); }
+
+/* Same slow-rotating dashed ring device as the product panel, scaled up
+   and pushed mostly off-canvas so only a faint arc shows through — ties
+   the two halves together with a shared bit of quiet motion instead of
+   the left side being a static color field next to an animated one. */
+.hero__left-ring {
+  position: absolute;
+  bottom: -22%;
+  left: -18%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  z-index: 0;
+  pointer-events: none;
+  animation: hero-stage-spin 60s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__left-ring { animation: none; }
+}
 /* Sits inside .hero itself (which already has position:relative and
    overflow:hidden) at its actual bottom edge — no separate flow element or
    margin-overlap needed, so there's no way for a gap to open up. */
@@ -987,10 +1009,12 @@ h1, h2, h3, h4 {
   .hero__half { padding: 3rem 1.75rem; }
   .hero__half--right { padding: 3.5rem 1.75rem 2.5rem; min-height: 0; }
   .hero__watermark { width: 220px; height: 220px; top: -8%; right: -14%; }
+  .hero__left-ring { width: 260px; height: 260px; bottom: -14%; left: -14%; }
   .hero__product-cluster { max-width: 340px; margin: 0 auto; }
   .hero__spotlight-title { font-size: 0.68rem; }
   .hero__deco { opacity: 0.4 !important; }
   .hero__deco--1 { width: 44px !important; height: 44px !important; }
+  .hero__deco--7, .hero__deco--8 { width: 34px !important; height: 34px !important; }
 
   .product-row__inner, .product-row--reverse .product-row__inner { grid-template-columns: 1fr; direction: ltr; }
   .product-row__media { max-width: 380px; margin: 0 auto; }
