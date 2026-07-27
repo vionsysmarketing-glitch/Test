@@ -270,10 +270,16 @@ h1, h2, h3, h4 {
 }
 .hero__half--right {
   align-items: center;
-  /* Flat, fully-saturated color fill for the whole column — a confident
-     duotone split reads far bolder than a soft gradient or a partial
-     diagonal block. */
-  background: var(--hero-stage-color, #FF5A36);
+  /* Bold two-tone diagonal color block — a hard-edged geometric split
+     (not a texture layered on top of a flat fill) so the panel reads as
+     a deliberate graphic device instead of a plain color field. */
+  background: linear-gradient(
+    128deg,
+    var(--hero-stage-color-alt, #FFC93C) 0%,
+    var(--hero-stage-color-alt, #FFC93C) 44%,
+    var(--hero-stage-color, #FF5A36) 44%,
+    var(--hero-stage-color, #FF5A36) 100%
+  );
 }
 
 /* Big faint line-art watermark for texture/depth behind the headline —
@@ -293,25 +299,6 @@ h1, h2, h3, h4 {
   pointer-events: none;
 }
 .hero__watermark svg { width: 100%; height: 100%; }
-
-/* Soft glow behind the hero product — a warm halo instead of hard-edged
-   sunburst rays, which read as busy "strips" against the flat panel. */
-.hero__stage {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 100%;
-  max-width: 620px;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    var(--hero-stage-color-alt, #FFC93C) 0%,
-    transparent 68%
-  );
-  opacity: 0.55;
-  z-index: 0;
-}
 
 /* Hand-drawn line-art scattered around the hero, standing in for the old
    dot-grain texture — a handful of bold unique illustrations rather than a
