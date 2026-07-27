@@ -52,24 +52,18 @@
     <div class="hero__deco hero__deco--6" style="color: #C9A227;">{% render 'deco-leaf-branch' %}</div>
 
     {% comment %}
-      Only the three "clean" product photos (plain white studio background)
-      are used here — the chutney jars are shot with a grey lifestyle
-      backdrop that shows as a visible mismatched box inside a circular
-      badge, so they're kept out of this cluster.
+      One clean product photo (plain white studio background) stands in
+      for the whole Masala/spice-powder category — three separate circles
+      here read as cluttered, and a single confident feature works just as
+      well as a category entry point, linking through to the collection
+      rather than one product.
     {% endcomment %}
-    <div class="hero__product-cluster">
-      <a href="{{ section.settings.masala_link | default: '/products/garam-masala-powder' }}" class="hero__spotlight-float">
+    <div class="hero__product-cluster hero__product-cluster--single">
+      <a href="{{ section.settings.category_link | default: '/collections/spices' }}" class="hero__spotlight-float">
         <span class="hero__spotlight-badge">⭐ Best Seller</span>
+        <span class="hero__spotlight-eyebrow">{{ section.settings.category_label }}</span>
         <img src="{{ 'garam-masala.jpg' | asset_url }}" alt="Garam Masala Powder" loading="eager" width="300" height="300">
         <span class="hero__spotlight-title">Garam Masala Powder</span>
-      </a>
-      <a href="{{ section.settings.chilli_link | default: '/products/chilli-flakes' }}" class="hero__orbit hero__orbit--chilli">
-        <img src="{{ 'chilli-flakes.jpg' | asset_url }}" alt="Chilli Flakes" loading="lazy" width="150" height="150">
-        <span>Chilli Flakes</span>
-      </a>
-      <a href="{{ section.settings.coriander_link | default: '/products/coriander-powder' }}" class="hero__orbit hero__orbit--coriander">
-        <img src="{{ 'coriander-powder.jpg' | asset_url }}" alt="Dhaniya Powder" loading="lazy" width="150" height="150">
-        <span>Dhaniya Powder</span>
       </a>
     </div>
 
@@ -99,10 +93,9 @@
     { "type": "color", "id": "stage_color_alt", "label": "Gold accent color", "default": "#C9A227", "info": "Used for the thin rings, badge, and line-art accents" },
     { "type": "color", "id": "wave_color", "label": "Bottom wave color", "default": "#FBF3E7", "info": "Should match the page background so the section blends in on scroll" },
     { "type": "url", "id": "shop_all_link", "label": "\"Shop the Full Range\" link" },
-    { "type": "header", "content": "Product links" },
-    { "type": "url", "id": "masala_link", "label": "Garam Masala Powder link", "info": "Defaults to /products/garam-masala-powder" },
-    { "type": "url", "id": "chilli_link", "label": "Chilli Flakes link", "info": "Defaults to /products/chilli-flakes" },
-    { "type": "url", "id": "coriander_link", "label": "Dhaniya Powder link", "info": "Defaults to /products/coriander-powder" }
+    { "type": "header", "content": "Featured product" },
+    { "type": "text", "id": "category_label", "label": "Category label", "default": "Spice Powders" },
+    { "type": "url", "id": "category_link", "label": "Featured product/category link", "info": "Defaults to /collections/spices — a single product photo standing in as a category entry point" }
   ]
 }
 {% endschema %}
