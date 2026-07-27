@@ -294,22 +294,22 @@ h1, h2, h3, h4 {
 }
 .hero__watermark svg { width: 100%; height: 100%; }
 
-/* Sunburst medallion behind the hero product — a classic "bold" motif for
-   spice/hot-sauce branding, and a much more graphic, energetic backdrop
-   than a flat panel on its own. */
+/* Soft glow behind the hero product — a warm halo instead of hard-edged
+   sunburst rays, which read as busy "strips" against the flat panel. */
 .hero__stage {
   position: absolute;
   top: 50%; left: 50%;
-  width: 92%;
-  max-width: 560px;
+  width: 100%;
+  max-width: 620px;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: repeating-conic-gradient(
-    from 0deg,
-    var(--hero-stage-color-alt, #FFC93C) 0deg 9deg,
-    transparent 9deg 18deg
+  background: radial-gradient(
+    circle,
+    var(--hero-stage-color-alt, #FFC93C) 0%,
+    transparent 68%
   );
+  opacity: 0.55;
   z-index: 0;
 }
 
@@ -360,7 +360,7 @@ h1, h2, h3, h4 {
 }
 .hero__title-accent { color: var(--color-accent); }
 .hero__title--compact { font-size: clamp(2.2rem, 3.4vw, 3.2rem); margin-bottom: 1.75rem; }
-.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
 /* .btn--outline elsewhere sits on light backgrounds and uses currentColor
    (dark) — this half is a solid dark blue, so only here it needs to flip
    to white without touching the shared .btn--outline rule used on the
@@ -368,7 +368,9 @@ h1, h2, h3, h4 {
 .hero__actions .btn--outline { color: #fff; border-color: #fff; }
 .hero__actions .btn--outline:hover { background: #fff; color: var(--hero-bg, #014C9D); }
 
-.hero__features { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+/* Two-by-two grid instead of a wrapping row, so the four features always
+   read as a tidy block regardless of label length. */
+.hero__features { display: grid; grid-template-columns: repeat(2, auto); gap: 1.5rem 2.25rem; }
 .hero__feature { display: flex; align-items: center; gap: 0.6rem; }
 .hero__feature-icon {
   width: 40px; height: 40px;
@@ -426,7 +428,17 @@ h1, h2, h3, h4 {
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
   transform: rotate(6deg);
 }
-.hero__spotlight-title { display: block; margin-top: 0.6rem; font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--color-primary); text-align: center; }
+.hero__spotlight-title {
+  display: block;
+  margin-top: 0.5rem;
+  max-width: 78%;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+  line-height: 1.15;
+  color: var(--color-primary);
+  text-align: center;
+}
 
 .hero__orbit {
   position: absolute;

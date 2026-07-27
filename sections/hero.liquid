@@ -16,10 +16,6 @@
       <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
     </div>
     <h1 class="hero__title hero__title--compact">{{ heading_lead }} <span class="hero__title-accent">{{ heading_last }}</span></h1>
-    <div class="hero__actions">
-      <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
-      <a href="{{ section.settings.secondary_link }}" class="btn btn--outline">{{ section.settings.secondary_label }}</a>
-    </div>
 
     {% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
     <div class="hero__features">
@@ -39,6 +35,11 @@
         <span class="hero__feature-icon" style="--feature-color: #B5651D;">{% render 'icon-truck' %}</span>
         <span class="hero__feature-label">Free Shipping</span>
       </div>
+    </div>
+
+    <div class="hero__actions">
+      <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
+      <a href="{{ section.settings.secondary_link }}" class="btn btn--outline">{{ section.settings.secondary_label }}</a>
     </div>
   </div>
 
