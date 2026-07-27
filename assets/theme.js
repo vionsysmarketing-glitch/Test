@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   initScrollShowcase();
   initHeroProductSlider();
+  initQuantityStepper();
 });
 
 function initScrollShowcase() {
@@ -155,4 +156,34 @@ function initHeroProductSlider() {
   root.addEventListener('focusout', start);
 
   start();
+}
+
+function initQuantityStepper() {
+  var steppers = document.querySelectorAll('[data-quantity-stepper]');
+  steppers.forEach(function (stepper) {
+    var input = stepper.querySelector('[data-quantity-input]');
+    var decrease = stepper.querySelector('[data-quantity-decrease]');
+    var increase = stepper.querySelector('[data-quantity-increase]');
+    if (!input) return;
+
+    function setValue(value) {
+      var min = parseInt(input.min, 10) || 1;
+      var next = Math.max(min, value);
+      input.value = next;
+    }
+
+    if (decrease) {
+      decrease.addEventListener('click', function () {
+        setValue((parseInt(input.value, 10) || 1) - 1);
+      });
+    }
+    if (increase) {
+      increase.addEventListener('click', function () {
+        setValue((parseInt(input.value, 10) || 1) + 1);
+      });
+    }
+    input.addEventListener('change', function () {
+      setValue(parseInt(input.value, 10) || 1);
+    });
+  });
 }

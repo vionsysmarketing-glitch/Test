@@ -1,6 +1,83 @@
+{% comment %}
+  Per-product tagline/benefits/usage-tip content is hardcoded here (same
+  six products, same taglines/benefit copy as scroll-showcase.liquid) —
+  Shopify's schema "default" blocks proved unreliable elsewhere in this
+  theme, so this follows the same established pattern rather than relying
+  on metafields. Any product not in this list still gets a sensible
+  generic fallback below instead of breaking.
+{% endcomment %}
+{% assign eyebrow = 'Our Products' %}
+{% assign spice_tag = '' %}
+{% assign accent = '#9D0101' %}
+{% assign tagline = product.title %}
+{% assign usage_tip = 'Great stirred into your everyday cooking, straight from the jar.' %}
+{% assign benefit_1 = 'Made with natural ingredients' %}
+{% assign benefit_2 = 'Zero preservatives' %}
+{% assign benefit_3 = 'Small-batch quality, every jar' %}
+
+{% case product.title %}
+  {% when 'Ghost Chutney' %}
+    {% assign eyebrow = 'Chutneys' %}
+    {% assign spice_tag = '🌶️🌶️🌶️ Extra Hot' %}
+    {% assign accent = '#9D0101' %}
+    {% assign tagline = 'For the heat-seekers' %}
+    {% assign usage_tip = 'Best with parathas, rice, or as a fiery dip for pakoras.' %}
+    {% assign benefit_1 = 'Made with real ghost peppers' %}
+    {% assign benefit_2 = 'Zero preservatives' %}
+    {% assign benefit_3 = 'Ready to eat, straight from the jar' %}
+  {% when 'Imli Chutney' %}
+    {% assign eyebrow = 'Chutneys' %}
+    {% assign spice_tag = '🌶️ Mild &amp; Tangy' %}
+    {% assign accent = '#B5651D' %}
+    {% assign tagline = 'Ghar wali meethi chutney' %}
+    {% assign usage_tip = 'Drizzle over chaat, samosas, or use as a marinade glaze.' %}
+    {% assign benefit_1 = 'Hyperlocal tamarind &amp; jaggery' %}
+    {% assign benefit_2 = 'No artificial flavours' %}
+    {% assign benefit_3 = 'Perfect with snacks, chaat &amp; momos' %}
+  {% when 'Momo Chutney' %}
+    {% assign eyebrow = 'Chutneys' %}
+    {% assign spice_tag = '🌶️🌶️ Medium Heat' %}
+    {% assign accent = '#9D0101' %}
+    {% assign tagline = 'The dip that made momos famous' %}
+    {% assign usage_tip = 'Serve alongside steamed or fried momos, or as a spicy dip.' %}
+    {% assign benefit_1 = 'Street-style spice blend' %}
+    {% assign benefit_2 = 'Small-batch roasted' %}
+    {% assign benefit_3 = 'Goes beyond momos: fries, eggs, rice' %}
+  {% when 'Chilli Flakes' %}
+    {% assign eyebrow = 'Spice Powders' %}
+    {% assign spice_tag = '🌶️🌶️ Medium Heat' %}
+    {% assign accent = '#4A4A4A' %}
+    {% assign tagline = 'Export quality, sun-dried heat' %}
+    {% assign usage_tip = 'Sprinkle over pizza, pasta, eggs, or roasted vegetables.' %}
+    {% assign benefit_1 = 'Export-quality sun-dried chillies' %}
+    {% assign benefit_2 = 'No fillers, no colouring' %}
+    {% assign benefit_3 = 'Coarse crunch, bold heat' %}
+  {% when 'Garam Masala Powder' %}
+    {% assign eyebrow = 'Spice Powders' %}
+    {% assign spice_tag = '🌿 Aromatic Blend' %}
+    {% assign accent = '#5C3A21' %}
+    {% assign tagline = 'The soul of every curry' %}
+    {% assign usage_tip = 'Stir into dal, sabzi, or curry in the last few minutes of cooking.' %}
+    {% assign benefit_1 = 'Small-batch roasted &amp; ground' %}
+    {% assign benefit_2 = 'No anti-caking agents' %}
+    {% assign benefit_3 = 'Export-quality spice sourcing' %}
+  {% when 'Coriander Powder' %}
+    {% assign eyebrow = 'Spice Powders' %}
+    {% assign spice_tag = '🌿 Everyday Staple' %}
+    {% assign accent = '#4A6B1F' %}
+    {% assign tagline = 'Fresh-ground, never stale' %}
+    {% assign usage_tip = 'Whisk into marinades or bloom in hot oil to start any curry base.' %}
+    {% assign benefit_1 = 'Export-quality coriander seeds' %}
+    {% assign benefit_2 = 'Ground fresh, not stockpiled' %}
+    {% assign benefit_3 = 'Everyday curry &amp; marinade base' %}
+{% endcase %}
+
 <section class="product-page page-width">
   <div class="product-page__media">
     <div class="product-page__media-frame">
+      {% if spice_tag != '' %}
+        <span class="product-page__spice-tag" style="--accent: {{ accent }};">{{ spice_tag }}</span>
+      {% endif %}
       {% if product.featured_image %}
         <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.featured_image.alt | escape }}" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}" loading="eager">
       {% else %}
@@ -19,9 +96,24 @@
   </div>
 
   <div class="product-page__info">
+    <span class="product-page__eyebrow" style="--accent: {{ accent }};">{{ eyebrow }}</span>
     <h1 class="product-page__title">{{ product.title }}</h1>
-    <p class="product-page__price">{{ product.price | money }}</p>
+    <p class="product-page__tagline">{{ tagline }}</p>
+
+    <div class="product-page__price-row">
+      <span class="product-page__price">{{ product.price | money }}</span>
+      {% if product.compare_at_price > product.price %}
+        <span class="product-page__price-compare">{{ product.compare_at_price | money }}</span>
+      {% endif %}
+    </div>
+
     <div class="product-page__description">{{ product.description }}</div>
+
+    <ul class="product-page__benefits" style="--accent: {{ accent }};">
+      <li>{% render 'icon-check' %}<span>{{ benefit_1 }}</span></li>
+      <li>{% render 'icon-check' %}<span>{{ benefit_2 }}</span></li>
+      <li>{% render 'icon-check' %}<span>{{ benefit_3 }}</span></li>
+    </ul>
 
     {% form 'product', product %}
       {% unless product.has_only_default_variant %}
@@ -36,16 +128,48 @@
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
       {% endunless %}
 
-      <div class="product-page__actions">
-        <button type="submit" class="btn btn--outline" {% unless product.available %}disabled{% endunless %}>
-          {% if product.available %}Add to Cart{% else %}Sold Out{% endif %}
-        </button>
+      <div class="product-page__row">
+        <div class="product-page__quantity" data-quantity-stepper>
+          <button type="button" class="product-page__qty-btn" data-quantity-decrease aria-label="Decrease quantity">−</button>
+          <input type="number" name="quantity" value="1" min="1" inputmode="numeric" class="product-page__qty-input" data-quantity-input aria-label="Quantity">
+          <button type="button" class="product-page__qty-btn" data-quantity-increase aria-label="Increase quantity">+</button>
+        </div>
+
+        <div class="product-page__actions">
+          <button type="submit" class="btn btn--outline" {% unless product.available %}disabled{% endunless %}>
+            {% if product.available %}Add to Cart{% else %}Sold Out{% endif %}
+          </button>
+        </div>
       </div>
 
       {% if product.available %}
         {{ form | payment_button }}
       {% endif %}
     {% endform %}
+
+    <div class="product-page__usage">
+      <span class="product-page__usage-icon">{% render 'icon-leaf' %}</span>
+      <span><strong>How to use:</strong> {{ usage_tip }}</span>
+    </div>
+
+    <div class="product-page__trust-row">
+      <div class="product-page__trust-item">
+        <span class="product-page__trust-icon" style="--feature-color: #4A6B1F;">{% render 'icon-leaf' %}</span>
+        <span>Natural Ingredients</span>
+      </div>
+      <div class="product-page__trust-item">
+        <span class="product-page__trust-icon" style="--feature-color: #014C9D;">{% render 'icon-shield' %}</span>
+        <span>Zero Preservatives</span>
+      </div>
+      <div class="product-page__trust-item">
+        <span class="product-page__trust-icon" style="--feature-color: #9D0101;">{% render 'icon-flame' %}</span>
+        <span>Small-Batch Made</span>
+      </div>
+      <div class="product-page__trust-item">
+        <span class="product-page__trust-icon" style="--feature-color: #B5651D;">{% render 'icon-truck' %}</span>
+        <span>Free Shipping</span>
+      </div>
+    </div>
   </div>
 </section>
 

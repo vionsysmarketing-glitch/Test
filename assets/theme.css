@@ -924,6 +924,7 @@ h1, h2, h3, h4 {
 /* ---------- Product / Collection / Cart / misc pages ---------- */
 .product-page { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 3.5rem 0; align-items: start; }
 .product-page__media-frame {
+  position: relative;
   aspect-ratio: 1 / 1;
   background: rgba(255,255,255,0.6);
   border-radius: var(--radius-lg);
@@ -944,12 +945,100 @@ h1, h2, h3, h4 {
   border: 1px solid var(--color-border);
 }
 .product-page__thumb img { width: 100%; height: 100%; object-fit: contain; }
-.product-page__title { color: var(--color-primary); margin-bottom: 0.5rem; font-size: 2rem; }
-.product-page__price { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; }
-.product-page__description { margin-bottom: 1.75rem; }
+.product-page__spice-tag {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: var(--accent, var(--color-primary));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+  z-index: 1;
+}
+.product-page__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent, var(--color-primary));
+  margin-bottom: 0.5rem;
+}
+.product-page__title { color: var(--color-primary); margin-bottom: 0.35rem; font-size: 2rem; }
+.product-page__tagline { font-family: var(--font-heading); font-style: italic; font-size: 1.05rem; color: var(--color-text); opacity: 0.75; margin-bottom: 1rem; }
+.product-page__price-row { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.25rem; }
+.product-page__price { font-size: 1.4rem; font-weight: 700; }
+.product-page__price-compare { font-size: 1.05rem; color: rgba(34,34,34,0.45); text-decoration: line-through; }
+.product-page__description { margin-bottom: 1.5rem; }
+
+.product-page__benefits { list-style: none; margin: 0 0 1.75rem; padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 0.65rem; background: rgba(0,0,0,0.03); border-radius: var(--radius-md); border-left: 3px solid var(--accent, var(--color-primary)); }
+.product-page__benefits li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.92rem; font-weight: 600; }
+.product-page__benefits li svg { flex-shrink: 0; color: var(--accent, var(--color-primary)); width: 18px; height: 18px; }
+
 .product-page__variant-select { display: block; margin-bottom: 1rem; padding: 0.6rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); }
-.product-page__actions { margin-bottom: 1rem; }
-.product-page__actions .btn { width: 100%; }
+.product-page__row { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
+.product-page__quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.product-page__qty-btn {
+  width: 40px; height: 44px;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: background-color 0.15s ease;
+}
+.product-page__qty-btn:hover { background: rgba(0,0,0,0.05); }
+.product-page__qty-input {
+  width: 44px; height: 44px;
+  border: none;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  -moz-appearance: textfield;
+}
+.product-page__qty-input::-webkit-outer-spin-button,
+.product-page__qty-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.product-page__actions { flex: 1; margin-bottom: 0; }
+.product-page__actions .btn { width: 100%; height: 100%; }
+
+.product-page__usage {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  background: rgba(74, 107, 31, 0.08);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  margin: 1.25rem 0;
+}
+.product-page__usage-icon { flex-shrink: 0; width: 20px; height: 20px; color: #4A6B1F; margin-top: 0.1rem; }
+
+.product-page__trust-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem 1rem; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+.product-page__trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; font-weight: 700; color: var(--color-text); }
+.product-page__trust-icon {
+  width: 34px; height: 34px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(34,34,34,0.14), 0 0 0 2px var(--feature-color, transparent) inset;
+  color: var(--feature-color, var(--color-primary));
+}
+.product-page__trust-icon svg { width: 18px; height: 18px; }
 
 /* Shopify's native dynamic checkout button ({{ form | payment_button }}).
    Only the generic "unbranded" button and the "more options" link can be
