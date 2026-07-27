@@ -5,15 +5,17 @@
 {% assign heading_last = heading_words | last %}
 
 <section class="hero" style="--hero-bg: {{ section.settings.background_color }}; --hero-stage-color: {{ section.settings.stage_color }}; --hero-stage-color-alt: {{ section.settings.stage_color_alt }};">
-  <div class="hero__deco hero__deco--1" style="color: #FFFFFF;">{% render 'deco-chili' %}</div>
-  <div class="hero__deco hero__deco--2" style="color: #FFE8CF;">{% render 'deco-leaf-branch' %}</div>
-  <div class="hero__deco hero__deco--3" style="color: #FFFFFF;">{% render 'deco-tamarind' %}</div>
+  <div class="hero__deco hero__deco--1" style="color: #FFFFFF; --deco-float-duration: 5.2s; --deco-float-delay: -2.6s;">{% render 'deco-chili' %}</div>
+  <div class="hero__deco hero__deco--2" style="color: #FFE8CF; --deco-float-duration: 6.5s; --deco-float-delay: -0.9s;">{% render 'deco-leaf-branch' %}</div>
+  <div class="hero__deco hero__deco--3" style="color: #FFFFFF; --deco-float-duration: 4.8s; --deco-float-delay: -3.9s;">{% render 'deco-tamarind' %}</div>
 
   <div class="hero__half hero__half--left">
     <div class="hero__left-ring" aria-hidden="true"></div>
     <div class="hero__watermark" aria-hidden="true">{% render 'deco-swirl' %}</div>
-    <div class="hero__deco hero__deco--7" style="color: #FFFFFF;">{% render 'deco-swirl' %}</div>
-    <div class="hero__deco hero__deco--8" style="color: #FFE8CF;">{% render 'deco-chili' %}</div>
+    <div class="hero__deco hero__deco--7" style="color: #FFFFFF; --deco-float-duration: 5.5s; --deco-float-delay: -1.2s;">{% render 'deco-swirl' %}</div>
+    <div class="hero__deco hero__deco--8" style="color: #FFE8CF; --deco-float-duration: 6.2s; --deco-float-delay: -3.4s;">{% render 'deco-chili' %}</div>
+    <div class="hero__deco hero__deco--9" style="color: #FFFFFF; --deco-float-duration: 4.6s; --deco-float-delay: -0.6s;">{% render 'deco-mortar-pestle' %}</div>
+    <div class="hero__deco hero__deco--10" style="color: #FFE8CF; --deco-float-duration: 5.8s; --deco-float-delay: -2.1s;">{% render 'deco-garlic' %}</div>
 
     <div class="hero__leaf-badge">
       <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}

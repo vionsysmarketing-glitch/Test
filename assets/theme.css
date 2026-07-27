@@ -302,15 +302,36 @@ h1, h2, h3, h4 {
    dot-grain texture — a handful of bold unique illustrations rather than a
    tiled repeat, inspired by the illustrated-character treatment used
    around bold headline copy on reference hot-sauce sites. */
-.hero__deco { position: absolute; z-index: 1; pointer-events: none; }
+.hero__deco { position: absolute; z-index: 1; pointer-events: none; transform: var(--deco-transform, none); }
 .hero__deco svg { display: block; width: 100%; height: 100%; }
-.hero__deco--1 { top: 7%; left: 40%; width: 56px; height: 56px; opacity: 0.5; transform: rotate(-12deg); }
-.hero__deco--2 { bottom: 9%; left: 2%; width: 64px; height: 64px; opacity: 0.55; transform: rotate(8deg); }
-.hero__deco--3 { top: 60%; left: 33%; width: 50px; height: 50px; opacity: 0.4; transform: rotate(-20deg); }
-.hero__deco--4 { top: 6%; left: 8%; width: 46px; height: 46px; opacity: 0.4; transform: rotate(8deg); }
-.hero__deco--6 { bottom: 7%; right: 5%; width: 42px; height: 42px; opacity: 0.4; transform: rotate(-15deg); }
-.hero__deco--7 { top: 42%; left: 45%; width: 40px; height: 40px; opacity: 0.3; transform: rotate(20deg); }
-.hero__deco--8 { bottom: 5%; left: 44%; width: 48px; height: 48px; opacity: 0.28; transform: rotate(-8deg) scaleX(-1); }
+.hero__deco--1 { top: 7%; left: 40%; width: 56px; height: 56px; opacity: 0.5; --deco-transform: rotate(-12deg); }
+.hero__deco--2 { bottom: 9%; left: 2%; width: 64px; height: 64px; opacity: 0.55; --deco-transform: rotate(8deg); }
+.hero__deco--3 { top: 60%; left: 33%; width: 50px; height: 50px; opacity: 0.4; --deco-transform: rotate(-20deg); }
+.hero__deco--4 { top: 6%; left: 8%; width: 46px; height: 46px; opacity: 0.4; --deco-transform: rotate(8deg); }
+.hero__deco--6 { bottom: 7%; right: 5%; width: 42px; height: 42px; opacity: 0.4; --deco-transform: rotate(-15deg); }
+.hero__deco--7 { top: 42%; left: 45%; width: 40px; height: 40px; opacity: 0.3; --deco-transform: rotate(20deg); }
+.hero__deco--8 { bottom: 5%; left: 44%; width: 48px; height: 48px; opacity: 0.28; --deco-transform: rotate(-8deg) scaleX(-1); }
+.hero__deco--9 { top: 50%; right: 5%; width: 46px; height: 46px; opacity: 0.32; --deco-transform: rotate(10deg); }
+.hero__deco--10 { bottom: 15%; right: 9%; width: 50px; height: 50px; opacity: 0.3; --deco-transform: rotate(-10deg); }
+
+/* Gentle floating bob for the left-side illustrations only (the right
+   side's slider already carries its own motion) — each one gets a
+   slightly different duration/delay via inline style so they drift out
+   of sync instead of bobbing in unison like a single mechanical unit. */
+.hero__deco--1, .hero__deco--2, .hero__deco--3, .hero__deco--7, .hero__deco--8, .hero__deco--9, .hero__deco--10 {
+  animation: hero-deco-float 5s ease-in-out infinite;
+  animation-duration: var(--deco-float-duration, 5s);
+  animation-delay: var(--deco-float-delay, 0s);
+}
+@keyframes hero-deco-float {
+  0%, 100% { transform: var(--deco-transform, none) translateY(0); }
+  50% { transform: var(--deco-transform, none) translateY(-7px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__deco--1, .hero__deco--2, .hero__deco--3, .hero__deco--7, .hero__deco--8, .hero__deco--9, .hero__deco--10 {
+    animation: none;
+  }
+}
 
 /* Same slow-rotating dashed ring device as the product panel, scaled up
    and pushed mostly off-canvas so only a faint arc shows through — ties
@@ -999,6 +1020,7 @@ h1, h2, h3, h4 {
   .hero__deco { opacity: 0.4 !important; }
   .hero__deco--1 { width: 44px !important; height: 44px !important; }
   .hero__deco--7, .hero__deco--8 { width: 34px !important; height: 34px !important; }
+  .hero__deco--9, .hero__deco--10 { width: 36px !important; height: 36px !important; }
 
   .product-row__inner, .product-row--reverse .product-row__inner { grid-template-columns: 1fr; direction: ltr; }
   .product-row__media { max-width: 380px; margin: 0 auto; }
