@@ -259,10 +259,13 @@ h1, h2, h3, h4 {
   position: relative;
   background: var(--hero-bg, #FBF3E7);
   background-image:
-    radial-gradient(circle at 90% 10%, rgba(230, 214, 36, 0.4), transparent 40%),
-    radial-gradient(circle at 8% 95%, rgba(157, 1, 1, 0.12), transparent 45%),
-    radial-gradient(rgba(34,34,34,0.05) 1.5px, transparent 1.5px);
-  background-size: auto, auto, 20px 20px;
+    var(--hero-pattern, none),
+    radial-gradient(circle at 90% 10%, rgba(230, 214, 36, 0.5), transparent 40%),
+    radial-gradient(circle at 8% 95%, rgba(157, 1, 1, 0.18), transparent 48%),
+    radial-gradient(circle at 50% 50%, rgba(74, 107, 31, 0.08), transparent 55%),
+    radial-gradient(rgba(34,34,34,0.07) 1.5px, transparent 1.5px);
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, repeat;
+  background-size: 280px 280px, auto, auto, auto, 22px 22px;
   overflow: hidden;
 }
 .hero__half { display: flex; flex-direction: column; justify-content: center; padding: 4rem 3.5rem; position: relative; z-index: 1; }
