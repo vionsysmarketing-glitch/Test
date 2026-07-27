@@ -283,6 +283,7 @@ h1, h2, h3, h4 {
   color: var(--color-primary);
   margin-bottom: 1rem;
 }
+.hero__title--compact { font-size: clamp(1.7rem, 2.4vw, 2.35rem); }
 .hero__subtitle {
   font-size: 1.1rem;
   max-width: 460px;
@@ -307,27 +308,45 @@ h1, h2, h3, h4 {
 .hero__swatch-dot img { width: 100%; height: 100%; object-fit: cover; }
 .hero__swatch-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text); }
 
-.hero__image-card {
-  position: relative;
-  width: min(460px, 85%);
-  aspect-ratio: 1 / 1;
-  background: #fff;
-  border-radius: var(--radius-lg);
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
-}
-.hero__image-card img { width: 100%; height: 100%; object-fit: cover; }
-.hero__badge-sale {
-  position: absolute;
-  top: 16px; left: 16px;
-  background: var(--color-accent);
-  color: var(--color-text);
-  font-size: 0.7rem;
-  font-weight: 800;
+.hero__range { width: 100%; max-width: 560px; }
+.hero__range-label {
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  padding: 0.35rem 0.8rem;
-  border-radius: var(--radius-pill);
+  letter-spacing: 0.12em;
+  margin-bottom: 1.25rem;
+  opacity: 0.85;
+}
+.hero__range-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.hero__range-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: var(--radius-md);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 0.6rem 0.6rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero__range-card:hover { transform: translateY(-4px); box-shadow: 0 14px 26px rgba(0,0,0,0.24); }
+.hero__range-card img { width: 100%; flex: 1; object-fit: contain; min-height: 0; }
+.hero__range-card span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-text);
+  line-height: 1.2;
 }
 
 /* ---------- Section heading (shared) ---------- */
@@ -701,6 +720,42 @@ h1, h2, h3, h4 {
 .product-page__actions { margin-bottom: 1rem; }
 .product-page__actions .btn { width: 100%; }
 
+/* Shopify's native dynamic checkout button ({{ form | payment_button }}).
+   Only the generic "unbranded" button and the "more options" link can be
+   restyled — branded express-checkout buttons (Shop Pay, PayPal, etc.) are
+   rendered by Shopify/the payment provider as iframes and keep their own
+   required branding regardless of this CSS. */
+.shopify-payment-button { margin-top: 0.75rem; }
+.shopify-payment-button__button--unbranded {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.01em;
+  padding: 0.9rem 1.75rem !important;
+  border-radius: var(--radius-pill) !important;
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(157, 1, 1, 0.35);
+  transition: transform .15s ease, background-color .15s ease;
+}
+.shopify-payment-button__button--unbranded:hover { background: var(--color-primary-dark) !important; transform: translateY(-2px); }
+.shopify-payment-button__more-options {
+  display: block;
+  text-align: center;
+  margin-top: 0.6rem !important;
+  font-family: var(--font-body);
+  font-size: 0.8rem !important;
+  font-weight: 700;
+  color: var(--color-text) !important;
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
 .collection__header { padding: 3rem 0 2rem; text-align: center; }
 .collection__title { color: var(--color-primary); font-size: 2rem; }
 .collection__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding-bottom: 3rem; }
@@ -746,7 +801,9 @@ h1, h2, h3, h4 {
 
   .hero { grid-template-columns: 1fr; }
   .hero__half { padding: 3rem 1.75rem; }
-  .hero__half--right { padding: 2rem 1.75rem 3rem; min-height: 320px; }
+  .hero__half--right { padding: 2rem 1.75rem 3rem; min-height: 0; }
+  .hero__range-grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+  .hero__range-card span { font-size: 0.62rem; }
 
   .product-row__inner, .product-row--reverse .product-row__inner { grid-template-columns: 1fr; direction: ltr; }
   .product-row__media { max-width: 380px; margin: 0 auto; }

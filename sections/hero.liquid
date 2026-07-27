@@ -3,7 +3,7 @@
     <div class="hero__leaf-badge">
       <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
     </div>
-    <h1 class="hero__title">{{ section.settings.heading }}</h1>
+    <h1 class="hero__title hero__title--compact">{{ section.settings.heading }}</h1>
     <p class="hero__subtitle">{{ section.settings.subheading }}</p>
     <div class="hero__actions">
       <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
@@ -36,13 +36,16 @@
   </div>
 
   <div class="hero__half hero__half--right">
-    <div class="hero__image-card">
-      {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | image_url: width: 900 }}" alt="{{ section.settings.image.alt | escape }}" loading="eager" width="900" height="900">
-      {% else %}
-        <img src="{{ 'hero-banner.jpg' | asset_url }}" alt="Hungry Dinosaur Foods — Ghost, Imli & Momo Chutney" loading="eager" width="900" height="900">
-      {% endif %}
-      <div class="hero__badge-sale">{{ section.settings.badge_text }}</div>
+    <div class="hero__range">
+      <span class="hero__range-label">{{ section.settings.range_label }}</span>
+      <div class="hero__range-grid">
+        <div class="hero__range-card"><img src="{{ 'ghost-chutney.jpg' | asset_url }}" alt="Ghost Chutney" loading="eager" width="220" height="220"><span>Ghost Chutney</span></div>
+        <div class="hero__range-card"><img src="{{ 'imli-chutney.jpg' | asset_url }}" alt="Imli Chutney" loading="eager" width="220" height="220"><span>Imli Chutney</span></div>
+        <div class="hero__range-card"><img src="{{ 'momo-chutney.jpg' | asset_url }}" alt="Momo Chutney" loading="eager" width="220" height="220"><span>Momo Chutney</span></div>
+        <div class="hero__range-card"><img src="{{ 'chilli-flakes.jpg' | asset_url }}" alt="Chilli Flakes" loading="lazy" width="220" height="220"><span>Chilli Flakes</span></div>
+        <div class="hero__range-card"><img src="{{ 'garam-masala.jpg' | asset_url }}" alt="Garam Masala Powder" loading="lazy" width="220" height="220"><span>Garam Masala</span></div>
+        <div class="hero__range-card"><img src="{{ 'coriander-powder.jpg' | asset_url }}" alt="Coriander Powder" loading="lazy" width="220" height="220"><span>Coriander Powder</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -58,8 +61,7 @@
     { "type": "url", "id": "primary_link", "label": "Primary button link" },
     { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Our Story" },
     { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
-    { "type": "image_picker", "id": "image", "label": "Hero image", "info": "Defaults to the Hungry Dinosaur product banner" },
-    { "type": "text", "id": "badge_text", "label": "Corner badge text", "default": "New Batch" },
+    { "type": "text", "id": "range_label", "label": "Product range label", "default": "The Full Range" },
     { "type": "color", "id": "color_left", "label": "Left panel color", "default": "#FBEADF" },
     { "type": "color", "id": "color_right", "label": "Right panel color", "default": "#9D0101" },
     { "type": "url", "id": "shop_all_link", "label": "Flavour swatches link" }
