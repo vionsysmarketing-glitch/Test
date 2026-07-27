@@ -270,50 +270,14 @@ h1, h2, h3, h4 {
 }
 .hero__half--right {
   align-items: center;
-  /* Deep jewel-tone instead of a bright primary color, with a soft
-     off-center highlight (not a shape) for quiet depth — pairs with thin
-     gold accents for a premium feel rather than a loud snack-brand one. */
-  background:
-    radial-gradient(circle at 50% 42%, rgba(255,255,255,0.07) 0%, transparent 62%),
-    var(--hero-stage-color, #6E1423);
+  /* Soft, flat neutral field — no shape, gradient, or ring behind the
+     product; the product itself and plain typography carry the panel. */
+  background: var(--hero-stage-color, #F1E4CC);
 }
 
-/* Slowly-rotating dashed rings behind the product — dashed (not solid)
-   so the continuous rotation actually reads as motion instead of a
-   static circle, at two different speeds/directions for a gentle orbit
-   feel rather than a mechanical spin. */
-.hero__stage {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 100%;
-  max-width: 640px;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  pointer-events: none;
-}
-.hero__stage::before,
-.hero__stage::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1px dashed var(--hero-stage-color-alt, #C9A227);
-  opacity: 0.5;
-  animation: hero-stage-spin 40s linear infinite;
-}
-.hero__stage::after {
-  inset: 9%;
-  opacity: 0.32;
-  animation-duration: 55s;
-  animation-direction: reverse;
-}
 @keyframes hero-stage-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__stage::before, .hero__stage::after { animation: none; }
 }
 
 /* Big faint line-art watermark for texture/depth behind the headline —
@@ -425,79 +389,70 @@ h1, h2, h3, h4 {
 }
 .hero__feature-label { font-size: 0.78rem; font-weight: 700; color: #fff; max-width: 90px; line-height: 1.25; }
 
-/* Product cluster: a single, larger feature stands in for what used to
-   be three separate circles — one confident focal point instead of a
-   cluttered scatter, doubling as a category entry point. */
-.hero__product-cluster {
+/* Minimal floating product: no card, no circle, no frame — just the jar
+   itself (drop-shadowed, slightly tilted) grounded by a soft blurred
+   shadow, with plain small-caps typography doing the rest. An editorial/
+   DTC-style feature standing in for the whole Masala/spice-powder
+   category, rather than a graphic shape. */
+.hero__feature-product {
   position: relative;
   z-index: 2;
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero__spotlight-float {
-  position: relative;
-  width: 88%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  box-shadow: 0 26px 52px rgba(0,0,0,0.32), 0 0 0 3px var(--hero-stage-color-alt, #C9A227);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  z-index: 2;
+  text-align: center;
+  text-decoration: none;
 }
-.hero__spotlight-float:hover { transform: translateY(-6px); box-shadow: 0 30px 58px rgba(0,0,0,0.36), 0 0 0 3px var(--hero-stage-color-alt, #C9A227); }
-.hero__spotlight-float img { width: 70%; flex: 1; object-fit: contain; min-height: 0; }
-.hero__spotlight-badge {
-  position: absolute;
-  top: 8%; right: 4%;
-  background: var(--hero-stage-color-alt, #C9A227);
-  color: #2A1704;
-  font-size: 0.66rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.3rem 0.7rem;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
-  transform: rotate(4deg);
-}
-.hero__spotlight-eyebrow {
-  position: absolute;
-  top: 8%; left: 4%;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--hero-stage-color-alt, #C9A227);
-  background: var(--hero-stage-color, #6E1423);
-  padding: 0.25rem 0.7rem;
-  border-radius: var(--radius-pill);
-  transform: rotate(-4deg);
-}
-.hero__spotlight-title {
-  display: block;
-  margin-top: 0.65rem;
-  padding-top: 0.5rem;
-  max-width: 85%;
-  border-top: 1px solid rgba(110, 20, 35, 0.18);
+.hero__feature-product-eyebrow {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.78rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  line-height: 1.3;
-  color: var(--hero-stage-color, #6E1423);
-  text-align: center;
+  color: var(--hero-stage-color-alt, #9D0101);
+  margin-bottom: 1.5rem;
+}
+.hero__feature-product-shadow {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 220px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(20, 12, 4, 0.22);
+  border-radius: 50%;
+  filter: blur(18px);
+  z-index: -1;
+}
+.hero__feature-product-image {
+  /* No drop-shadow filter here: the source photos are plain opaque JPGs
+     (no transparency), so a CSS drop-shadow would trace the image's
+     rectangular bounding box, not the jar — showing up as a visible
+     white box with a shadowed edge instead of hugging the product. The
+     panel color is matched to the photo's own white background instead,
+     so the rectangle disappears and only the photo's own studio shadow
+     (baked into the shot) and the blurred ground-shadow below read. */
+  width: min(320px, 68%);
+  height: auto;
+  object-fit: contain;
+  transform: rotate(-4deg);
+  transition: transform 0.25s ease;
+}
+.hero__feature-product:hover .hero__feature-product-image { transform: rotate(-4deg) translateY(-6px); }
+.hero__feature-product-name {
+  margin-top: 1.75rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  color: var(--color-text);
+}
+.hero__feature-product-tag {
+  margin-top: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  color: var(--hero-stage-color-alt, #9D0101);
 }
 
 .hero__range-pill {
@@ -1001,8 +956,6 @@ h1, h2, h3, h4 {
   .hero__half--right { padding: 3.5rem 1.75rem 2.5rem; min-height: 0; }
   .hero__watermark { width: 220px; height: 220px; top: -8%; right: -14%; }
   .hero__left-ring { width: 260px; height: 260px; bottom: -14%; left: -14%; }
-  .hero__product-cluster { max-width: 340px; margin: 0 auto; }
-  .hero__spotlight-title { font-size: 0.68rem; }
   .hero__deco { opacity: 0.4 !important; }
   .hero__deco--1 { width: 44px !important; height: 44px !important; }
   .hero__deco--7, .hero__deco--8 { width: 34px !important; height: 34px !important; }
