@@ -262,14 +262,14 @@ h1, h2, h3, h4 {
 }
 /* Compound selector (not just .hero__inner) so this always beats the
    later single-class .page-width padding override at the 599px
-   breakpoint, regardless of source order. Single centered column now
-   (no product/showcase column), so this is a plain centered flex block
-   rather than a two-column grid. */
+   breakpoint, regardless of source order. Column stack: headline/CTA
+   block on top, full-width feature strip pinned along the bottom. */
 .hero .hero__inner {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  min-height: 480px;
-  padding: 5rem 24px;
+  min-height: 500px;
+  padding: 4.5rem 24px 0;
   position: relative;
   z-index: 2;
 }
@@ -279,93 +279,82 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   position: relative;
-  max-width: 640px;
+  max-width: 660px;
+  margin: 0 auto;
+  padding-bottom: 3.5rem;
   text-align: center;
 }
-/* Full-section decorative backdrop (sunburst + halftone dots + sparkles,
-   styled after the brand's own marketing creatives) instead of anything
-   scoped to a "product" area — there's no product in this section. */
-.hero__decor-burst {
+
+/* Backdrop: no dot grid or sunburst rays — a soft warm glow plus two wide
+   flowing ribbon bands, reusing the same curve language as the theme's
+   section wave dividers so it reads as depth rather than pattern. Both
+   stay within the brand orange (one lighter, one a deeper burnt tone). */
+.hero__glow {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1200px;
-  height: 1200px;
-  transform: translate(-50%, -50%) rotate(8deg);
-  border-radius: 50%;
-  background: repeating-conic-gradient(rgba(255,255,255,0.12) 0deg 9deg, rgba(255,255,255,0) 9deg 18deg);
+  inset: 0;
+  background:
+    radial-gradient(90% 70% at 50% 8%, rgba(255, 214, 150, 0.42) 0%, rgba(255, 214, 150, 0) 62%),
+    radial-gradient(70% 60% at 88% 96%, rgba(140, 60, 4, 0.26) 0%, rgba(140, 60, 4, 0) 66%);
   z-index: 0;
   pointer-events: none;
 }
-.hero__decor-dots {
+.hero__ribbons {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 900px;
-  height: 900px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-image: radial-gradient(rgba(255,255,255,0.3) 1.5px, transparent 1.5px);
-  background-size: 16px 16px;
-  -webkit-mask-image: radial-gradient(circle, #000 55%, transparent 78%);
-          mask-image: radial-gradient(circle, #000 55%, transparent 78%);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   pointer-events: none;
 }
-.hero__decor-sparkle {
-  position: absolute;
-  color: #fff;
-  z-index: 1;
-  pointer-events: none;
-}
-.hero__decor-sparkle--1 { top: 12%; left: 8%; width: 22px; height: 22px; opacity: 0.8; }
-.hero__decor-sparkle--2 { top: 20%; right: 10%; width: 16px; height: 16px; opacity: 0.7; }
-.hero__decor-sparkle--3 { bottom: 16%; right: 16%; width: 14px; height: 14px; opacity: 0.6; }
 
-@keyframes hero-stage-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Feature strip along the base of the section: four equal columns split
+   by hairline rules, sitting on a subtly darker band so it reads as a
+   deliberate footer to the hero rather than floating text. */
+.hero__strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(140, 60, 4, 0.10);
+  margin: 0 -24px;
+  /* Bottom padding clears the 50px-tall .hero__wave that sits absolutely
+     at the section's bottom edge, so the last row of labels never tucks
+     under the cream wave. */
+  padding: 1.75rem 24px calc(50px + 1.5rem);
+}
+.hero__strip .hero__feature {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0 1rem;
+}
+.hero__strip .hero__feature + .hero__feature {
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+.hero__strip .hero__feature-label {
+  max-width: none;
+  text-align: center;
+  font-size: 0.82rem;
 }
 
-/* Big faint line-art watermark for texture/depth behind the headline —
-   the left-side answer to the sunburst medallion on the right, so both
-   halves carry the same graphic energy instead of one being a plain
-   color field. */
-.hero__watermark {
-  position: absolute;
-  top: -12%;
-  right: -8%;
-  width: 320px;
-  height: 320px;
-  color: #fff;
-  opacity: 0.1;
-  transform: rotate(8deg);
-  z-index: -1;
-  pointer-events: none;
-}
-.hero__watermark svg { width: 100%; height: 100%; }
-
-/* Hand-drawn line-art scattered around the hero, standing in for the old
-   dot-grain texture — a handful of bold unique illustrations rather than a
-   tiled repeat, inspired by the illustrated-character treatment used
-   around bold headline copy on reference hot-sauce sites. */
+/* Hand-drawn line-art scattered around the hero — a handful of bold
+   unique illustrations rather than a tiled repeat. All of them sit in the
+   left/right gutters beside the centered content column and above the
+   bottom feature strip, so nothing overlaps live text. */
 .hero__deco { position: absolute; z-index: 1; pointer-events: none; transform: var(--deco-transform, none); }
 .hero__deco svg { display: block; width: 100%; height: 100%; }
-.hero__deco--1 { top: 7%; left: 40%; width: 56px; height: 56px; opacity: 0.5; --deco-transform: rotate(-12deg); }
-.hero__deco--2 { bottom: 9%; left: 2%; width: 64px; height: 64px; opacity: 0.55; --deco-transform: rotate(8deg); }
-.hero__deco--3 { top: 60%; left: 33%; width: 50px; height: 50px; opacity: 0.4; --deco-transform: rotate(-20deg); }
-.hero__deco--4 { top: 6%; left: 8%; width: 46px; height: 46px; opacity: 0.4; --deco-transform: rotate(8deg); }
-.hero__deco--6 { bottom: 7%; right: 5%; width: 42px; height: 42px; opacity: 0.4; --deco-transform: rotate(-15deg); }
-.hero__deco--7 { top: 42%; left: 45%; width: 40px; height: 40px; opacity: 0.3; --deco-transform: rotate(20deg); }
-.hero__deco--8 { bottom: 5%; left: 44%; width: 48px; height: 48px; opacity: 0.28; --deco-transform: rotate(-8deg) scaleX(-1); }
-.hero__deco--9 { top: 50%; right: 5%; width: 46px; height: 46px; opacity: 0.32; --deco-transform: rotate(10deg); }
-.hero__deco--10 { bottom: 15%; right: 9%; width: 50px; height: 50px; opacity: 0.3; --deco-transform: rotate(-10deg); }
+.hero__deco--1 { top: 10%; left: 7%; width: 56px; height: 56px; opacity: 0.5; --deco-transform: rotate(-12deg); }
+.hero__deco--2 { top: 46%; left: 4%; width: 64px; height: 64px; opacity: 0.5; --deco-transform: rotate(8deg); }
+.hero__deco--3 { top: 26%; left: 15%; width: 50px; height: 50px; opacity: 0.38; --deco-transform: rotate(-20deg); }
+.hero__deco--4 { top: 9%; right: 8%; width: 46px; height: 46px; opacity: 0.42; --deco-transform: rotate(8deg); }
+.hero__deco--6 { top: 44%; right: 5%; width: 42px; height: 42px; opacity: 0.42; --deco-transform: rotate(-15deg); }
+.hero__deco--9 { top: 25%; right: 16%; width: 46px; height: 46px; opacity: 0.32; --deco-transform: rotate(10deg); }
+.hero__deco--10 { top: 58%; right: 10%; width: 50px; height: 50px; opacity: 0.3; --deco-transform: rotate(-10deg); }
 
-/* Gentle floating bob for the left-side illustrations only (the right
-   side's slider already carries its own motion) — each one gets a
-   slightly different duration/delay via inline style so they drift out
-   of sync instead of bobbing in unison like a single mechanical unit. */
-.hero__deco--1, .hero__deco--2, .hero__deco--3, .hero__deco--7, .hero__deco--8, .hero__deco--9, .hero__deco--10 {
+/* Gentle floating bob — each one gets a slightly different duration/delay
+   via inline style so they drift out of sync instead of bobbing in unison
+   like a single mechanical unit. */
+.hero__deco--1, .hero__deco--2, .hero__deco--3, .hero__deco--4, .hero__deco--6, .hero__deco--9, .hero__deco--10 {
   animation: hero-deco-float 5s ease-in-out infinite;
   animation-duration: var(--deco-float-duration, 5s);
   animation-delay: var(--deco-float-delay, 0s);
@@ -375,29 +364,9 @@ h1, h2, h3, h4 {
   50% { transform: var(--deco-transform, none) translateY(-7px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero__deco--1, .hero__deco--2, .hero__deco--3, .hero__deco--7, .hero__deco--8, .hero__deco--9, .hero__deco--10 {
+  .hero__deco--1, .hero__deco--2, .hero__deco--3, .hero__deco--4, .hero__deco--6, .hero__deco--9, .hero__deco--10 {
     animation: none;
   }
-}
-
-/* Same slow-rotating dashed ring device as the product panel, scaled up
-   and pushed mostly off-canvas so only a faint arc shows through — ties
-   the two halves together with a shared bit of quiet motion instead of
-   the left side being a static color field next to an animated one. */
-.hero__left-ring {
-  position: absolute;
-  bottom: -22%;
-  left: -18%;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  border: 1px dashed rgba(255, 255, 255, 0.28);
-  z-index: 0;
-  pointer-events: none;
-  animation: hero-stage-spin 60s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__left-ring { animation: none; }
 }
 /* Sits inside .hero itself (which already has position:relative and
    overflow:hidden) at its actual bottom edge — no separate flow element or
@@ -462,7 +431,7 @@ h1, h2, h3, h4 {
   .hero__title-underline path { animation: none; stroke-dashoffset: 0; }
 }
 .hero__title--compact { font-size: clamp(2.2rem, 3.4vw, 3.2rem); margin-bottom: 1.75rem; }
-.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+.hero__actions { display: flex; gap: 1rem 1.5rem; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 2rem; }
 /* .btn--outline elsewhere sits on light backgrounds and uses currentColor
    (dark) — this half is a solid dark blue, so only here it needs to flip
    to white without touching the shared .btn--outline rule used on the
@@ -470,9 +439,6 @@ h1, h2, h3, h4 {
 .hero__actions .btn--outline { color: #fff; border-color: #fff; }
 .hero__actions .btn--outline:hover { background: #fff; color: var(--hero-bg, #014C9D); }
 
-/* Two-by-two grid instead of a wrapping row, so the four features always
-   read as a tidy block regardless of label length. */
-.hero__features { display: grid; grid-template-columns: repeat(2, auto); gap: 1.5rem 2.25rem; }
 .hero__feature { display: flex; align-items: center; gap: 0.6rem; }
 .hero__feature-icon {
   width: 40px; height: 40px;
@@ -485,24 +451,23 @@ h1, h2, h3, h4 {
 }
 .hero__feature-label { font-size: 0.78rem; font-weight: 700; color: #fff; max-width: 90px; line-height: 1.25; text-align: left; }
 
-.hero__range-pill {
-  position: relative;
-  z-index: 2;
+/* Third CTA sits inline with the two buttons as a plain underlined text
+   link rather than a third competing pill — one primary, one outline,
+   one quiet tertiary. */
+.hero__range-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.75rem;
-  background: var(--color-text);
+  gap: 0.4rem;
   color: #fff;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1rem;
-  padding: 0.85rem 1.5rem;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.25);
-  transition: transform 0.2s ease;
+  font-size: 0.92rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  transition: opacity 0.2s ease;
 }
-.hero__range-pill:hover { transform: translateY(-3px); }
+.hero__range-link:hover { opacity: 0.75; }
 
 /* ---------- Section heading (shared) ---------- */
 .section-heading { text-align: center; padding: 4.5rem 0 2.5rem; }
@@ -1117,12 +1082,17 @@ h1, h2, h3, h4 {
   }
   .mobile-menu__list { list-style: none; margin: 0; padding: 1rem 24px; display: flex; flex-direction: column; gap: 1rem; font-weight: 600; }
 
-  .hero .hero__inner { min-height: 0; padding: 3rem 18px 3.5rem; }
-  .hero__watermark { width: 220px; height: 220px; top: -8%; right: -14%; }
-  .hero__left-ring { width: 260px; height: 260px; bottom: -14%; left: -14%; }
+  .hero .hero__inner { min-height: 0; padding: 3rem 18px 0; }
+  .hero__content { padding-bottom: 2.5rem; }
+  /* Four columns is too narrow to read on phones — two-by-two, with the
+     vertical rules swapped for a horizontal one between the rows. */
+  .hero__strip { grid-template-columns: repeat(2, 1fr); margin: 0 -18px; padding: 1.5rem 18px calc(50px + 1.25rem); row-gap: 1.5rem; }
+  .hero__strip .hero__feature + .hero__feature { border-left: none; }
+  .hero__strip .hero__feature:nth-child(even) { border-left: 1px solid rgba(255,255,255,0.22); }
+  .hero__strip .hero__feature:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.22); padding-top: 1.5rem; }
   .hero__deco { opacity: 0.4 !important; }
   .hero__deco--1 { width: 44px !important; height: 44px !important; }
-  .hero__deco--7, .hero__deco--8 { width: 34px !important; height: 34px !important; }
+  .hero__deco--3, .hero__deco--9 { display: none; }
   .hero__deco--9, .hero__deco--10 { width: 36px !important; height: 36px !important; }
 
   .product-row__inner, .product-row--reverse .product-row__inner { grid-template-columns: 1fr; direction: ltr; }

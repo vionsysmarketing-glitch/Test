@@ -16,69 +16,68 @@
 
 <section class="hero" style="--hero-bg: {{ section.settings.background_color }};">
   {% comment %}
-    No product image anywhere in this section anymore — every attempt at
-    isolating a product photo here kept reading as some version of "box
-    around a product," so this drops the product entirely and rebuilds
-    the section around a single centered column instead of a two-column
-    text/product split. The sunburst + halftone texture from the brand's
-    own marketing creatives (assets/hero-banner.jpg) stays, but now as a
-    full-section backdrop behind the centered headline rather than
-    confined to a small "product stage."
+    Background: the sunburst rays + halftone dot texture are gone (the dot
+    grid read as noise rather than texture). In their place, still in the
+    same brand orange: a soft warm glow plus wide flowing ribbon bands —
+    the same curve language already used for the section wave dividers
+    elsewhere in this theme, just scaled up as a full-bleed backdrop, so
+    it reads as calm depth instead of pattern.
+
+    Layout: the features move out of the middle of the stack (they were a
+    2x2 grid wedged between the heading and the buttons) and become a
+    full-width strip along the bottom of the section, divided into four
+    columns. That leaves the top as a clean headline + CTA block and
+    gives the section a defined base instead of everything floating in
+    one centered pile.
   {% endcomment %}
-  <span class="hero__decor-burst" aria-hidden="true"></span>
-  <span class="hero__decor-dots" aria-hidden="true"></span>
-  <span class="hero__decor-sparkle hero__decor-sparkle--1" aria-hidden="true">{% render 'icon-sparkle' %}</span>
-  <span class="hero__decor-sparkle hero__decor-sparkle--2" aria-hidden="true">{% render 'icon-sparkle' %}</span>
-  <span class="hero__decor-sparkle hero__decor-sparkle--3" aria-hidden="true">{% render 'icon-sparkle' %}</span>
+  <span class="hero__glow" aria-hidden="true"></span>
+  <svg class="hero__ribbons" viewBox="0 0 1440 620" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,90 C320,10 760,180 1440,60 L1440,200 C760,320 320,150 0,230 Z" fill="rgba(255,255,255,0.09)"></path>
+    <path d="M0,300 C360,220 780,400 1440,270 L1440,430 C780,560 360,380 0,460 Z" fill="rgba(140,60,4,0.10)"></path>
+  </svg>
 
   <div class="hero__deco hero__deco--1" style="color: #FFFFFF; --deco-float-duration: 5.2s; --deco-float-delay: -2.6s;">{% render 'deco-chili' %}</div>
   <div class="hero__deco hero__deco--2" style="color: #FFE8CF; --deco-float-duration: 6.5s; --deco-float-delay: -0.9s;">{% render 'deco-leaf-branch' %}</div>
   <div class="hero__deco hero__deco--3" style="color: #FFFFFF; --deco-float-duration: 4.8s; --deco-float-delay: -3.9s;">{% render 'deco-tamarind' %}</div>
   <div class="hero__deco hero__deco--4" style="color: #FFFFFF; --deco-float-duration: 5.9s; --deco-float-delay: -1.8s;">{% render 'deco-swirl' %}</div>
   <div class="hero__deco hero__deco--6" style="color: #FFE8CF; --deco-float-duration: 5.1s; --deco-float-delay: -3.2s;">{% render 'deco-leaf-branch' %}</div>
+  <div class="hero__deco hero__deco--9" style="color: #FFFFFF; --deco-float-duration: 4.6s; --deco-float-delay: -0.6s;">{% render 'deco-mortar-pestle' %}</div>
+  <div class="hero__deco hero__deco--10" style="color: #FFE8CF; --deco-float-duration: 5.8s; --deco-float-delay: -2.1s;">{% render 'deco-garlic' %}</div>
 
   <div class="hero__inner page-width">
     <div class="hero__content">
-      <div class="hero__left-ring" aria-hidden="true"></div>
-      <div class="hero__watermark" aria-hidden="true">{% render 'deco-swirl' %}</div>
-      <div class="hero__deco hero__deco--7" style="color: #FFFFFF; --deco-float-duration: 5.5s; --deco-float-delay: -1.2s;">{% render 'deco-swirl' %}</div>
-      <div class="hero__deco hero__deco--8" style="color: #FFE8CF; --deco-float-duration: 6.2s; --deco-float-delay: -3.4s;">{% render 'deco-chili' %}</div>
-      <div class="hero__deco hero__deco--9" style="color: #FFFFFF; --deco-float-duration: 4.6s; --deco-float-delay: -0.6s;">{% render 'deco-mortar-pestle' %}</div>
-      <div class="hero__deco hero__deco--10" style="color: #FFE8CF; --deco-float-duration: 5.8s; --deco-float-delay: -2.1s;">{% render 'deco-garlic' %}</div>
-
       <div class="hero__leaf-badge">
         <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
       </div>
       <h1 class="hero__title hero__title--compact">{{ heading_lead }} <span class="hero__title-accent">{{ heading_last }}<svg class="hero__title-underline" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2,8 C40,2 90,12 130,6 C160,2 180,10 198,5"></path></svg></span></h1>
 
-      {% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
-      <div class="hero__features">
-        <div class="hero__feature">
-          <span class="hero__feature-icon" style="--feature-color: #4A6B1F;">{% render 'icon-leaf' %}</span>
-          <span class="hero__feature-label">Natural Ingredients</span>
-        </div>
-        <div class="hero__feature">
-          <span class="hero__feature-icon" style="--feature-color: #014C9D;">{% render 'icon-shield' %}</span>
-          <span class="hero__feature-label">Zero Preservatives</span>
-        </div>
-        <div class="hero__feature">
-          <span class="hero__feature-icon" style="--feature-color: #9D0101;">{% render 'icon-flame' %}</span>
-          <span class="hero__feature-label">Small-Batch Made</span>
-        </div>
-        <div class="hero__feature">
-          <span class="hero__feature-icon" style="--feature-color: #B5651D;">{% render 'icon-truck' %}</span>
-          <span class="hero__feature-label">Free Shipping</span>
-        </div>
-      </div>
-
       <div class="hero__actions">
         <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
         <a href="{{ section.settings.secondary_link }}" class="btn btn--outline">{{ section.settings.secondary_label }}</a>
+        <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__range-link">
+          {{ section.settings.range_label }} <span aria-hidden="true">→</span>
+        </a>
       </div>
+    </div>
 
-      <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__range-pill">
-        {{ section.settings.range_label }} <span aria-hidden="true">→</span>
-      </a>
+    {% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
+    <div class="hero__strip">
+      <div class="hero__feature">
+        <span class="hero__feature-icon" style="--feature-color: #4A6B1F;">{% render 'icon-leaf' %}</span>
+        <span class="hero__feature-label">Natural Ingredients</span>
+      </div>
+      <div class="hero__feature">
+        <span class="hero__feature-icon" style="--feature-color: #014C9D;">{% render 'icon-shield' %}</span>
+        <span class="hero__feature-label">Zero Preservatives</span>
+      </div>
+      <div class="hero__feature">
+        <span class="hero__feature-icon" style="--feature-color: #9D0101;">{% render 'icon-flame' %}</span>
+        <span class="hero__feature-label">Small-Batch Made</span>
+      </div>
+      <div class="hero__feature">
+        <span class="hero__feature-icon" style="--feature-color: #B5651D;">{% render 'icon-truck' %}</span>
+        <span class="hero__feature-label">Free Shipping</span>
+      </div>
     </div>
   </div>
 
