@@ -403,7 +403,36 @@ h1, h2, h3, h4 {
   color: #fff;
   margin-bottom: 1rem;
 }
-.hero__title-accent { color: #9D0101; }
+.hero__title-accent { position: relative; display: inline-block; color: #9D0101; }
+
+/* Hand-drawn doodle underline beneath the accent phrase, drawn in with a
+   stroke reveal on load rather than just appearing — a slightly wobbly
+   line (not a perfect ruler-straight one) is what reads as "doodle"
+   here, while still following the word roughly horizontally. */
+.hero__title-underline {
+  position: absolute;
+  left: 0;
+  bottom: -0.22em;
+  width: 100%;
+  height: 0.4em;
+  overflow: visible;
+  pointer-events: none;
+}
+.hero__title-underline path {
+  fill: none;
+  stroke: #9D0101;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: hero-underline-draw 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.7s forwards;
+}
+@keyframes hero-underline-draw {
+  to { stroke-dashoffset: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__title-underline path { animation: none; stroke-dashoffset: 0; }
+}
 .hero__title--compact { font-size: clamp(2.2rem, 3.4vw, 3.2rem); margin-bottom: 1.75rem; }
 .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
 /* .btn--outline elsewhere sits on light backgrounds and uses currentColor
