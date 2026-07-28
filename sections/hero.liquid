@@ -39,9 +39,25 @@
         <span class="hero__title-accent">{{ heading_last }}<svg class="hero__title-underline" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2,8 C40,2 90,12 130,6 C160,2 180,10 198,5"></path></svg></span>
       </h1>
 
-      {% if section.settings.subheading != blank %}
-        <p class="hero__subtext">{{ section.settings.subheading }}</p>
-      {% endif %}
+      {% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
+      <ul class="hero__features">
+        <li class="hero__feature">
+          <span class="hero__feature-icon">{% render 'icon-leaf' %}</span>
+          <span class="hero__feature-label">Natural Ingredients</span>
+        </li>
+        <li class="hero__feature">
+          <span class="hero__feature-icon">{% render 'icon-shield' %}</span>
+          <span class="hero__feature-label">Zero Preservatives</span>
+        </li>
+        <li class="hero__feature">
+          <span class="hero__feature-icon">{% render 'icon-flame' %}</span>
+          <span class="hero__feature-label">Small-Batch Made</span>
+        </li>
+        <li class="hero__feature">
+          <span class="hero__feature-icon">{% render 'icon-truck' %}</span>
+          <span class="hero__feature-label">Free Shipping</span>
+        </li>
+      </ul>
 
       <div class="hero__actions">
         <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
@@ -63,7 +79,6 @@
   "name": "Hero",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Nothing Beats Real Flavour" },
-    { "type": "textarea", "id": "subheading", "label": "Sub-heading", "default": "Small-batch chutneys and export-quality spice powders, made with nothing but real ingredients. No preservatives, no shortcuts." },
     { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Shop the Pack" },
     { "type": "url", "id": "primary_link", "label": "Primary button link" },
     { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Our Story" },

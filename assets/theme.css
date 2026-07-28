@@ -345,12 +345,43 @@ h1, h2, h3, h4 {
 }
 .hero__swoosh svg { width: 100%; height: auto; }
 
-.hero__subtext {
-  max-width: 30rem;
-  margin: 1.25rem auto 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(34, 34, 34, 0.75);
+/* Four equal columns rather than a flex row, so the icons sit on a fixed
+   rhythm and stay evenly spaced regardless of how long each label runs. */
+.hero__features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem 0.5rem;
+  width: 100%;
+  /* 38rem is the narrowest width at which all four labels still set on a
+     single line — below it "Natural Ingredients" wraps and the row reads
+     ragged against its three single-line neighbours. */
+  max-width: 38rem;
+  margin: 2rem auto 0;
+  padding: 0;
+  list-style: none;
+}
+.hero__feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  text-align: center;
+}
+.hero__feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+.hero__feature-icon svg { width: 26px; height: 26px; }
+.hero__feature-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: rgba(34, 34, 34, 0.72);
 }
 
 /* Sits inside .hero itself (which already has position:relative and
@@ -1075,7 +1106,9 @@ h1, h2, h3, h4 {
   .hero__garden--right { right: -30px; }
   .hero__content { padding: 0 3.5rem; }
   .hero__title-accent { font-size: clamp(2.1rem, 10.5vw, 3rem); }
-  .hero__subtext { font-size: 0.94rem; }
+  /* Four across leaves ~60px per column between the illustration strips —
+     far too narrow for the labels, so they pair up two-by-two. */
+  .hero__features { grid-template-columns: repeat(2, 1fr); gap: 1.4rem 0.75rem; max-width: 20rem; }
 
   .product-row__inner, .product-row--reverse .product-row__inner { grid-template-columns: 1fr; direction: ltr; }
   .product-row__media { max-width: 380px; margin: 0 auto; }
