@@ -72,15 +72,21 @@
       <div class="hero__deco hero__deco--6" style="color: #FFE8CF; --deco-float-duration: 5.1s; --deco-float-delay: -3.2s;">{% render 'deco-leaf-branch' %}</div>
 
       {% comment %}
-        Same clean, no-card/no-circle/no-dark-panel product feature as
-        before, but now auto-advancing through the three spice-powder
-        products instead of showing just one — an automatic slider for the
-        Masala range. JS toggles "is-active" on the matching slide/caption/
-        dot; markup falls back to showing just the first product if JS
-        never runs (progressive enhancement, same pattern as the "Meet the
-        Pack" scroll showcase). A soft blurred glow (not a hard card/circle)
-        sits behind the image so it reads against the shared background
-        instead of showing the product photo's own white studio edge.
+        Auto-advancing slider through the three spice-powder products. JS
+        toggles "is-active" on the matching slide/caption/dot; markup falls
+        back to showing just the first product if JS never runs
+        (progressive enhancement, same pattern as the "Meet the Pack"
+        scroll showcase).
+
+        The product photos are plain opaque JPGs with their own white
+        studio background — floating them directly on a flat color always
+        left a visible white rectangle no matter what sat behind them. Two
+        things fix that here: the image uses mix-blend-mode:multiply (so
+        its white pixels reveal whatever's behind instead of painting
+        white), and it sits inside a rich dark "spotlight" card rather than
+        directly on the hero background — the card's own color is what the
+        white background dissolves into, and its bottom third carries a
+        scrim + the name/tag caption directly over the image.
       {% endcomment %}
       {% comment %}
         Link fallbacks are resolved by looking up the real product by title
@@ -104,34 +110,34 @@
       <div class="hero__feature-slider" data-hero-slider>
         <span class="hero__feature-product-eyebrow">{{ section.settings.category_label }}</span>
 
-        <div class="hero__feature-slide-viewport">
-          <span class="hero__showcase-glow" aria-hidden="true"></span>
-          <div class="hero__feature-slide is-active" data-slide="0">
-            <span class="hero__feature-product-shadow" aria-hidden="true"></span>
-            <img class="hero__feature-product-image" src="{{ slide_images[0] | asset_url }}" alt="{{ slide_titles[0] }}" loading="eager" width="320" height="256">
+        <div class="hero__showcase-card">
+          <div class="hero__feature-slide-viewport">
+            <div class="hero__feature-slide is-active" data-slide="0">
+              <img class="hero__feature-product-image" src="{{ slide_images[0] | asset_url }}" alt="{{ slide_titles[0] }}" loading="eager" width="320" height="256">
+            </div>
+            <div class="hero__feature-slide" data-slide="1">
+              <img class="hero__feature-product-image" src="{{ slide_images[1] | asset_url }}" alt="{{ slide_titles[1] }}" loading="lazy" width="320" height="256">
+            </div>
+            <div class="hero__feature-slide" data-slide="2">
+              <img class="hero__feature-product-image" src="{{ slide_images[2] | asset_url }}" alt="{{ slide_titles[2] }}" loading="lazy" width="320" height="256">
+            </div>
           </div>
-          <div class="hero__feature-slide" data-slide="1">
-            <span class="hero__feature-product-shadow" aria-hidden="true"></span>
-            <img class="hero__feature-product-image" src="{{ slide_images[1] | asset_url }}" alt="{{ slide_titles[1] }}" loading="lazy" width="320" height="256">
-          </div>
-          <div class="hero__feature-slide" data-slide="2">
-            <span class="hero__feature-product-shadow" aria-hidden="true"></span>
-            <img class="hero__feature-product-image" src="{{ slide_images[2] | asset_url }}" alt="{{ slide_titles[2] }}" loading="lazy" width="320" height="256">
-          </div>
-        </div>
 
-        <a href="{{ slide_links }}" class="hero__feature-caption is-active" data-caption="0">
-          <span class="hero__feature-product-name">{{ slide_titles[0] }}</span>
-          <span class="hero__feature-product-tag">{{ slide_tags[0] }}</span>
-        </a>
-        <a href="{{ slide_links_2 }}" class="hero__feature-caption" data-caption="1">
-          <span class="hero__feature-product-name">{{ slide_titles[1] }}</span>
-          <span class="hero__feature-product-tag">{{ slide_tags[1] }}</span>
-        </a>
-        <a href="{{ slide_links_3 }}" class="hero__feature-caption" data-caption="2">
-          <span class="hero__feature-product-name">{{ slide_titles[2] }}</span>
-          <span class="hero__feature-product-tag">{{ slide_tags[2] }}</span>
-        </a>
+          <div class="hero__showcase-scrim" aria-hidden="true"></div>
+
+          <a href="{{ slide_links }}" class="hero__feature-caption is-active" data-caption="0">
+            <span class="hero__feature-product-name">{{ slide_titles[0] }}</span>
+            <span class="hero__feature-product-tag">{{ slide_tags[0] }}</span>
+          </a>
+          <a href="{{ slide_links_2 }}" class="hero__feature-caption" data-caption="1">
+            <span class="hero__feature-product-name">{{ slide_titles[1] }}</span>
+            <span class="hero__feature-product-tag">{{ slide_tags[1] }}</span>
+          </a>
+          <a href="{{ slide_links_3 }}" class="hero__feature-caption" data-caption="2">
+            <span class="hero__feature-product-name">{{ slide_titles[2] }}</span>
+            <span class="hero__feature-product-tag">{{ slide_tags[2] }}</span>
+          </a>
+        </div>
 
         <div class="hero__feature-dots" role="tablist" aria-label="Featured spice powders">
           <button type="button" class="hero__feature-dot is-active" data-dot="0" aria-label="Show {{ slide_titles[0] }}"></button>

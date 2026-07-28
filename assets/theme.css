@@ -440,11 +440,15 @@ h1, h2, h3, h4 {
 }
 .hero__feature-label { font-size: 0.78rem; font-weight: 700; color: #fff; max-width: 90px; line-height: 1.25; }
 
-/* Minimal floating product, now auto-sliding through the three spice
-   powders — no card, no circle, no frame either way. Images and
-   captions are two separate crossfading stacks (same pattern as the
-   "Meet the Pack" scroll showcase's text/media split), synced by index
-   via JS so a caption's length changing doesn't reflow the image. */
+/* Rich "spotlight card" showcase, auto-sliding through the three spice
+   powders. The product photos are plain opaque JPGs with their own white
+   studio background — no amount of floating them directly on the flat
+   hero color hid that white rectangle. Two things fix it: the image uses
+   mix-blend-mode:multiply (so its white pixels reveal the card's own
+   color instead of painting solid white) and the card itself is a deep
+   toasted-brown gradient, close in tone to the spice photography, so the
+   "disappeared" white background reads as intentional moody lighting
+   rather than a leftover studio backdrop. */
 .hero__feature-slider {
   position: relative;
   z-index: 2;
@@ -464,68 +468,58 @@ h1, h2, h3, h4 {
   margin-bottom: 1.5rem;
 }
 
-.hero__feature-slide-viewport {
+.hero__showcase-card {
   position: relative;
-  width: min(320px, 68vw);
-  aspect-ratio: 940 / 751;
+  width: min(320px, 72vw);
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  background: radial-gradient(130% 100% at 50% 20%, #A85A28 0%, #7A3B10 55%, #4E2408 100%);
+  overflow: hidden;
+  box-shadow: 0 22px 44px rgba(30, 14, 4, 0.35);
 }
-/* Soft blurred glow standing in for a hard card/circle behind the
-   product — lets the (opaque, white-background) product photos read
-   against the shared flat hero background without a visible box edge. */
-.hero__showcase-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 122%;
-  height: 122%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.22) 55%, rgba(255,255,255,0) 78%);
-  filter: blur(6px);
-  pointer-events: none;
-}
+.hero__feature-slide-viewport { position: absolute; inset: 0; }
 .hero__feature-slide {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 1.75rem 5rem;
+  pointer-events: none;
+}
+.hero__feature-slide.is-active { pointer-events: auto; }
+/* The crossfade's opacity/transform transition lives on the <img> itself,
+   not a wrapping div — mix-blend-mode fails to blend against the card's
+   background when it sits inside an ancestor that has its own opacity/
+   transform transition (that ancestor ends up isolating the blend to its
+   own, effectively transparent, backdrop instead of reaching the card). */
+.hero__feature-product-image {
+  width: 84%;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
   opacity: 0;
   transform: scale(0.97) translateY(6px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.hero__feature-slide.is-active { opacity: 1; transform: scale(1) translateY(0); }
-.hero__feature-product-shadow {
+.hero__feature-slide.is-active .hero__feature-product-image { opacity: 1; transform: scale(1) translateY(0); }
+/* Bottom scrim so the overlaid name/tag caption stays legible over
+   whichever part of the product photo sits behind it. */
+.hero__showcase-scrim {
   position: absolute;
-  top: 62%;
-  left: 50%;
-  width: 60%;
-  height: 12%;
-  transform: translate(-50%, -50%);
-  background: rgba(20, 12, 4, 0.22);
-  border-radius: 50%;
-  filter: blur(18px);
-  z-index: -1;
-}
-.hero__feature-product-image {
-  /* No drop-shadow filter here: the source photos are plain opaque JPGs
-     (no transparency), so a CSS drop-shadow would trace the image's
-     rectangular bounding box, not the jar — showing up as a visible
-     white box with a shadowed edge instead of hugging the product. The
-     panel color is matched to the photos' own white background instead,
-     so the rectangle disappears and only their baked-in studio shadow
-     plus the blurred ground-shadow above read. */
-  width: 82%;
-  height: auto;
-  object-fit: contain;
-  transform: rotate(-4deg);
+  left: 0; right: 0; bottom: 0;
+  height: 48%;
+  background: linear-gradient(to top, rgba(24, 10, 2, 0.88), rgba(24, 10, 2, 0));
+  pointer-events: none;
 }
 
 .hero__feature-caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
   display: none;
   flex-direction: column;
   align-items: center;
-  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem 1.5rem;
   text-decoration: none;
   animation: hero-caption-in 0.5s ease;
 }
@@ -537,7 +531,7 @@ h1, h2, h3, h4 {
 .hero__feature-product-name {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
   color: #fff;
 }
 .hero__feature-product-tag {
