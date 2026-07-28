@@ -256,24 +256,21 @@ h1, h2, h3, h4 {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  /* One continuous flat color across the whole section — no separate
-     panels, so there's nothing that needs a seam/divider to hide. */
-  background: var(--hero-bg, #E88B23);
-  color: #fff;
+  /* Light ground, as in the reference — the illustration and type carry
+     the section, so the background stays out of the way. */
+  background: var(--hero-bg, #FBF3E7);
+  color: var(--color-text);
   overflow: hidden;
 }
 /* Compound selector (not just .hero__inner) so this always beats the
    later single-class .page-width padding override at the 599px
-   breakpoint, regardless of source order. Column stack: headline/CTA
-   block on top, full-width feature strip pinned along the bottom. */
+   breakpoint, regardless of source order. */
 .hero .hero__inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 560px;
-  /* Bottom padding leaves room for the absolutely-positioned ticker
-     (which sits above the 50px wave) so it never covers the buttons. */
-  padding: 4.5rem 24px calc(68px + 5.5rem);
+  padding: 5rem 24px calc(50px + 3.5rem);
   position: relative;
   z-index: 2;
 }
@@ -283,154 +280,49 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   position: relative;
-  max-width: 700px;
+  max-width: 640px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* Backdrop: wide diagonal stripes in two close tints of the brand orange.
-   Replaces an earlier attempt at big overlapping flat circles, which read
-   as random blobs — a regular stripe rhythm reads as a deliberate pattern
-   and keeps the poster feel without competing with the headline. */
-.hero__shapes {
+/* Illustrated chilli clusters growing in from each edge, framing the
+   centred copy. They're decorative and sit behind the content (z-index 1
+   vs the inner's 2) so long headings never collide with the artwork —
+   they just overlap it, which is exactly what the reference does. */
+.hero__garden {
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(
-    124deg,
-    rgba(255, 255, 255, 0.075) 0 44px,
-    rgba(255, 255, 255, 0) 44px 108px
-  );
-}
-
-/* Rotated "stickers" pinned around the headline: thick dark outline plus
-   a solid (un-blurred) offset shadow, the pop-art/sticker device the
-   brand already uses in its own creatives. */
-.hero__sticker {
-  position: absolute;
-  z-index: 3;
-  display: inline-block;
-  background: #FFF8EC;
-  color: var(--color-text, #222);
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 0.76rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  padding: 0.6rem 1rem;
-  border: 3px solid var(--color-text, #222);
-  border-radius: var(--radius-pill);
-  box-shadow: 5px 6px 0 var(--color-text, #222);
-}
-.hero__sticker--a { top: 4%; left: -6%; transform: rotate(-9deg); }
-.hero__sticker--b { bottom: 16%; right: -7%; background: var(--color-accent, #E6D624); transform: rotate(7deg); }
-.hero__mascot {
-  position: absolute;
-  /* Bottom-left: with the display face the headline sets on one line, so
-     the right edge is occupied — this gap beside the (centred) button row
-     is the reliably clear spot. */
+  top: 0;
   bottom: 0;
-  left: -5%;
-  z-index: 3;
-  width: 86px;
-  height: 86px;
-  border-radius: 50%;
-  border: 3px solid var(--color-text, #222);
-  box-shadow: 5px 6px 0 var(--color-text, #222);
-  overflow: hidden;
-  transform: rotate(-8deg);
-  animation: hero-deco-float 6s ease-in-out infinite;
-  --deco-transform: rotate(-8deg);
+  width: clamp(200px, 22vw, 320px);
+  z-index: 1;
+  pointer-events: none;
 }
-.hero__mascot img { display: block; width: 100%; height: 100%; object-fit: cover; }
-@media (prefers-reduced-motion: reduce) {
-  .hero__mascot { animation: none; }
-}
-/* The stickers and mascot live in the gutters either side of the 700px
-   content column. Below ~1100px those gutters are too narrow to hold them
-   and they start landing on the badge and the button row, so they drop
-   out and the type + ticker carry the section on their own. */
-@media screen and (max-width: 1099px) {
-  .hero__sticker, .hero__mascot { display: none; }
+.hero__garden--left { left: -18px; }
+.hero__garden--right { right: -18px; }
+.hero__garden svg {
+  width: 100%;
+  height: 100%;
+  /* The clusters are drawn taller than they are wide; slicing keeps the
+     stems running the full height of the section at any aspect ratio
+     instead of letter-boxing them into the middle. */
+  object-fit: cover;
 }
 
-/* Scrolling ticker along the base instead of a static four-column strip —
-   reuses the announcement bar's `marquee` keyframe (track holds two
-   copies of the items, so -50% loops seamlessly). */
-.hero__marquee {
-  position: absolute;
-  left: 0;
-  right: 0;
-  /* The wave is 50px tall; the extra ~18px absorbs the vertical spread
-     the -1.2deg rotation adds at the far ends of the bar, which would
-     otherwise dip the ticker under the cream wave at the left edge. */
-  bottom: 68px;
-  z-index: 3;
-  background: var(--color-text, #222);
-  border-top: 3px solid var(--color-text, #222);
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 0.7rem 0;
-  transform: rotate(-1.2deg) scaleX(1.06);
+.hero__swoosh {
+  display: block;
+  width: 56px;
+  margin: 0 auto 1rem;
 }
-.hero__marquee-track {
-  display: inline-flex;
-  animation: marquee 26s linear infinite;
-}
-.hero__marquee-item {
-  position: relative;
-  flex: none;
-  color: #fff;
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 0.86rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0 2rem;
-}
-.hero__marquee-item::after {
-  content: '🌶️';
-  position: absolute;
-  right: -0.55rem;
-  font-size: 0.8em;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__marquee-track { animation: none; }
+.hero__swoosh svg { width: 100%; height: auto; }
+
+.hero__subtext {
+  max-width: 30rem;
+  margin: 1.25rem auto 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(34, 34, 34, 0.75);
 }
 
-/* Hand-drawn line-art scattered around the hero — a handful of bold
-   unique illustrations rather than a tiled repeat. All of them sit in the
-   left/right gutters beside the centered content column and above the
-   bottom feature strip, so nothing overlaps live text. */
-.hero__deco { position: absolute; z-index: 1; pointer-events: none; transform: var(--deco-transform, none); }
-.hero__deco svg { display: block; width: 100%; height: 100%; }
-.hero__deco--1 { top: 10%; left: 7%; width: 56px; height: 56px; opacity: 0.5; --deco-transform: rotate(-12deg); }
-.hero__deco--2 { top: 46%; left: 4%; width: 64px; height: 64px; opacity: 0.5; --deco-transform: rotate(8deg); }
-.hero__deco--3 { top: 26%; left: 15%; width: 50px; height: 50px; opacity: 0.38; --deco-transform: rotate(-20deg); }
-.hero__deco--4 { top: 9%; right: 8%; width: 46px; height: 46px; opacity: 0.42; --deco-transform: rotate(8deg); }
-.hero__deco--6 { top: 44%; right: 5%; width: 42px; height: 42px; opacity: 0.42; --deco-transform: rotate(-15deg); }
-.hero__deco--9 { top: 25%; right: 16%; width: 46px; height: 46px; opacity: 0.32; --deco-transform: rotate(10deg); }
-.hero__deco--10 { top: 58%; right: 10%; width: 50px; height: 50px; opacity: 0.3; --deco-transform: rotate(-10deg); }
-
-/* Gentle floating bob — each one gets a slightly different duration/delay
-   via inline style so they drift out of sync instead of bobbing in unison
-   like a single mechanical unit. */
-.hero__deco--1, .hero__deco--2, .hero__deco--3, .hero__deco--4, .hero__deco--6, .hero__deco--9, .hero__deco--10 {
-  animation: hero-deco-float 5s ease-in-out infinite;
-  animation-duration: var(--deco-float-duration, 5s);
-  animation-delay: var(--deco-float-delay, 0s);
-}
-@keyframes hero-deco-float {
-  0%, 100% { transform: var(--deco-transform, none) translateY(0); }
-  50% { transform: var(--deco-transform, none) translateY(-7px); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__deco--1, .hero__deco--2, .hero__deco--3, .hero__deco--4, .hero__deco--6, .hero__deco--9, .hero__deco--10 {
-    animation: none;
-  }
-}
 /* Sits inside .hero itself (which already has position:relative and
    overflow:hidden) at its actual bottom edge — no separate flow element or
    margin-overlap needed, so there's no way for a gap to open up. */
@@ -442,28 +334,8 @@ h1, h2, h3, h4 {
   z-index: 3;
   display: block;
 }
-.hero__leaf-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: var(--color-accent);
-  color: var(--color-text);
-  padding: 0.4rem 0.9rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 1.25rem;
-  /* Same sticker construction as .hero__sticker — thick outline, solid
-     offset shadow — so the eyebrow reads as part of the collage. */
-  border: 3px solid var(--color-text, #222);
-  box-shadow: 5px 6px 0 var(--color-text, #222);
-  transform: rotate(-4deg);
-}
-/* Oversized poster type: the lead words sit small and wide above a very
-   large accent phrase, so the headline reads as a graphic rather than a
-   line of copy. */
+/* Reference-style display type: a small wide-tracked lead line over a
+   large two-tone headline, dark then brand red. */
 .hero__title {
   margin-bottom: 1rem;
   line-height: 0.92;
@@ -475,8 +347,8 @@ h1, h2, h3, h4 {
   font-weight: 800;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 0.9rem;
+  color: rgba(34, 34, 34, 0.65);
+  margin-bottom: 0.75rem;
 }
 .hero__title-accent {
   position: relative;
@@ -488,9 +360,6 @@ h1, h2, h3, h4 {
   line-height: 0.95;
   text-transform: uppercase;
   color: #9D0101;
-  /* Solid, un-blurred offset shadow — the pop-art layered-type device,
-     not a soft glow. */
-  text-shadow: 6px 7px 0 #FFF8EC;
 }
 
 /* Hand-drawn doodle underline beneath the accent phrase, drawn in with a
@@ -532,44 +401,17 @@ h1, h2, h3, h4 {
   .hero__title-underline path { animation: none; stroke-dashoffset: 0; }
 }
 .hero__actions { display: flex; gap: 1rem 1.5rem; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 2.25rem; }
-/* Chunky sticker-style buttons to match the stickers/ticker: thick dark
-   outline plus a solid offset shadow that collapses on press. Scoped to
-   .hero__actions so the shared .btn used on product/cart pages is
-   untouched. */
-.hero__actions .btn {
-  border: 3px solid var(--color-text, #222);
-  border-radius: var(--radius-pill);
-  box-shadow: 5px 6px 0 var(--color-text, #222);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
-}
-.hero__actions .btn:hover { transform: translate(2px, 3px); box-shadow: 3px 3px 0 var(--color-text, #222); }
-.hero__actions .btn:active { transform: translate(5px, 6px); box-shadow: 0 0 0 var(--color-text, #222); }
-/* .btn--outline elsewhere sits on light backgrounds and uses currentColor
-   (dark); on this saturated orange it needs a solid light fill instead so
-   it still reads as a button against the outlined type behind it. */
-.hero__actions .btn--outline { background: #FFF8EC; color: var(--color-text, #222); border-color: var(--color-text, #222); }
-.hero__actions .btn--outline:hover { background: #fff; color: var(--color-text, #222); }
+/* The hero now sits on a light ground, so .btn--outline's shared dark
+   currentColor border works as-is; only the fill needs pinning so it
+   doesn't read as a hole in the illustration behind it. */
+.hero__actions .btn--outline { background: transparent; color: var(--color-text); border-color: var(--color-text); }
+.hero__actions .btn--outline:hover { background: var(--color-text); color: var(--color-background); }
 
-.hero__feature { display: flex; align-items: center; gap: 0.6rem; }
-.hero__feature-icon {
-  width: 40px; height: 40px;
-  flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--feature-color, var(--color-primary));
-  box-shadow: 0 2px 8px rgba(34,34,34,0.16), 0 0 0 2px #9D0101 inset;
-}
-.hero__feature-label { font-size: 0.78rem; font-weight: 700; color: #fff; max-width: 90px; line-height: 1.25; text-align: left; }
-
-/* Third CTA sits inline with the two buttons as a plain underlined text
-   link rather than a third competing pill — one primary, one outline,
-   one quiet tertiary. */
 .hero__range-link {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #fff;
+  color: var(--color-primary);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.92rem;
@@ -1193,14 +1035,17 @@ h1, h2, h3, h4 {
   }
   .mobile-menu__list { list-style: none; margin: 0; padding: 1rem 24px; display: flex; flex-direction: column; gap: 1rem; font-weight: 600; }
 
-  .hero .hero__inner { min-height: 0; padding: 3rem 18px calc(58px + 4.5rem); }
-  .hero__title-accent { text-shadow: 4px 5px 0 #FFF8EC; }
-  .hero__marquee { bottom: 58px; transform: rotate(-1.2deg) scaleX(1.12); padding: 0.55rem 0; }
-  .hero__marquee-item { font-size: 0.76rem; padding: 0 1.4rem; }
-  .hero__deco { opacity: 0.4 !important; }
-  .hero__deco--1 { width: 44px !important; height: 44px !important; }
-  .hero__deco--3, .hero__deco--9 { display: none; }
-  .hero__deco--9, .hero__deco--10 { width: 36px !important; height: 36px !important; }
+  .hero .hero__inner { min-height: 0; padding: 2.5rem 18px calc(50px + 2rem); }
+  /* The clusters shrink to narrow strips down each edge rather than
+     disappearing — the illustration is the section's whole idea. The
+     content then gets side padding wider than the visible strip so the
+     copy never runs into the artwork. */
+  .hero__garden { width: 92px; }
+  .hero__garden--left { left: -30px; }
+  .hero__garden--right { right: -30px; }
+  .hero__content { padding: 0 3.5rem; }
+  .hero__title-accent { font-size: clamp(2.1rem, 10.5vw, 3rem); }
+  .hero__subtext { font-size: 0.94rem; }
 
   .product-row__inner, .product-row--reverse .product-row__inner { grid-template-columns: 1fr; direction: ltr; }
   .product-row__media { max-width: 380px; margin: 0 auto; }

@@ -16,70 +16,40 @@
 
 <section class="hero" style="--hero-bg: {{ section.settings.background_color }};">
   {% comment %}
-    Bold poster treatment rather than a tidy centered stack: hard-edged
-    background shapes (no soft gradients or dot grids), oversized pop-art
-    display type where the accent phrase gets a hard offset shadow, and
-    rotated "stickers" pinned around the headline with thick outlines and
-    solid drop shadows. The polite four-column feature strip is replaced
-    by a scrolling ticker along the bottom, reusing the same `marquee`
-    keyframe as the site's announcement bar.
+    Rebuilt after the Cien Chiles reference: a light ground with dense
+    flat-vector chilli/botanical clusters growing in from the left and
+    right edges, framing a centred display headline and a short line of
+    copy. The illustration is the whole visual idea here, so the previous
+    sticker collage, mascot, scrolling ticker and stripe backdrop are all
+    gone — they'd fight the artwork for attention.
 
-    Sticker copy is pulled from lines the brand already runs in the
-    announcement bar, so nothing here invents a new claim.
+    No product photograph: the reference frames type, not a bottle, and
+    dropping the jar in between two dense clusters either crowded the art
+    or got clipped by them at narrower widths.
   {% endcomment %}
-  <span class="hero__shapes" aria-hidden="true"></span>
-
-  <div class="hero__deco hero__deco--1" style="color: #FFFFFF; --deco-float-duration: 5.2s; --deco-float-delay: -2.6s;">{% render 'deco-chili' %}</div>
-  <div class="hero__deco hero__deco--2" style="color: #FFE8CF; --deco-float-duration: 6.5s; --deco-float-delay: -0.9s;">{% render 'deco-leaf-branch' %}</div>
-  <div class="hero__deco hero__deco--3" style="color: #FFFFFF; --deco-float-duration: 4.8s; --deco-float-delay: -3.9s;">{% render 'deco-tamarind' %}</div>
-  <div class="hero__deco hero__deco--4" style="color: #FFFFFF; --deco-float-duration: 5.9s; --deco-float-delay: -1.8s;">{% render 'deco-swirl' %}</div>
-  <div class="hero__deco hero__deco--6" style="color: #FFE8CF; --deco-float-duration: 5.1s; --deco-float-delay: -3.2s;">{% render 'deco-leaf-branch' %}</div>
-  <div class="hero__deco hero__deco--9" style="color: #FFFFFF; --deco-float-duration: 4.6s; --deco-float-delay: -0.6s;">{% render 'deco-mortar-pestle' %}</div>
-  <div class="hero__deco hero__deco--10" style="color: #FFE8CF; --deco-float-duration: 5.8s; --deco-float-delay: -2.1s;">{% render 'deco-garlic' %}</div>
+  <div class="hero__garden hero__garden--left" aria-hidden="true">{% render 'deco-chili-cluster-a' %}</div>
+  <div class="hero__garden hero__garden--right" aria-hidden="true">{% render 'deco-chili-cluster-b' %}</div>
 
   <div class="hero__inner page-width">
     <div class="hero__content">
-      <div class="hero__leaf-badge">
-        <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
-      </div>
+      <span class="hero__swoosh" aria-hidden="true">{% render 'icon-chili-swoosh' %}</span>
 
       <h1 class="hero__title">
         <span class="hero__title-lead">{{ heading_lead }}</span>
         <span class="hero__title-accent">{{ heading_last }}<svg class="hero__title-underline" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2,8 C40,2 90,12 130,6 C160,2 180,10 198,5"></path></svg></span>
       </h1>
 
+      {% if section.settings.subheading != blank %}
+        <p class="hero__subtext">{{ section.settings.subheading }}</p>
+      {% endif %}
+
       <div class="hero__actions">
         <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
         <a href="{{ section.settings.secondary_link }}" class="btn btn--outline">{{ section.settings.secondary_label }}</a>
         <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__range-link">
-          {{ section.settings.range_label }} <span aria-hidden="true">→</span>
+          {{ section.settings.range_label }} <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
-
-      {% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
-      <span class="hero__sticker hero__sticker--a" aria-hidden="true">One bite and you&rsquo;re hooked</span>
-      <span class="hero__sticker hero__sticker--b" aria-hidden="true">Zero preservatives</span>
-      <span class="hero__mascot" aria-hidden="true">
-        <img src="{{ 'logo-icon.png' | asset_url }}" alt="" width="86" height="86" loading="eager">
-      </span>
-    </div>
-  </div>
-
-  {% comment %}
-    Items are duplicated (second set aria-hidden) so the track can loop
-    seamlessly at translateX(-50%) — same construction as the
-    announcement bar, which shares the `marquee` keyframe.
-  {% endcomment %}
-  <div class="hero__marquee" aria-label="Why Hungry Dinosaur">
-    <div class="hero__marquee-track">
-      <span class="hero__marquee-item">Natural Ingredients</span>
-      <span class="hero__marquee-item">Zero Preservatives</span>
-      <span class="hero__marquee-item">Small-Batch Made</span>
-      <span class="hero__marquee-item">Free Shipping</span>
-      <span class="hero__marquee-item" aria-hidden="true">Natural Ingredients</span>
-      <span class="hero__marquee-item" aria-hidden="true">Zero Preservatives</span>
-      <span class="hero__marquee-item" aria-hidden="true">Small-Batch Made</span>
-      <span class="hero__marquee-item" aria-hidden="true">Free Shipping</span>
     </div>
   </div>
 
@@ -92,14 +62,14 @@
 {
   "name": "Hero",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Small-batch. Big flavour." },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Nothing Beats Real Flavour" },
+    { "type": "textarea", "id": "subheading", "label": "Sub-heading", "default": "Small-batch chutneys and export-quality spice powders, made with nothing but real ingredients. No preservatives, no shortcuts." },
     { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Shop the Pack" },
     { "type": "url", "id": "primary_link", "label": "Primary button link" },
     { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Our Story" },
     { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
     { "type": "text", "id": "range_label", "label": "CTA card text", "default": "Shop the Full Range" },
-    { "type": "color", "id": "background_color", "label": "Background color", "default": "#E88B23", "info": "Bold flat color across the whole section" },
+    { "type": "color", "id": "background_color", "label": "Background color", "default": "#FBF3E7", "info": "Light ground the chilli illustrations sit on" },
     { "type": "color", "id": "wave_color", "label": "Bottom wave color", "default": "#FBF3E7", "info": "Should match the page background so the section blends in on scroll" },
     { "type": "url", "id": "shop_all_link", "label": "\"Shop the Full Range\" link" }
   ]
