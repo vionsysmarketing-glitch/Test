@@ -14,7 +14,7 @@
 {% assign heading_lead = heading_words | slice: 0, heading_lead_count | join: ' ' %}
 {% assign heading_last = heading_words | slice: heading_lead_count, heading_accent_words | join: ' ' %}
 
-<section class="hero" style="--hero-bg: {{ section.settings.background_color }}; --hero-stage-color-alt: {{ section.settings.stage_color_alt }};">
+<section class="hero" style="--hero-bg: {{ section.settings.background_color }};">
   <div class="hero__deco hero__deco--1" style="color: #FFFFFF; --deco-float-duration: 5.2s; --deco-float-delay: -2.6s;">{% render 'deco-chili' %}</div>
   <div class="hero__deco hero__deco--2" style="color: #FFE8CF; --deco-float-duration: 6.5s; --deco-float-delay: -0.9s;">{% render 'deco-leaf-branch' %}</div>
   <div class="hero__deco hero__deco--3" style="color: #FFFFFF; --deco-float-duration: 4.8s; --deco-float-delay: -3.9s;">{% render 'deco-tamarind' %}</div>
@@ -72,78 +72,40 @@
       <div class="hero__deco hero__deco--6" style="color: #FFE8CF; --deco-float-duration: 5.1s; --deco-float-delay: -3.2s;">{% render 'deco-leaf-branch' %}</div>
 
       {% comment %}
-        Auto-advancing slider through the three spice-powder products. JS
-        toggles "is-active" on the matching slide/caption/dot; markup falls
-        back to showing just the first product if JS never runs
-        (progressive enhancement, same pattern as the "Meet the Pack"
-        scroll showcase).
-
-        The product photos are plain opaque JPGs with their own white
-        studio background — floating them directly on a flat color always
-        left a visible white rectangle no matter what sat behind them. Two
-        things fix that here: the image uses mix-blend-mode:multiply (so
-        its white pixels reveal whatever's behind instead of painting
-        white), and it sits inside a rich dark "spotlight" card rather than
-        directly on the hero background — the card's own color is what the
-        white background dissolves into, and its bottom third carries a
-        scrim + the name/tag caption directly over the image.
+        A single featured product (no slider) presented as a clean plinth
+        card — the product photos are plain opaque JPGs shot on pure white
+        (#FFFFFF) seamless paper, so rather than fighting that with color
+        tricks (a colored backdrop always left a visible seam or, with a
+        blend-mode workaround, visibly tinted the product's own colors),
+        the card behind it is exactly the same pure white. White meets
+        white, so there is no edge left to see at all — the simplest fix
+        available given the source photos.
       {% endcomment %}
       {% comment %}
-        Link fallbacks are resolved by looking up the real product by title
-        (collections.all always has the merchant's actual URL/handle) rather
-        than guessing a handle like '/products/chilli-flakes' — real store
-        handles often carry extra suffixes (e.g. "chilli-flakes-export-quality")
-        that a guessed default can't predict, and a wrong guess 404s instead
-        of failing safely. Falls through to the shop-all link, never a dead end.
+        Link fallback is resolved by looking up the real product by title
+        (collections.all always has the merchant's actual URL/handle)
+        rather than guessing a handle like '/products/garam-masala-powder'
+        — real store handles often carry extra suffixes (e.g.
+        "-export-quality") that a guessed default can't predict, and a
+        wrong guess 404s instead of failing safely. Falls through to the
+        shop-all link, never a dead end.
       {% endcomment %}
-      {% assign slide_titles = 'Garam Masala Powder|Chilli Flakes|Dhaniya Powder' | split: '|' %}
-      {% assign slide_tags = '★ Best Seller|🔥 Customer Favorite|🌿 Everyday Staple' | split: '|' %}
-      {% assign slide_images = 'garam-masala.jpg|chilli-flakes.jpg|coriander-powder.jpg' | split: '|' %}
-      {% assign masala_product = collections.all.products | where: 'title', 'Garam Masala (Export Quality)' | first %}
-      {% assign chilli_product = collections.all.products | where: 'title', 'Chilli Flakes (Export Quality)' | first %}
-      {% assign coriander_product = collections.all.products | where: 'title', 'Coriander powder (Export Quality)' | first %}
+      {% assign featured_product = collections.all.products | where: 'title', 'Garam Masala (Export Quality)' | first %}
       {% assign safe_fallback = section.settings.shop_all_link | default: '/collections/all' %}
-      {% assign slide_links = section.settings.masala_link | default: masala_product.url | default: safe_fallback %}
-      {% assign slide_links_2 = section.settings.chilli_link | default: chilli_product.url | default: safe_fallback %}
-      {% assign slide_links_3 = section.settings.coriander_link | default: coriander_product.url | default: safe_fallback %}
+      {% assign featured_link = section.settings.masala_link | default: featured_product.url | default: safe_fallback %}
 
-      <div class="hero__feature-slider" data-hero-slider>
+      <div class="hero__feature-slider">
         <span class="hero__feature-product-eyebrow">{{ section.settings.category_label }}</span>
 
         <div class="hero__showcase-card">
-          <div class="hero__feature-slide-viewport">
-            <div class="hero__feature-slide is-active" data-slide="0">
-              <img class="hero__feature-product-image" src="{{ slide_images[0] | asset_url }}" alt="{{ slide_titles[0] }}" loading="eager" width="320" height="256">
-            </div>
-            <div class="hero__feature-slide" data-slide="1">
-              <img class="hero__feature-product-image" src="{{ slide_images[1] | asset_url }}" alt="{{ slide_titles[1] }}" loading="lazy" width="320" height="256">
-            </div>
-            <div class="hero__feature-slide" data-slide="2">
-              <img class="hero__feature-product-image" src="{{ slide_images[2] | asset_url }}" alt="{{ slide_titles[2] }}" loading="lazy" width="320" height="256">
-            </div>
-          </div>
-
-          <div class="hero__showcase-scrim" aria-hidden="true"></div>
-
-          <a href="{{ slide_links }}" class="hero__feature-caption is-active" data-caption="0">
-            <span class="hero__feature-product-name">{{ slide_titles[0] }}</span>
-            <span class="hero__feature-product-tag">{{ slide_tags[0] }}</span>
-          </a>
-          <a href="{{ slide_links_2 }}" class="hero__feature-caption" data-caption="1">
-            <span class="hero__feature-product-name">{{ slide_titles[1] }}</span>
-            <span class="hero__feature-product-tag">{{ slide_tags[1] }}</span>
-          </a>
-          <a href="{{ slide_links_3 }}" class="hero__feature-caption" data-caption="2">
-            <span class="hero__feature-product-name">{{ slide_titles[2] }}</span>
-            <span class="hero__feature-product-tag">{{ slide_tags[2] }}</span>
-          </a>
+          <span class="hero__showcase-badge">★ Best Seller</span>
+          <span class="hero__showcase-shadow" aria-hidden="true"></span>
+          <img class="hero__feature-product-image" src="{{ 'garam-masala.jpg' | asset_url }}" alt="Garam Masala Powder" loading="eager" width="320" height="256">
         </div>
 
-        <div class="hero__feature-dots" role="tablist" aria-label="Featured spice powders">
-          <button type="button" class="hero__feature-dot is-active" data-dot="0" aria-label="Show {{ slide_titles[0] }}"></button>
-          <button type="button" class="hero__feature-dot" data-dot="1" aria-label="Show {{ slide_titles[1] }}"></button>
-          <button type="button" class="hero__feature-dot" data-dot="2" aria-label="Show {{ slide_titles[2] }}"></button>
-        </div>
+        <a href="{{ featured_link }}" class="hero__feature-caption">
+          <span class="hero__feature-product-name">Garam Masala Powder</span>
+        </a>
       </div>
 
       <a href="{{ section.settings.shop_all_link | default: '/collections/all' }}" class="hero__range-pill">
@@ -169,14 +131,11 @@
     { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
     { "type": "text", "id": "range_label", "label": "CTA card text", "default": "Shop the Full Range" },
     { "type": "color", "id": "background_color", "label": "Background color", "default": "#E88B23", "info": "Bold flat color across the whole section" },
-    { "type": "color", "id": "stage_color_alt", "label": "Product tag & dot accent color", "default": "#FFFFFF", "info": "Used for the best-seller tag text and the active slider dot" },
     { "type": "color", "id": "wave_color", "label": "Bottom wave color", "default": "#FBF3E7", "info": "Should match the page background so the section blends in on scroll" },
     { "type": "url", "id": "shop_all_link", "label": "\"Shop the Full Range\" link" },
-    { "type": "header", "content": "Featured product slider" },
+    { "type": "header", "content": "Featured product" },
     { "type": "text", "id": "category_label", "label": "Category label", "default": "Spice Powders" },
-    { "type": "url", "id": "masala_link", "label": "Garam Masala Powder link", "info": "Defaults to /products/garam-masala-powder" },
-    { "type": "url", "id": "chilli_link", "label": "Chilli Flakes link", "info": "Defaults to /products/chilli-flakes" },
-    { "type": "url", "id": "coriander_link", "label": "Dhaniya Powder link", "info": "Defaults to /products/coriander-powder" }
+    { "type": "url", "id": "masala_link", "label": "Garam Masala Powder link", "info": "Defaults to /products/garam-masala-powder" }
   ]
 }
 {% endschema %}

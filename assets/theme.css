@@ -440,15 +440,12 @@ h1, h2, h3, h4 {
 }
 .hero__feature-label { font-size: 0.78rem; font-weight: 700; color: #fff; max-width: 90px; line-height: 1.25; }
 
-/* Rich "spotlight card" showcase, auto-sliding through the three spice
-   powders. The product photos are plain opaque JPGs with their own white
-   studio background — no amount of floating them directly on the flat
-   hero color hid that white rectangle. Two things fix it: the image uses
-   mix-blend-mode:multiply (so its white pixels reveal the card's own
-   color instead of painting solid white) and the card itself is a deep
-   toasted-brown gradient, close in tone to the spice photography, so the
-   "disappeared" white background reads as intentional moody lighting
-   rather than a leftover studio backdrop. */
+/* Single featured product, no slider. The photos are plain opaque JPGs
+   shot on pure white (#FFFFFF) seamless paper — rather than fighting that
+   with a colored backdrop (always left a visible seam) or a blend-mode
+   trick (visibly tints the product's own colors), the card behind it is
+   the same pure white the photo already has. White meeting white leaves
+   no edge to see, so the "cutout" look comes for free with no distortion. */
 .hero__feature-slider {
   position: relative;
   z-index: 2;
@@ -470,63 +467,61 @@ h1, h2, h3, h4 {
 
 .hero__showcase-card {
   position: relative;
-  width: min(320px, 72vw);
-  aspect-ratio: 4 / 5;
-  border-radius: 28px;
-  background: radial-gradient(130% 100% at 50% 20%, #A85A28 0%, #7A3B10 55%, #4E2408 100%);
-  overflow: hidden;
-  box-shadow: 0 22px 44px rgba(30, 14, 4, 0.35);
-}
-.hero__feature-slide-viewport { position: absolute; inset: 0; }
-.hero__feature-slide {
-  position: absolute;
-  inset: 0;
+  width: min(280px, 62vw);
+  aspect-ratio: 1 / 1.05;
+  border-radius: 24px;
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.75rem 5rem;
-  pointer-events: none;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 22px 44px rgba(30, 14, 4, 0.28);
 }
-.hero__feature-slide.is-active { pointer-events: auto; }
-/* The crossfade's opacity/transform transition lives on the <img> itself,
-   not a wrapping div — mix-blend-mode fails to blend against the card's
-   background when it sits inside an ancestor that has its own opacity/
-   transform transition (that ancestor ends up isolating the blend to its
-   own, effectively transparent, backdrop instead of reaching the card). */
+/* Soft blurred "ground" shadow under the jar instead of a CSS drop-shadow
+   filter on the image itself — a filter would trace the image's full
+   rectangular bounding box (all of it opaque, no alpha channel to follow
+   the jar's silhouette), showing up as a visible rectangle-shaped shadow
+   rather than one that hugs the product. */
+.hero__showcase-shadow {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  width: 58%;
+  height: 10%;
+  transform: translateX(-50%);
+  background: rgba(30, 14, 4, 0.16);
+  border-radius: 50%;
+  filter: blur(12px);
+}
 .hero__feature-product-image {
-  width: 84%;
+  position: relative;
+  width: 78%;
   height: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;
-  opacity: 0;
-  transform: scale(0.97) translateY(6px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: rotate(-3deg);
 }
-.hero__feature-slide.is-active .hero__feature-product-image { opacity: 1; transform: scale(1) translateY(0); }
-/* Bottom scrim so the overlaid name/tag caption stays legible over
-   whichever part of the product photo sits behind it. */
-.hero__showcase-scrim {
+.hero__showcase-badge {
   position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 48%;
-  background: linear-gradient(to top, rgba(24, 10, 2, 0.88), rgba(24, 10, 2, 0));
-  pointer-events: none;
+  top: -14px;
+  right: -8px;
+  z-index: 1;
+  background: var(--color-primary, #9D0101);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  transform: rotate(6deg);
 }
 
 .hero__feature-caption {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.25rem 1.5rem 1.5rem;
+  display: block;
+  margin-top: 1.5rem;
   text-decoration: none;
-  animation: hero-caption-in 0.5s ease;
-}
-.hero__feature-caption.is-active { display: flex; }
-@keyframes hero-caption-in {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 .hero__feature-product-name {
   font-family: var(--font-heading);
@@ -534,26 +529,6 @@ h1, h2, h3, h4 {
   font-size: clamp(1.2rem, 2vw, 1.45rem);
   color: #fff;
 }
-.hero__feature-product-tag {
-  margin-top: 0.4rem;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.03em;
-  color: var(--hero-stage-color-alt, #FFFFFF);
-}
-
-.hero__feature-dots { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
-.hero__feature-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  border: none;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-.hero__feature-dot.is-active { background: var(--hero-stage-color-alt, #FFFFFF); transform: scale(1.2); }
 
 .hero__range-pill {
   position: relative;
