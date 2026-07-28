@@ -77,7 +77,7 @@
 <section class="product-recipes page-width">
   <div class="section-heading">
     <span class="section-heading__eyebrow">{{ section.settings.eyebrow }}</span>
-    <h2 class="section-heading__title">{{ section.settings.heading | replace: '{{ product }}', product.title }}</h2>
+    <h2 class="section-heading__title">{{ section.settings.heading | replace: '[product]', product.title }}</h2>
   </div>
   <div class="product-recipes__grid">
     <div class="product-recipe-card">
@@ -103,7 +103,7 @@
   "name": "Product recipes",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How To Use It" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Ways to Enjoy {{ product }}", "info": "{{ product }} is replaced with the product's title" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ways to Enjoy [product]", "info": "[product] is replaced with the product's title" }
   ]
 }
 {% endschema %}
