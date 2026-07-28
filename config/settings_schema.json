@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Hungry Dinosaur",
-    "theme_version": "1.0.0",
+    "theme_version": "1.1.0-outline-icons",
     "theme_author": "Hungry Dinosaur Foods",
     "theme_documentation_url": "https://hungrydinosaurfoods.com",
     "theme_support_url": "https://hungrydinosaurfoods.com/pages/contact"
@@ -66,9 +66,24 @@
   {
     "name": "Social media",
     "settings": [
-      { "type": "text", "id": "social_instagram_link", "label": "Instagram", "default": "https://instagram.com/hungrydinosaurfoods" },
-      { "type": "text", "id": "social_facebook_link", "label": "Facebook", "default": "https://facebook.com" },
-      { "type": "text", "id": "social_twitter_link", "label": "Twitter / X", "default": "https://twitter.com" }
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "default": "https://instagram.com/hungrydinosaurfoods"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "default": "https://facebook.com"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter / X",
+        "default": "https://twitter.com"
+      }
     ]
   }
 ]
