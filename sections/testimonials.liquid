@@ -6,8 +6,12 @@
       <h2 class="testimonials__count">{{ section.settings.count }}<span class="testimonials__plus">+</span></h2>
       <p class="testimonials__count-sub">{{ section.settings.count_label }}</p>
       <p class="testimonials__tagline">{{ section.settings.tagline }}</p>
-      <div class="testimonials__avatars" aria-hidden="true">
-        {% for i in (1..5) %}<span class="testimonials__avatar testimonials__avatar--{{ i }}"></span>{% endfor %}
+      <div class="testimonials__export-stat">
+        <span class="testimonials__export-number">{{ section.settings.export_count }}<span class="testimonials__plus">+</span></span>
+        <div class="testimonials__export-copy">
+          <span class="testimonials__export-label">{{ section.settings.export_label }}</span>
+          <span class="testimonials__export-sub">{{ section.settings.export_sub }}</span>
+        </div>
       </div>
     </div>
 
@@ -34,7 +38,10 @@
   "settings": [
     { "type": "text", "id": "count", "label": "Customer count", "default": "12,000" },
     { "type": "text", "id": "count_label", "label": "Count label", "default": "happy taste buds and counting" },
-    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Real people. Real heat. Real cravings." }
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Real people. Real heat. Real cravings." },
+    { "type": "text", "id": "export_count", "label": "Export count", "default": "1,000" },
+    { "type": "text", "id": "export_label", "label": "Export label", "default": "kg exported worldwide" },
+    { "type": "text", "id": "export_sub", "label": "Export supporting line", "default": "Trusted in kitchens far beyond India." }
   ]
 }
 {% endschema %}
