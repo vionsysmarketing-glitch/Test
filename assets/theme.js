@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initQuantityStepper();
   initProductRecommendations();
   initHeroParallax();
+  initHowItWorks();
 });
 
 function initScrollShowcase() {
@@ -265,4 +266,29 @@ function initHeroParallax() {
     targetY = 0;
     schedule();
   });
+}
+
+
+function initHowItWorks() {
+  var section = document.querySelector('[data-how-it-works]');
+  if (!section) return;
+
+  // No IntersectionObserver (or reduced motion) — show the finished state
+  // immediately rather than leaving the steps stuck at opacity 0.
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) {
+    section.classList.add('is-visible');
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      // One-shot: the steps shouldn't re-run every time they scroll past.
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.25 });
+
+  observer.observe(section);
 }

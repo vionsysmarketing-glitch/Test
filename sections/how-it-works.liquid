@@ -1,35 +1,51 @@
-{% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
-<section class="how-it-works">
+{% comment %}
+  Hardcoded — see scroll-showcase.liquid for why.
+
+  The emoji that used to sit in solid circles are replaced with outline
+  icons in the theme's existing stroke style (same construction as
+  icon-leaf and friends), sitting in outlined rings rather than filled
+  discs so the section matches the hero's outline-icon treatment.
+
+  Each step carries its number, and the whole row is a scroll-triggered
+  reveal driven by initHowItWorks() — the section sits below the fold, so
+  animating on load would mean it had already finished by the time anyone
+  saw it.
+{% endcomment %}
+<section class="how-it-works" data-how-it-works>
   <div class="how-it-works__heading-area">
     <h2>{{ section.settings.heading }}</h2>
   </div>
   <div class="how-it-works__content-area" style="background-color: {{ section.settings.band_color }};">
-    <div class="how-it-works__grid">
-      <div class="how-it-works__step">
-        <div class="how-it-works__icon-circle" style="background-color: {{ section.settings.icon_circle_color }};">
-          <span aria-hidden="true">🫙</span>
-        </div>
+    <ol class="how-it-works__grid" style="--step-accent: {{ section.settings.icon_circle_color }};">
+      <li class="how-it-works__step" style="--i: 0">
+        <span class="how-it-works__icon-circle">
+          <span class="how-it-works__step-num" aria-hidden="true">1</span>
+          {% render 'icon-step-jar' %}
+        </span>
         <p class="how-it-works__step-text">Twist open the jar — no cooking, no prep needed.</p>
-      </div>
-      <div class="how-it-works__step">
-        <div class="how-it-works__icon-circle" style="background-color: {{ section.settings.icon_circle_color }};">
-          <span aria-hidden="true">🥄</span>
-        </div>
+      </li>
+      <li class="how-it-works__step" style="--i: 1">
+        <span class="how-it-works__icon-circle">
+          <span class="how-it-works__step-num" aria-hidden="true">2</span>
+          {% render 'icon-step-spoon' %}
+        </span>
         <p class="how-it-works__step-text">Spoon out as much heat as you can handle.</p>
-      </div>
-      <div class="how-it-works__step">
-        <div class="how-it-works__icon-circle" style="background-color: {{ section.settings.icon_circle_color }};">
-          <span aria-hidden="true">🌯</span>
-        </div>
+      </li>
+      <li class="how-it-works__step" style="--i: 2">
+        <span class="how-it-works__icon-circle">
+          <span class="how-it-works__step-num" aria-hidden="true">3</span>
+          {% render 'icon-step-bowl' %}
+        </span>
         <p class="how-it-works__step-text">Pair with snacks, wraps, rice, eggs or momos.</p>
-      </div>
-      <div class="how-it-works__step">
-        <div class="how-it-works__icon-circle" style="background-color: {{ section.settings.icon_circle_color }};">
-          <span aria-hidden="true">🔥</span>
-        </div>
+      </li>
+      <li class="how-it-works__step" style="--i: 3">
+        <span class="how-it-works__icon-circle">
+          <span class="how-it-works__step-num" aria-hidden="true">4</span>
+          {% render 'icon-step-snowflake' %}
+        </span>
         <p class="how-it-works__step-text">Reseal and refrigerate. Bold flavour, zero waste.</p>
-      </div>
-    </div>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -39,7 +55,7 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Ready in Seconds. Bold for Hours." },
     { "type": "color", "id": "band_color", "label": "Band background", "default": "#F7C2B8" },
-    { "type": "color", "id": "icon_circle_color", "label": "Icon circle color", "default": "#9D0101" }
+    { "type": "color", "id": "icon_circle_color", "label": "Icon & ring color", "default": "#9D0101", "info": "Used for the outline ring, the icon and the step number" }
   ]
 }
 {% endschema %}

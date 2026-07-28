@@ -792,17 +792,95 @@ h1, h2, h3, h4 {
   gap: 2rem;
   max-width: var(--page-width);
   margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
 }
-.how-it-works__step { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.how-it-works__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* Dashed rule threading the four steps together, so the row reads as a
+   sequence rather than four unrelated badges. Drawn from each step to the
+   next, so it never dangles off the last one. */
+.how-it-works__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 48px;
+  left: calc(50% + 60px);
+  right: calc(-50% + 60px);
+  border-top: 2px dashed var(--step-accent, #9D0101);
+  opacity: 0.28;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s ease calc(var(--i) * 0.12s + 0.25s);
+}
+.how-it-works.is-visible .how-it-works__step:not(:last-child)::after { transform: scaleX(1); }
+
+/* Outlined ring rather than a solid disc, matching the hero's outline
+   icons. Hover/focus inverts it to solid — the interaction that makes the
+   row feel touchable. */
 .how-it-works__icon-circle {
+  position: relative;
   width: 96px; height: 96px;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 2.5rem;
   margin-bottom: 1.1rem;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  color: var(--step-accent, #9D0101);
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px solid var(--step-accent, #9D0101);
+  transition: background-color 0.28s ease, color 0.28s ease,
+              transform 0.32s cubic-bezier(0.34, 1.45, 0.64, 1),
+              box-shadow 0.28s ease;
 }
+.how-it-works__icon-circle svg { width: 42px; height: 42px; transition: transform 0.32s cubic-bezier(0.34, 1.45, 0.64, 1); }
+.how-it-works__step-num {
+  position: absolute;
+  top: -6px; right: -2px;
+  width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--step-accent, #9D0101);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition: transform 0.32s cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+.how-it-works__step:hover .how-it-works__icon-circle,
+.how-it-works__step:focus-within .how-it-works__icon-circle {
+  background: var(--step-accent, #9D0101);
+  color: #fff;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
+}
+.how-it-works__step:hover .how-it-works__icon-circle svg { transform: rotate(-8deg) scale(1.08); }
+.how-it-works__step:hover .how-it-works__step-num { transform: scale(1.15) rotate(8deg); }
 .how-it-works__step-text { font-size: 0.9rem; font-weight: 700; color: var(--color-text); max-width: 190px; margin: 0; }
+
+/* Scroll-triggered reveal: the steps rise in one after another once the
+   section actually enters the viewport. */
+.how-it-works__step {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--i) * 0.12s);
+}
+.how-it-works.is-visible .how-it-works__step { opacity: 1; transform: none; }
+/* Without JS the observer never runs, so the steps must not stay hidden. */
+.no-js .how-it-works__step { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .how-it-works__step,
+  .how-it-works__icon-circle,
+  .how-it-works__icon-circle svg,
+  .how-it-works__step-num { transition: none; }
+  .how-it-works__step { opacity: 1; transform: none; }
+  .how-it-works__step:not(:last-child)::after { transform: scaleX(1); transition: none; }
+}
 
 /* ---------- Lifestyle banner ---------- */
 .lifestyle-banner { padding: 5rem 0; background: var(--color-background-alt); }
@@ -1181,6 +1259,9 @@ h1, h2, h3, h4 {
     margin-top: 0;
   }
   .how-it-works__grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+  /* The connector assumes one continuous row; once the steps wrap to a
+     2x2 it would trail off the end of each row into empty space. */
+  .how-it-works__step:not(:last-child)::after { display: none; }
   .testimonials__inner { grid-template-columns: 1fr; }
   .lifestyle-banner__inner { grid-template-columns: 1fr; }
   .lifestyle-banner__media { max-width: 380px; margin: 0 auto; }
