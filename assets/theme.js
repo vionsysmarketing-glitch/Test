@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initHeroProductSlider();
   initQuantityStepper();
   initProductRecommendations();
+  initHeroParallax();
 });
 
 function initScrollShowcase() {
@@ -213,4 +214,55 @@ function initProductRecommendations() {
       // Network hiccup or recommendations unavailable — fail silently and
       // leave the section empty rather than surfacing a broken UI.
     });
+}
+
+
+function initHeroParallax() {
+  var hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  var gardens = hero.querySelectorAll('.hero__garden');
+  if (!gardens.length) return;
+
+  // Pointer-driven depth is meaningless without a pointer, and unwanted if
+  // the visitor has asked for reduced motion — in both cases the clusters
+  // simply stay put.
+  var mq = window.matchMedia;
+  if (mq && mq('(prefers-reduced-motion: reduce)').matches) return;
+  if (mq && mq('(hover: none)').matches) return;
+
+  var targetX = 0;
+  var targetY = 0;
+  var frame = null;
+
+  function apply() {
+    frame = null;
+    for (var i = 0; i < gardens.length; i++) {
+      var garden = gardens[i];
+      // Opposite depths so the two sides counter-move, which reads as
+      // parallax rather than the whole section sliding.
+      var depth = parseFloat(garden.getAttribute('data-depth')) || 1;
+      garden.style.setProperty('--px', (targetX * 30 * depth).toFixed(2) + 'px');
+      garden.style.setProperty('--py', (targetY * 20 * depth).toFixed(2) + 'px');
+    }
+  }
+
+  function schedule() {
+    if (!frame) frame = window.requestAnimationFrame(apply);
+  }
+
+  hero.addEventListener('mousemove', function (event) {
+    var rect = hero.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    // Normalised to -0.5..0.5 from the section's centre.
+    targetX = (event.clientX - rect.left) / rect.width - 0.5;
+    targetY = (event.clientY - rect.top) / rect.height - 0.5;
+    schedule();
+  });
+
+  hero.addEventListener('mouseleave', function () {
+    targetX = 0;
+    targetY = 0;
+    schedule();
+  });
 }
