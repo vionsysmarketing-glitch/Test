@@ -20,7 +20,12 @@
   {% comment %} Fonts matched to the ulagnatural.com reference: Playfair Display serif for headings, DM Sans for body {% endcomment %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {% comment %}
+    Baloo 2 is loaded for the hero headline only — a chunky rounded
+    letterform much closer to the brand's own packaging/logo lettering
+    than the editorial serif, which read as stiff at poster size.
+  {% endcomment %}
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
 
   {{ 'theme.css' | asset_url | stylesheet_tag }}
 

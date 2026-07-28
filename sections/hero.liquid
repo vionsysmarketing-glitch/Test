@@ -16,25 +16,18 @@
 
 <section class="hero" style="--hero-bg: {{ section.settings.background_color }};">
   {% comment %}
-    Background: the sunburst rays + halftone dot texture are gone (the dot
-    grid read as noise rather than texture). In their place, still in the
-    same brand orange: a soft warm glow plus wide flowing ribbon bands —
-    the same curve language already used for the section wave dividers
-    elsewhere in this theme, just scaled up as a full-bleed backdrop, so
-    it reads as calm depth instead of pattern.
+    Bold poster treatment rather than a tidy centered stack: hard-edged
+    background shapes (no soft gradients or dot grids), oversized pop-art
+    display type where the accent phrase gets a hard offset shadow, and
+    rotated "stickers" pinned around the headline with thick outlines and
+    solid drop shadows. The polite four-column feature strip is replaced
+    by a scrolling ticker along the bottom, reusing the same `marquee`
+    keyframe as the site's announcement bar.
 
-    Layout: the features move out of the middle of the stack (they were a
-    2x2 grid wedged between the heading and the buttons) and become a
-    full-width strip along the bottom of the section, divided into four
-    columns. That leaves the top as a clean headline + CTA block and
-    gives the section a defined base instead of everything floating in
-    one centered pile.
+    Sticker copy is pulled from lines the brand already runs in the
+    announcement bar, so nothing here invents a new claim.
   {% endcomment %}
-  <span class="hero__glow" aria-hidden="true"></span>
-  <svg class="hero__ribbons" viewBox="0 0 1440 620" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,90 C320,10 760,180 1440,60 L1440,200 C760,320 320,150 0,230 Z" fill="rgba(255,255,255,0.09)"></path>
-    <path d="M0,300 C360,220 780,400 1440,270 L1440,430 C780,560 360,380 0,460 Z" fill="rgba(140,60,4,0.10)"></path>
-  </svg>
+  <span class="hero__shapes" aria-hidden="true"></span>
 
   <div class="hero__deco hero__deco--1" style="color: #FFFFFF; --deco-float-duration: 5.2s; --deco-float-delay: -2.6s;">{% render 'deco-chili' %}</div>
   <div class="hero__deco hero__deco--2" style="color: #FFE8CF; --deco-float-duration: 6.5s; --deco-float-delay: -0.9s;">{% render 'deco-leaf-branch' %}</div>
@@ -49,7 +42,11 @@
       <div class="hero__leaf-badge">
         <span aria-hidden="true">🌶️</span> {{ section.settings.eyebrow }}
       </div>
-      <h1 class="hero__title hero__title--compact">{{ heading_lead }} <span class="hero__title-accent">{{ heading_last }}<svg class="hero__title-underline" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2,8 C40,2 90,12 130,6 C160,2 180,10 198,5"></path></svg></span></h1>
+
+      <h1 class="hero__title">
+        <span class="hero__title-lead">{{ heading_lead }}</span>
+        <span class="hero__title-accent">{{ heading_last }}<svg class="hero__title-underline" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2,8 C40,2 90,12 130,6 C160,2 180,10 198,5"></path></svg></span>
+      </h1>
 
       <div class="hero__actions">
         <a href="{{ section.settings.primary_link }}" class="btn btn--solid">{{ section.settings.primary_label }}</a>
@@ -58,26 +55,31 @@
           {{ section.settings.range_label }} <span aria-hidden="true">→</span>
         </a>
       </div>
-    </div>
 
-    {% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
-    <div class="hero__strip">
-      <div class="hero__feature">
-        <span class="hero__feature-icon" style="--feature-color: #4A6B1F;">{% render 'icon-leaf' %}</span>
-        <span class="hero__feature-label">Natural Ingredients</span>
-      </div>
-      <div class="hero__feature">
-        <span class="hero__feature-icon" style="--feature-color: #014C9D;">{% render 'icon-shield' %}</span>
-        <span class="hero__feature-label">Zero Preservatives</span>
-      </div>
-      <div class="hero__feature">
-        <span class="hero__feature-icon" style="--feature-color: #9D0101;">{% render 'icon-flame' %}</span>
-        <span class="hero__feature-label">Small-Batch Made</span>
-      </div>
-      <div class="hero__feature">
-        <span class="hero__feature-icon" style="--feature-color: #B5651D;">{% render 'icon-truck' %}</span>
-        <span class="hero__feature-label">Free Shipping</span>
-      </div>
+      {% comment %} Hardcoded — see scroll-showcase.liquid for why. {% endcomment %}
+      <span class="hero__sticker hero__sticker--a" aria-hidden="true">One bite and you&rsquo;re hooked</span>
+      <span class="hero__sticker hero__sticker--b" aria-hidden="true">Zero preservatives</span>
+      <span class="hero__mascot" aria-hidden="true">
+        <img src="{{ 'logo-icon.png' | asset_url }}" alt="" width="86" height="86" loading="eager">
+      </span>
+    </div>
+  </div>
+
+  {% comment %}
+    Items are duplicated (second set aria-hidden) so the track can loop
+    seamlessly at translateX(-50%) — same construction as the
+    announcement bar, which shares the `marquee` keyframe.
+  {% endcomment %}
+  <div class="hero__marquee" aria-label="Why Hungry Dinosaur">
+    <div class="hero__marquee-track">
+      <span class="hero__marquee-item">Natural Ingredients</span>
+      <span class="hero__marquee-item">Zero Preservatives</span>
+      <span class="hero__marquee-item">Small-Batch Made</span>
+      <span class="hero__marquee-item">Free Shipping</span>
+      <span class="hero__marquee-item" aria-hidden="true">Natural Ingredients</span>
+      <span class="hero__marquee-item" aria-hidden="true">Zero Preservatives</span>
+      <span class="hero__marquee-item" aria-hidden="true">Small-Batch Made</span>
+      <span class="hero__marquee-item" aria-hidden="true">Free Shipping</span>
     </div>
   </div>
 
