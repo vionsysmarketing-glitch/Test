@@ -440,10 +440,13 @@ h1, h2, h3, h4 {
 }
 .hero__feature-label { font-size: 0.78rem; font-weight: 700; color: #fff; max-width: 90px; line-height: 1.25; }
 
-/* Single featured product, no slider, no card. garam-masala-cutout.png
+/* Single featured product, styled after the brand's own marketing
+   creatives (assets/hero-banner.jpg) instead of a plain float: a comic-
+   style sunburst + halftone dot texture behind the product, sparkle
+   accents, and a thick-outlined pop-art badge. garam-masala-cutout.png
    has the studio photo's white background genuinely removed (real alpha
    transparency, not a color trick) and is cropped tight to the jar, so it
-   floats directly on the hero color with nothing behind it at all. */
+   still floats cleanly with nothing but this new backdrop behind it. */
 .hero__feature-slider {
   position: relative;
   z-index: 2;
@@ -470,6 +473,47 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
 }
+/* Alternating light/transparent wedges radiating from center — a
+   comic-book "pow" sunburst done as a plain conic-gradient circle, same
+   device as the real hero-banner.jpg creative's background. */
+.hero__showcase-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 190%;
+  height: 190%;
+  transform: translate(-50%, -50%) rotate(8deg);
+  border-radius: 50%;
+  background: repeating-conic-gradient(rgba(255,255,255,0.16) 0deg 9deg, rgba(255,255,255,0) 9deg 18deg);
+  z-index: -2;
+  pointer-events: none;
+}
+/* Halftone dot texture over the sunburst, same trick used for the
+   .ingredients section background — reads as print/comic texture. */
+.hero__showcase-dots {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 165%;
+  height: 165%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-image: radial-gradient(rgba(255,255,255,0.4) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(circle, #000 55%, transparent 78%);
+          mask-image: radial-gradient(circle, #000 55%, transparent 78%);
+  z-index: -1;
+  pointer-events: none;
+}
+.hero__showcase-sparkle {
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero__showcase-sparkle--1 { top: 4%; left: -6%; width: 20px; height: 20px; opacity: 0.9; }
+.hero__showcase-sparkle--2 { top: 62%; right: -8%; width: 14px; height: 14px; opacity: 0.7; }
+.hero__showcase-sparkle--3 { bottom: 6%; left: 2%; width: 12px; height: 12px; opacity: 0.6; }
 /* Soft blurred "ground" shadow under the jar, separate from the image's
    own drop-shadow filter below — gives it a grounded contact shadow
    rather than only an ambient one. Safe to blur into a plain ellipse here
@@ -498,22 +542,25 @@ h1, h2, h3, h4 {
   filter: drop-shadow(0 18px 20px rgba(20, 10, 2, 0.35));
   transform: rotate(-3deg);
 }
+/* Bold, thick-outlined pop-art badge instead of a plain soft pill — reads
+   closer to the hand-drawn comic call-outs in the brand's own creatives. */
 .hero__showcase-badge {
   position: absolute;
-  top: 6%;
-  right: 4%;
-  z-index: 1;
-  background: var(--color-primary, #9D0101);
-  color: #fff;
+  top: 2%;
+  right: 0%;
+  z-index: 2;
+  background: var(--color-accent, #E6D624);
+  color: var(--color-text, #222);
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.72rem;
+  font-weight: 800;
+  font-size: 0.74rem;
   letter-spacing: 0.02em;
   white-space: nowrap;
-  padding: 0.5rem 0.9rem;
+  padding: 0.55rem 1rem;
   border-radius: var(--radius-pill);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
-  transform: rotate(6deg);
+  border: 2.5px solid var(--color-text, #222);
+  box-shadow: 3px 4px 0 var(--color-text, #222);
+  transform: rotate(8deg);
 }
 
 .hero__feature-caption {

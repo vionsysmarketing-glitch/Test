@@ -72,20 +72,21 @@
       <div class="hero__deco hero__deco--6" style="color: #FFE8CF; --deco-float-duration: 5.1s; --deco-float-delay: -3.2s;">{% render 'deco-leaf-branch' %}</div>
 
       {% comment %}
-        A single featured product (no slider, no card of any kind). The
-        source studio photos are plain opaque JPGs on a pure white
-        background, which is exactly the problem every earlier attempt ran
-        into: floating them directly showed a white rectangle, a colored
-        backdrop left a visible seam, and a blend-mode workaround visibly
-        tinted the product's real colors. So this uses a real cutout —
-        garam-masala-cutout.png has the white studio background actually
-        removed (genuine alpha transparency, produced by flood-filling the
-        background region from the image's border and feathering the
-        edge), tightly cropped to the product itself. That means the
-        product can float directly on the hero color with a normal
-        drop-shadow filter (which now correctly follows the jar's own
-        silhouette instead of the old rectangular bounding box) and no
-        box, card, or color trick of any kind behind it.
+        Redesigned around the brand's own real marketing creatives
+        (assets/hero-banner.jpg, hero-banner-mobile.jpg — comic-style
+        sunburst rays, halftone dots, sparkle accents, bold outlined
+        badges) rather than another plain product float. The banner images
+        themselves aren't used directly since they carry their own baked-in
+        campaign text ("Find Delicious Chutneys Here") that would clash
+        with this section's real heading — this rebuilds their visual
+        language in CSS instead: a radiating sunburst + halftone dot
+        texture behind the product, sparkle accents, and a thick-outlined
+        pop-art "Best Seller" badge in place of the plain pill used before.
+
+        The product itself is still garam-masala-cutout.png — a real
+        background-removed cutout (genuine alpha transparency, flood-
+        filled from the image border and feathered), so it floats cleanly
+        over the new sunburst without any leftover white studio rectangle.
       {% endcomment %}
       {% comment %}
         Link fallback is resolved by looking up the real product by title
@@ -104,6 +105,11 @@
         <span class="hero__feature-product-eyebrow">{{ section.settings.category_label }}</span>
 
         <div class="hero__showcase-stage">
+          <span class="hero__showcase-burst" aria-hidden="true"></span>
+          <span class="hero__showcase-dots" aria-hidden="true"></span>
+          <span class="hero__showcase-sparkle hero__showcase-sparkle--1" aria-hidden="true">{% render 'icon-sparkle' %}</span>
+          <span class="hero__showcase-sparkle hero__showcase-sparkle--2" aria-hidden="true">{% render 'icon-sparkle' %}</span>
+          <span class="hero__showcase-sparkle hero__showcase-sparkle--3" aria-hidden="true">{% render 'icon-sparkle' %}</span>
           <span class="hero__showcase-badge">★ Best Seller</span>
           <span class="hero__showcase-shadow" aria-hidden="true"></span>
           <img class="hero__feature-product-image" src="{{ 'garam-masala-cutout.png' | asset_url }}" alt="Garam Masala Powder" loading="eager" width="528" height="569">
