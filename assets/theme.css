@@ -403,7 +403,7 @@ h1, h2, h3, h4 {
   color: #fff;
   margin-bottom: 1rem;
 }
-.hero__title-accent { color: var(--color-accent); }
+.hero__title-accent { color: #9D0101; }
 .hero__title--compact { font-size: clamp(2.2rem, 3.4vw, 3.2rem); margin-bottom: 1.75rem; }
 .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
 /* .btn--outline elsewhere sits on light backgrounds and uses currentColor
@@ -424,7 +424,7 @@ h1, h2, h3, h4 {
   border-radius: 50%;
   background: #fff;
   color: var(--feature-color, var(--color-primary));
-  box-shadow: 0 2px 8px rgba(34,34,34,0.16), 0 0 0 2px var(--feature-color, transparent) inset;
+  box-shadow: 0 2px 8px rgba(34,34,34,0.16), 0 0 0 2px #9D0101 inset;
 }
 .hero__feature-label { font-size: 0.78rem; font-weight: 700; color: #fff; max-width: 90px; line-height: 1.25; }
 

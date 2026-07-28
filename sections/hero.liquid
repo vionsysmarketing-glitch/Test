@@ -1,8 +1,18 @@
+{% comment %}
+  Accents the last two words of the heading (not just one) so a phrase
+  like "Real Flavour" can be highlighted as a unit rather than only its
+  final word — falls back to accenting just the last word if the heading
+  is shorter than 2 words.
+{% endcomment %}
 {% assign heading_words = section.settings.heading | split: ' ' %}
 {% assign heading_word_count = heading_words.size %}
-{% assign heading_lead_count = heading_word_count | minus: 1 %}
+{% assign heading_accent_words = 2 %}
+{% if heading_word_count < 2 %}
+  {% assign heading_accent_words = 1 %}
+{% endif %}
+{% assign heading_lead_count = heading_word_count | minus: heading_accent_words %}
 {% assign heading_lead = heading_words | slice: 0, heading_lead_count | join: ' ' %}
-{% assign heading_last = heading_words | last %}
+{% assign heading_last = heading_words | slice: heading_lead_count, heading_accent_words | join: ' ' %}
 
 <section class="hero" style="--hero-bg: {{ section.settings.background_color }}; --hero-stage-color: {{ section.settings.stage_color }}; --hero-stage-color-alt: {{ section.settings.stage_color_alt }};">
   <div class="hero__deco hero__deco--1" style="color: #FFFFFF; --deco-float-duration: 5.2s; --deco-float-delay: -2.6s;">{% render 'deco-chili' %}</div>
@@ -147,7 +157,7 @@
   "name": "Hero",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Small-batch. Big flavour." },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Bold Flavour. Zero Boring." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Nothing Beats Real Flavour" },
     { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Shop the Pack" },
     { "type": "url", "id": "primary_link", "label": "Primary button link" },
     { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Our Story" },
