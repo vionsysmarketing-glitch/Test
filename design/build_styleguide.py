@@ -252,7 +252,8 @@ def grid_block(d, y):
                size=11, weight=600, fill=C["slate_600"], anchor="middle",
                name="Margin label")
         d.text(fx + W * scale / 2, fy + 176,
-               "12 columns · 76px column · 24px gutter · 1200px content",
+               f"{GRID['columns']} columns · {GRID['column_width']}px column · "
+               f"{GRID['gutter']}px gutter · {GRID['content']}px content",
                family=BODY, size=12, weight=600, fill=C["slate_600"],
                anchor="middle", name="Spec")
 
