@@ -1,0 +1,715 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="390" height="7304" viewBox="0 0 390 7304" fill="none">
+<defs>
+<linearGradient id="heroGradientM" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E2647"/><stop offset="1" stop-color="#0A1526"/></linearGradient>
+<clipPath id="clip"><rect x="0" y="68" width="390" height="824"/></clipPath>
+<clipPath id="clip-2"><rect x="20" y="2239" width="350" height="260" rx="16" ry="16"/></clipPath>
+<clipPath id="clip-3"><rect x="0" y="2949" width="390" height="1009"/></clipPath>
+<clipPath id="clip-4"><rect x="20" y="5860" width="350" height="366" rx="16" ry="16"/></clipPath>
+<clipPath id="clip-5"><rect x="0" y="6270" width="390" height="356"/></clipPath>
+</defs>
+<g id="Frame / Homepage — Mobile 390">
+<rect id="Canvas" x="0" y="0" width="390" height="7304" fill="#FFFFFF"/>
+<g id="Section / Header">
+<rect id="Background" x="0" y="0" width="390" height="68" fill="#FFFFFF"/>
+<line id="Bottom rule" x1="0" y1="68" x2="390" y2="68" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+<g id="Logo / CorporateLounge">
+<text id="CORP" x="20" y="33.84" font-family="Varta" font-size="19.8" font-weight="700" fill="#163969" letter-spacing="0.792">CORP</text>
+<g id="Compass mark">
+<circle id="Ring" cx="82.5685" cy="27.207" r="8.4645" fill="none" stroke="#163969" stroke-width="2.871"/>
+<path id="Arc" d="M85.1842 19.1568 A8.4645 8.4645 0 0 1 90.6187 29.8227" fill="none" stroke="#F7B537" stroke-width="2.871" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle" d="M89.5984 15.9568 L85.0872 28.7809 L75.5386 38.4572 L80.0498 25.6331 Z" fill="#C62C28"/>
+<circle id="Pivot" cx="82.5685" cy="27.207" r="0.7425" fill="#FFFFFF"/>
+</g>
+<text id="RATE" x="93.6565" y="33.84" font-family="Varta" font-size="19.8" font-weight="700" fill="#163969" letter-spacing="0.792">RATE</text>
+<text id="LOUNGE" x="80.786" y="48.096" font-family="Varta" font-size="11.88" font-weight="700" fill="#C62C28" letter-spacing="2.871">LOUNGE</text>
+</g>
+<g id="Menu button">
+<line id="Bar" x1="340" y1="26" x2="370" y2="26" stroke="#163969" stroke-width="2" stroke-linecap="round"/>
+<line id="Bar-2" x1="340" y1="34" x2="370" y2="34" stroke="#163969" stroke-width="2" stroke-linecap="round"/>
+<line id="Bar-3" x1="340" y1="42" x2="370" y2="42" stroke="#163969" stroke-width="2" stroke-linecap="round"/>
+</g>
+</g>
+<g id="Section / Hero">
+<rect id="Background-2" x="0" y="68" width="390" height="824" fill="url(#heroGradientM)"/>
+<g id="Decoration" clip-path="url(#clip)">
+<g id="Background compass watermark" opacity="0.09">
+<g id="Compass mark-2">
+<circle id="Ring-2" cx="340" cy="188" r="162" fill="none" stroke="#FFFFFF" stroke-width="16"/>
+<path id="Arc-2" d="M390.061 33.9288 A162 162 0 0 1 494.071 238.061" fill="none" stroke="#F7B537" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle-2" d="M460.716 -5.18536 L383.25 215.026 L219.284 381.185 L296.75 160.974 Z" fill="#C62C28"/>
+<circle id="Pivot-2" cx="340" cy="188" r="12.75" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<g id="Eyebrow / Guiding Ambition. Charting Success.">
+<text id="Label" x="20" y="124" font-family="Open Sans" font-size="13" font-weight="700" fill="#F7B537" letter-spacing="1.6">GUIDING AMBITION. CHARTING SUCCESS.</text>
+</g>
+<g id="Hero headline">
+<text id="line-1" x="20" y="170.34" font-family="Varta" font-size="34" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">Most operations don’t</text>
+<text id="line-2" x="20" y="211.34" font-family="Varta" font-size="34" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">break all at once. They</text>
+<text id="line-3" x="20" y="252.34" font-family="Varta" font-size="34" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">drift.</text>
+</g>
+<g id="Hero subheadline">
+<text id="line-1-2" x="20" y="297.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#B9C6D8">When work moves differently across teams,</text>
+<text id="line-2-2" x="20" y="322.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#B9C6D8">systems, and automation, results become</text>
+<text id="line-3-2" x="20" y="347.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#B9C6D8">inconsistent and risk increases.</text>
+</g>
+<g id="Button / See How Work Is Really Moving">
+<rect id="Surface" x="20" y="382" width="350" height="54" rx="6" ry="6" fill="#C62C28"/>
+<text id="Label-2" x="42.0016" y="414" font-family="Open Sans" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="0.8">SEE HOW WORK IS REALLY MOVING</text>
+<path id="Arrow" d="M337.998 409 H349.998 M344.998 404.5 L349.998 409 L344.998 413.5" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Button / Schedule a Call">
+<rect id="Surface-2" x="20" y="448" width="350" height="54" rx="6" ry="6" fill="none" stroke="#6F86A6" stroke-width="1.5"/>
+<text id="Label-3" x="122.992" y="480" font-family="Open Sans" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="0.8">SCHEDULE A CALL</text>
+</g>
+<g id="Drift telemetry card">
+<rect id="Surface-3" x="20" y="534" width="350" height="302" rx="10" ry="10" fill="#FFFFFF"/>
+<g id="Eyebrow / Process telemetry">
+<text id="Label-4" x="40" y="568" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">PROCESS TELEMETRY</text>
+</g>
+<text id="Card title" x="40" y="600" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Intake → Approval</text>
+<line id="Divider" x1="40" y1="618" x2="350" y2="618" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+<g id="Lane / Intake">
+<text id="Label-5" x="40" y="654" font-family="Open Sans" font-size="12" font-weight="600" fill="#3C4A5F">Intake</text>
+<line id="Standard path" x1="108" y1="650" x2="310" y2="650" stroke="#DEE5EE" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="4 4"/>
+<path id="Actual path" d="M108 650 C188.8 650 219.1 652.88 310 652.88" fill="none" stroke="#C62C28" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="End node" cx="310" cy="652.88" r="3.6" fill="#C62C28"/>
+<text id="Delta" x="350" y="656.88" font-family="Open Sans" font-size="12" font-weight="700" fill="#C62C28" text-anchor="end">+2d</text>
+</g>
+<g id="Lane / Review">
+<text id="Label-6" x="40" y="700" font-family="Open Sans" font-size="12" font-weight="600" fill="#3C4A5F">Review</text>
+<line id="Standard path-2" x1="108" y1="696" x2="310" y2="696" stroke="#DEE5EE" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="4 4"/>
+<path id="Actual path-2" d="M108 696 C188.8 696 219.1 704.32 310 704.32" fill="none" stroke="#C62C28" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="End node-2" cx="310" cy="704.32" r="3.6" fill="#C62C28"/>
+<text id="Delta-2" x="350" y="708.32" font-family="Open Sans" font-size="12" font-weight="700" fill="#C62C28" text-anchor="end">+5d</text>
+</g>
+<g id="Lane / Approval">
+<text id="Label-7" x="40" y="746" font-family="Open Sans" font-size="12" font-weight="600" fill="#3C4A5F">Approval</text>
+<line id="Standard path-3" x1="108" y1="742" x2="310" y2="742" stroke="#DEE5EE" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="4 4"/>
+<path id="Actual path-3" d="M108 742 C188.8 742 219.1 758 310 758" fill="none" stroke="#C62C28" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="End node-3" cx="310" cy="758" r="3.6" fill="#C62C28"/>
+<text id="Delta-3" x="350" y="762" font-family="Open Sans" font-size="12" font-weight="700" fill="#C62C28" text-anchor="end">+7d</text>
+</g>
+<line id="Footer divider" x1="40" y1="778" x2="350" y2="778" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+<rect id="Alert pill" x="40" y="792" width="128" height="28" rx="999" ry="999" fill="#F7E3E2"/>
+<circle id="Alert dot" cx="57" cy="806" r="3.5" fill="#C62C28"/>
+<text id="Alert label" x="68" y="810" font-family="Open Sans" font-size="10" font-weight="700" fill="#A6231F" letter-spacing="0.7">DRIFT DETECTED</text>
+<text id="Alert value" x="350" y="810" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="end">14 days lost</text>
+</g>
+</g>
+<g id="Section / Contracts and certifications">
+<rect id="Background-3" x="0" y="892" width="390" height="258" fill="#FFFFFF"/>
+<text id="Label-8" x="195" y="934" font-family="Open Sans" font-size="11" font-weight="700" fill="#8A97AA" letter-spacing="1.4" text-anchor="middle">CONTRACTS AND CERTIFICATIONS</text>
+<g id="Certification chips">
+<g id="Chip / HUB">
+<rect id="Surface-4" x="49.6797" y="954" width="65.3281" height="32" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-9" x="82.3438" y="974" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">HUB</text>
+</g>
+<g id="Chip / MBE">
+<rect id="Surface-5" x="123.008" y="954" width="65.0938" height="32" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-10" x="155.555" y="974" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">MBE</text>
+</g>
+<g id="Chip / WOSB">
+<rect id="Surface-6" x="196.102" y="954" width="75.8281" height="32" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-11" x="234.016" y="974" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">WOSB</text>
+</g>
+<g id="Chip / SBE">
+<rect id="Surface-7" x="279.93" y="954" width="60.3906" height="32" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-12" x="310.125" y="974" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">SBE</text>
+</g>
+<g id="Chip / SBA">
+<rect id="Surface-8" x="91.5938" y="994" width="61.9531" height="32" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-13" x="122.57" y="1014" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">SBA</text>
+</g>
+<g id="Chip / DIR-Approved">
+<rect id="Surface-9" x="161.547" y="994" width="136.859" height="32" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-14" x="229.977" y="1014" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">DIR-APPROVED</text>
+</g>
+<g id="Chip / TIPS Cooperative Purchasing">
+<rect id="Surface-10" x="67.2031" y="1034" width="255.594" height="32" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-15" x="195" y="1054" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">TIPS COOPERATIVE PURCHASING</text>
+</g>
+<g id="Chip / Hire Houston First">
+<rect id="Surface-11" x="58.0156" y="1074" width="180.766" height="32" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-16" x="148.398" y="1094" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">HIRE HOUSTON FIRST</text>
+</g>
+<g id="Chip / NMSDC">
+<rect id="Surface-12" x="246.781" y="1074" width="85.2031" height="32" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-17" x="289.383" y="1094" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">NMSDC</text>
+</g>
+</g>
+</g>
+<g id="Section / Industries">
+<rect id="Background-4" x="0" y="1150" width="390" height="1033" fill="#F4F7FB"/>
+<g id="Section header / Steer Complex Operations With Cl">
+<g id="Eyebrow / Who we steer">
+<line id="Rule" x1="20" y1="1201" x2="48" y2="1201" stroke="#C62C28" stroke-width="2" stroke-linecap="butt"/>
+<text id="Label-18" x="60" y="1206" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">WHO WE STEER</text>
+</g>
+<g id="Heading">
+<text id="line-1-3" x="20" y="1247.16" font-family="Varta" font-size="27" font-weight="700" fill="#10203A" letter-spacing="-0.3">Steer Complex Operations</text>
+<text id="line-2-3" x="20" y="1281.16" font-family="Varta" font-size="27" font-weight="700" fill="#10203A" letter-spacing="-0.3">With Clarity</text>
+</g>
+<g id="Subheading">
+<text id="line-1-4" x="20" y="1320.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">The same drift shows up everywhere — it just</text>
+<text id="line-2-4" x="20" y="1345.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">carries a different cost depending on who you</text>
+<text id="line-3-3" x="20" y="1370.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">answer to.</text>
+</g>
+</g>
+<g id="Card / Government &amp; Municipalities">
+<rect id="Surface-13" x="20" y="1409" width="350" height="166" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<rect id="Icon tile" x="40" y="1431" width="44" height="44" rx="6" ry="6" fill="#EAF0F7"/>
+<g id="Icon / government">
+<path id="Icon / government-2" d="M51 1461.25 H73" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-3" d="M62 1443.83 L71.1667 1449.33 H52.8333 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-4" d="M55.5833 1451.17 V1459.42" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-5" d="M61.0833 1451.17 V1459.42" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-6" d="M66.5833 1451.17 V1459.42" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title">
+<text id="line-1-5" x="98" y="1452.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Government &amp; Municipalities</text>
+</g>
+<g id="Body">
+<text id="line-1-6" x="40" y="1501.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Public trust depends on operational discipline.</text>
+<text id="line-2-5" x="40" y="1523.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">We help you protect it with oversight-ready</text>
+<text id="line-3-4" x="40" y="1545.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">workflows and consistent execution.</text>
+</g>
+</g>
+<g id="Card / Education">
+<rect id="Surface-14" x="20" y="1591" width="350" height="166" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<rect id="Icon tile-2" x="40" y="1613" width="44" height="44" rx="6" ry="6" fill="#EAF0F7"/>
+<g id="Icon / education">
+<path id="Icon / education-2" d="M62 1626.75 L72.0833 1632.25 L62 1637.75 L51.9167 1632.25 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / education-3" d="M55.5833 1634.08 V1639.58 C55.5833 1642.33 68.4167 1642.33 68.4167 1639.58 V1634.08" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-2">
+<text id="line-1-7" x="98" y="1634.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Education</text>
+</g>
+<g id="Body-2">
+<text id="line-1-8" x="40" y="1683.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Your institution runs on process. When</text>
+<text id="line-2-6" x="40" y="1705.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">departments fall out of alignment, compliance</text>
+<text id="line-3-5" x="40" y="1727.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">risk and student experience both suffer.</text>
+</g>
+</g>
+<g id="Card / Energy">
+<rect id="Surface-15" x="20" y="1773" width="350" height="166" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<rect id="Icon tile-3" x="40" y="1795" width="44" height="44" rx="6" ry="6" fill="#EAF0F7"/>
+<g id="Icon / energy">
+<path id="Icon / energy-2" d="M62.9167 1807.83 L54.6667 1818.38 H61.5417 L60.1667 1826.17 L69.3333 1815.17 H62 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-3">
+<text id="line-1-9" x="98" y="1816.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Energy</text>
+</g>
+<g id="Body-3">
+<text id="line-1-10" x="40" y="1865.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">High-consequence work needs repeatable</text>
+<text id="line-2-7" x="40" y="1887.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">control. We standardise how work moves</text>
+<text id="line-3-6" x="40" y="1909.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">before automation locks the gaps in place.</text>
+</g>
+</g>
+<g id="Card / Corporate &amp; Private Governance">
+<rect id="Surface-16" x="20" y="1955" width="350" height="172" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<rect id="Icon tile-4" x="40" y="1977" width="44" height="44" rx="6" ry="6" fill="#EAF0F7"/>
+<g id="Icon / corporate">
+<path id="Icon / corporate-2" d="M52.8333 2007.25 H71.1667" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-3" d="M53.75 2007.25 V1993.5 H62.9167 V2007.25" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-4" d="M62.9167 2007.25 V1998.08 H70.25 V2007.25" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-5" d="M56.5 1996.25 h0.0916667" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-6" d="M60.1667 1996.25 h0.0916667" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-7" d="M56.5 2000.83 h0.0916667" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-8" d="M60.1667 2000.83 h0.0916667" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-9" d="M65.6667 2001.75 h0.0916667" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-4">
+<text id="line-1-11" x="98" y="1998.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Corporate &amp; Private</text>
+<text id="line-2-8" x="98" y="2024.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Governance</text>
+</g>
+<g id="Body-4">
+<text id="line-1-12" x="40" y="2053.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Mission alone won’t carry you. Strong</text>
+<text id="line-2-9" x="40" y="2075.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">operations will — with simplified workflows</text>
+<text id="line-3-7" x="40" y="2097.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">and tools your teams actually use.</text>
+</g>
+</g>
+</g>
+<g id="Section / We Are CorporateLounge">
+<rect id="Background-5" x="0" y="2183" width="390" height="766" fill="#FFFFFF"/>
+<rect id="Panel" x="20" y="2239" width="350" height="260" rx="16" ry="16" fill="#0E2647"/>
+<g id="Compass rings" opacity="0.22" clip-path="url(#clip-2)">
+<circle id="Ring-3" cx="195" cy="2369" r="118" fill="none" stroke="#FFFFFF" stroke-width="1.25"/>
+<circle id="Ring-4" cx="195" cy="2369" r="86" fill="none" stroke="#FFFFFF" stroke-width="1.25"/>
+<circle id="Ring-5" cx="195" cy="2369" r="56" fill="none" stroke="#FFFFFF" stroke-width="1.25"/>
+</g>
+<g id="Compass mark-3">
+<circle id="Ring-6" cx="195" cy="2369" r="39.5" fill="none" stroke="#FFFFFF" stroke-width="9"/>
+<path id="Arc-3" d="M207.206 2331.43 A39.5 39.5 0 0 1 232.567 2381.21" fill="none" stroke="#F7B537" stroke-width="9" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle-3" d="M226.244 2319 L206.194 2375.99 L163.756 2419 L183.806 2362.01 Z" fill="#C62C28"/>
+<circle id="Pivot-3" cx="195" cy="2369" r="3.3" fill="#FFFFFF"/>
+</g>
+<g id="Eyebrow / Our story">
+<line id="Rule-2" x1="20" y1="2534" x2="48" y2="2534" stroke="#C62C28" stroke-width="2" stroke-linecap="butt"/>
+<text id="Label-19" x="60" y="2539" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">OUR STORY</text>
+</g>
+<g id="Heading-2">
+<text id="line-1-13" x="20" y="2580.16" font-family="Varta" font-size="27" font-weight="700" fill="#10203A" letter-spacing="-0.3">We Are CorporateLounge</text>
+</g>
+<g id="Paragraph 1">
+<text id="line-1-14" x="20" y="2621.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">We are a process-focused IT consultancy. We give</text>
+<text id="line-2-10" x="20" y="2646.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">the work structure — so execution stays</text>
+<text id="line-3-8" x="20" y="2671.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">consistent as teams, systems, and automation</text>
+<text id="line-4" x="20" y="2696.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">change around it.</text>
+</g>
+<g id="Paragraph 2">
+<text id="line-1-15" x="20" y="2731.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">We start with how work actually moves, not how the</text>
+<text id="line-2-11" x="20" y="2753.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">org chart says it should. Once the process holds, the</text>
+<text id="line-3-9" x="20" y="2775.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">technology, reporting, and governance built on top of</text>
+<text id="line-4-2" x="20" y="2797.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">it hold too.</text>
+</g>
+<line id="Divider-2" x1="20" y1="2831" x2="370" y2="2831" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+<g id="Story stats">
+<text id="Value" x="20" y="2879" font-family="Varta" font-size="30" font-weight="700" fill="#163969">100%</text>
+<g id="Label-20">
+<text id="line-1-16" x="20" y="2902.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#56657C" letter-spacing="0.2">Process-first</text>
+<text id="line-2-12" x="20" y="2920.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#56657C" letter-spacing="0.2">engagements</text>
+</g>
+<text id="Value-2" x="136.667" y="2879" font-family="Varta" font-size="30" font-weight="700" fill="#163969">4</text>
+<g id="Label-21">
+<text id="line-1-17" x="136.667" y="2902.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#56657C" letter-spacing="0.2">Sectors served</text>
+<text id="line-2-13" x="136.667" y="2920.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#56657C" letter-spacing="0.2">end-to-end</text>
+</g>
+<text id="Value-3" x="253.333" y="2879" font-family="Varta" font-size="30" font-weight="700" fill="#163969">12+</text>
+<g id="Label-22">
+<text id="line-1-18" x="253.333" y="2902.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#56657C" letter-spacing="0.2">Contracts &amp;</text>
+<text id="line-2-14" x="253.333" y="2920.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#56657C" letter-spacing="0.2">certifications</text>
+</g>
+</g>
+</g>
+<g id="Section / COMPASS method">
+<rect id="Background-6" x="0" y="2949" width="390" height="1009" fill="#0E2647"/>
+<g id="Decoration-2" clip-path="url(#clip-3)">
+<g id="Watermark" opacity="0.07">
+<g id="Compass mark-4">
+<circle id="Ring-7" cx="40" cy="3918" r="172" fill="none" stroke="#FFFFFF" stroke-width="16"/>
+<path id="Arc-4" d="M93.1509 3754.42 A172 172 0 0 1 203.582 3971.15" fill="none" stroke="#F7B537" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle-4" d="M167.817 3713.45 L85.7946 3946.62 L-87.8165 4122.55 L-5.7946 3889.38 Z" fill="#FFFFFF"/>
+<circle id="Pivot-4" cx="40" cy="3918" r="13.5" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<g id="Section header / Four principles that hold operat">
+<g id="Eyebrow / Why COMPASS">
+<line id="Rule-3" x1="20" y1="3004" x2="48" y2="3004" stroke="#F7B537" stroke-width="2" stroke-linecap="butt"/>
+<text id="Label-23" x="60" y="3009" font-family="Open Sans" font-size="13" font-weight="700" fill="#F7B537" letter-spacing="1.6">WHY COMPASS</text>
+</g>
+<g id="Heading-3">
+<text id="line-1-19" x="20" y="3050.16" font-family="Varta" font-size="27" font-weight="700" fill="#FFFFFF" letter-spacing="-0.3">Four principles that hold</text>
+<text id="line-2-15" x="20" y="3084.16" font-family="Varta" font-size="27" font-weight="700" fill="#FFFFFF" letter-spacing="-0.3">operations steady</text>
+</g>
+<g id="Subheading-2">
+<text id="line-1-20" x="20" y="3123.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#B9C6D8">COMPASS is how we keep work moving the same</text>
+<text id="line-2-16" x="20" y="3148.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#B9C6D8">way every time — before, during, and after the</text>
+<text id="line-3-10" x="20" y="3173.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#B9C6D8">technology changes.</text>
+</g>
+</g>
+<g id="Card / Standardize Before Automation">
+<rect id="Surface-17" x="20" y="3212" width="350" height="176" rx="10" ry="10" fill="#163969" stroke="#24405F" stroke-width="1.25"/>
+<text id="Index" x="40" y="3252" font-family="Varta" font-size="15" font-weight="700" fill="#F7B537" letter-spacing="1.2">01</text>
+<g id="Icon / standardize">
+<path id="Icon / standardize-2" d="M82 3238.5 V3257.5" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect id="Lane" x="86" y="3239.5" width="13" height="5" rx="2.5" ry="2.5" fill="none" stroke="#FFFFFF" stroke-width="1.9"/>
+<rect id="Lane-2" x="86" y="3245.5" width="13" height="5" rx="2.5" ry="2.5" fill="none" stroke="#FFFFFF" stroke-width="1.9"/>
+<rect id="Lane-3" x="86" y="3251.5" width="13" height="5" rx="2.5" ry="2.5" fill="none" stroke="#FFFFFF" stroke-width="1.9"/>
+</g>
+<g id="Title-5">
+<text id="line-1-21" x="114" y="3257.24" font-family="Varta" font-size="19" font-weight="700" fill="#FFFFFF">Standardize Before</text>
+<text id="line-2-17" x="114" y="3283.24" font-family="Varta" font-size="19" font-weight="700" fill="#FFFFFF">Automation</text>
+</g>
+<g id="Body-5">
+<text id="line-1-22" x="40" y="3312.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">Automating an inconsistent process just makes</text>
+<text id="line-2-18" x="40" y="3334.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">the inconsistency faster. We settle the standard</text>
+<text id="line-3-11" x="40" y="3356.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">first.</text>
+</g>
+</g>
+<g id="Card / Control Work as It Moves">
+<rect id="Surface-18" x="20" y="3402" width="350" height="164" rx="10" ry="10" fill="#163969" stroke="#24405F" stroke-width="1.25"/>
+<text id="Index-2" x="40" y="3442" font-family="Varta" font-size="15" font-weight="700" fill="#F7B537" letter-spacing="1.2">02</text>
+<g id="Icon / control">
+<path id="Icon / control-2" d="M80 3438 H87" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / control-3" d="M93 3438 H100" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / control-4" d="M96.5 3434.5 L100 3438 L96.5 3441.5" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect id="Gate" x="87.5" y="3432" width="5" height="12" rx="1.6" ry="1.6" fill="#FFFFFF"/>
+</g>
+<g id="Title-6">
+<text id="line-1-23" x="114" y="3447.24" font-family="Varta" font-size="19" font-weight="700" fill="#FFFFFF">Control Work as It Moves</text>
+</g>
+<g id="Body-6">
+<text id="line-1-24" x="40" y="3490.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">Every handoff gets an owner, a trigger, and a</text>
+<text id="line-2-19" x="40" y="3512.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">checkpoint, so work doesn’t stall between</text>
+<text id="line-3-12" x="40" y="3534.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">teams.</text>
+</g>
+</g>
+<g id="Card / Find Where Work Slows">
+<rect id="Surface-19" x="20" y="3580" width="350" height="142" rx="10" ry="10" fill="#163969" stroke="#24405F" stroke-width="1.25"/>
+<text id="Index-3" x="40" y="3620" font-family="Varta" font-size="15" font-weight="700" fill="#F7B537" letter-spacing="1.2">03</text>
+<g id="Icon / delay">
+<circle id="Dial" cx="90" cy="3616" r="9.5" fill="none" stroke="#FFFFFF" stroke-width="1.9"/>
+<path id="Icon / delay-2" d="M90 3610.5 V3616 H94.5" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-7">
+<text id="line-1-25" x="114" y="3625.24" font-family="Varta" font-size="19" font-weight="700" fill="#FFFFFF">Find Where Work Slows</text>
+</g>
+<g id="Body-7">
+<text id="line-1-26" x="40" y="3668.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">We measure the real path from intake to close</text>
+<text id="line-2-20" x="40" y="3690.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">and surface the delays that reporting hides.</text>
+</g>
+</g>
+<g id="Card / Own the Work End-to-End">
+<rect id="Surface-20" x="20" y="3736" width="350" height="164" rx="10" ry="10" fill="#163969" stroke="#24405F" stroke-width="1.25"/>
+<text id="Index-4" x="40" y="3776" font-family="Varta" font-size="15" font-weight="700" fill="#F7B537" letter-spacing="1.2">04</text>
+<g id="Icon / ownership">
+<path id="Icon / ownership-2" d="M90 3762.5 L99 3766.5 V3773 C99 3778 94 3780.5 90 3781.5 C86 3780.5 81 3778 81 3773 V3766.5 Z" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / ownership-3" d="M86 3772 L89 3775 L94.5 3769" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-8">
+<text id="line-1-27" x="114" y="3781.24" font-family="Varta" font-size="19" font-weight="700" fill="#FFFFFF">Own the Work End-to-End</text>
+</g>
+<g id="Body-8">
+<text id="line-1-28" x="40" y="3824.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">One accountable thread from request to result</text>
+<text id="line-2-21" x="40" y="3846.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">— no gaps between departments, vendors, or</text>
+<text id="line-3-13" x="40" y="3868.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">systems.</text>
+</g>
+</g>
+</g>
+<g id="Section / What changes when we step in">
+<rect id="Background-7" x="0" y="3958" width="390" height="856" fill="#FFFFFF"/>
+<g id="Section header / What Changes When We Step In">
+<g id="Eyebrow / What changes">
+<line id="Rule-4" x1="20" y1="4009" x2="48" y2="4009" stroke="#C62C28" stroke-width="2" stroke-linecap="butt"/>
+<text id="Label-24" x="60" y="4014" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">WHAT CHANGES</text>
+</g>
+<g id="Heading-4">
+<text id="line-1-29" x="20" y="4055.16" font-family="Varta" font-size="27" font-weight="700" fill="#10203A" letter-spacing="-0.3">What Changes When We Step</text>
+<text id="line-2-22" x="20" y="4089.16" font-family="Varta" font-size="27" font-weight="700" fill="#10203A" letter-spacing="-0.3">In</text>
+</g>
+<g id="Subheading-3">
+<text id="line-1-30" x="20" y="4128.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">The difference shows up in how the work</text>
+<text id="line-2-23" x="20" y="4153.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">behaves, not in a slide deck.</text>
+</g>
+</g>
+<g id="Outcome / Work Runs the Same Way Across Team">
+<g id="Icon / check">
+<circle id="Disc" cx="32" cy="4202" r="11" fill="#163969"/>
+<path id="Tick" d="M27 4202 L30.5 4205.5 L37 4198.5" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-9">
+<text id="line-1-31" x="58" y="4205.76" font-family="Varta" font-size="17" font-weight="700" fill="#10203A">Work Runs the Same Way Across Teams</text>
+</g>
+<g id="Body-9">
+<text id="line-1-32" x="58" y="4234.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">One standard path, followed consistently,</text>
+<text id="line-2-24" x="58" y="4256.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">regardless of who picks up the request.</text>
+</g>
+</g>
+<line id="Divider-3" x1="20" y1="4284" x2="370" y2="4284" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+<g id="Outcome / Issues Surface Earlier">
+<g id="Icon / check-2">
+<circle id="Disc-2" cx="32" cy="4320" r="11" fill="#163969"/>
+<path id="Tick-2" d="M27 4320 L30.5 4323.5 L37 4316.5" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-10">
+<text id="line-1-33" x="58" y="4323.76" font-family="Varta" font-size="17" font-weight="700" fill="#10203A">Issues Surface Earlier</text>
+</g>
+<g id="Body-10">
+<text id="line-1-34" x="58" y="4352.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Checkpoints catch problems while they’re still</text>
+<text id="line-2-25" x="58" y="4374.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">cheap to fix, not at the deadline.</text>
+</g>
+</g>
+<line id="Divider-4" x1="20" y1="4402" x2="370" y2="4402" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+<g id="Outcome / Nothing Gets Lost Between Teams, S">
+<g id="Icon / check-3">
+<circle id="Disc-3" cx="32" cy="4438" r="11" fill="#163969"/>
+<path id="Tick-3" d="M27 4438 L30.5 4441.5 L37 4434.5" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-11">
+<text id="line-1-35" x="58" y="4441.76" font-family="Varta" font-size="17" font-weight="700" fill="#10203A">Nothing Gets Lost Between Teams,</text>
+<text id="line-2-26" x="58" y="4465.76" font-family="Varta" font-size="17" font-weight="700" fill="#10203A">Systems, or Data</text>
+</g>
+<g id="Body-11">
+<text id="line-1-36" x="58" y="4494.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Handoffs stay connected end-to-end, so</text>
+<text id="line-2-27" x="58" y="4516.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">context travels with the work.</text>
+</g>
+</g>
+<line id="Divider-5" x1="20" y1="4544" x2="370" y2="4544" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+<g id="Outcome / Control Holds as You Scale">
+<g id="Icon / check-4">
+<circle id="Disc-4" cx="32" cy="4580" r="11" fill="#163969"/>
+<path id="Tick-4" d="M27 4580 L30.5 4583.5 L37 4576.5" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-12">
+<text id="line-1-37" x="58" y="4583.76" font-family="Varta" font-size="17" font-weight="700" fill="#10203A">Control Holds as You Scale</text>
+</g>
+<g id="Body-12">
+<text id="line-1-38" x="58" y="4612.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">The process keeps its shape as volume,</text>
+<text id="line-2-28" x="58" y="4634.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">headcount, and automation grow.</text>
+</g>
+</g>
+<line id="Divider-6" x1="20" y1="4662" x2="370" y2="4662" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+<g id="Outcome / Leaders See What’s Actually Happen">
+<g id="Icon / check-5">
+<circle id="Disc-5" cx="32" cy="4698" r="11" fill="#163969"/>
+<path id="Tick-5" d="M27 4698 L30.5 4701.5 L37 4694.5" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Title-13">
+<text id="line-1-39" x="58" y="4701.76" font-family="Varta" font-size="17" font-weight="700" fill="#10203A">Leaders See What’s Actually Happening</text>
+</g>
+<g id="Body-13">
+<text id="line-1-40" x="58" y="4730.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Operational visibility built on real movement of</text>
+<text id="line-2-29" x="58" y="4752.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">work, not status meetings.</text>
+</g>
+</g>
+</g>
+<g id="Section / Our expertise">
+<rect id="Background-8" x="0" y="4814" width="390" height="1002" fill="#F4F7FB"/>
+<g id="Section header / Our Expertise">
+<g id="Eyebrow / Our expertise">
+<line id="Rule-5" x1="20" y1="4865" x2="48" y2="4865" stroke="#C62C28" stroke-width="2" stroke-linecap="butt"/>
+<text id="Label-25" x="60" y="4870" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">OUR EXPERTISE</text>
+</g>
+<g id="Heading-5">
+<text id="line-1-41" x="20" y="4911.16" font-family="Varta" font-size="27" font-weight="700" fill="#10203A" letter-spacing="-0.3">Our Expertise</text>
+</g>
+<g id="Subheading-4">
+<text id="line-1-42" x="20" y="4950.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">Four connected practices — engaged individually,</text>
+<text id="line-2-30" x="20" y="4975.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#56657C">or as a single accountable programme.</text>
+</g>
+</g>
+<g id="Card / Business Process Improvement">
+<rect id="Surface-21" x="20" y="5014" width="350" height="164" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<rect id="Icon tile-5" x="40" y="5036" width="44" height="44" rx="6" ry="6" fill="#EAF0F7"/>
+<g id="Icon / process">
+<rect id="Lane-4" x="51.9167" y="5048.83" width="20.1667" height="4.58333" rx="1.375" ry="1.375" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Lane-5" x="51.9167" y="5055.71" width="20.1667" height="4.58333" rx="1.375" ry="1.375" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Lane-6" x="51.9167" y="5062.58" width="20.1667" height="4.58333" rx="1.375" ry="1.375" fill="none" stroke="#163969" stroke-width="1.9"/>
+</g>
+<text id="Index-5" x="98" y="5048" font-family="Varta" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.2">01</text>
+<g id="Title-14">
+<text id="line-1-43" x="98" y="5071.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Business Process</text>
+<text id="line-2-31" x="98" y="5097.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Improvement</text>
+</g>
+<g id="Body-14">
+<text id="line-1-44" x="40" y="5126.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Map, standardise, and document how work</text>
+<text id="line-2-32" x="40" y="5148.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">moves so every team runs the same play.</text>
+</g>
+</g>
+<g id="Card / Program &amp; Project Management">
+<rect id="Surface-22" x="20" y="5194" width="350" height="186" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<rect id="Icon tile-6" x="40" y="5216" width="44" height="44" rx="6" ry="6" fill="#EAF0F7"/>
+<g id="Icon / program">
+<path id="Icon / program-2" d="M53.75 5245.33 V5230.67" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / program-3" d="M53.75 5245.33 H70.25" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect id="Bar-4" x="56.5" y="5239.83" width="3.66667" height="5.5" rx="0.916667" ry="0.916667" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Bar-5" x="61.0833" y="5235.25" width="3.66667" height="10.0833" rx="0.916667" ry="0.916667" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Bar-6" x="65.6667" y="5231.58" width="3.66667" height="13.75" rx="0.916667" ry="0.916667" fill="none" stroke="#163969" stroke-width="1.9"/>
+</g>
+<text id="Index-6" x="98" y="5228" font-family="Varta" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.2">02</text>
+<g id="Title-15">
+<text id="line-1-45" x="98" y="5251.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Program &amp; Project</text>
+<text id="line-2-33" x="98" y="5277.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Management</text>
+</g>
+<g id="Body-15">
+<text id="line-1-46" x="40" y="5306.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">PMO structure, governance, and delivery</text>
+<text id="line-2-34" x="40" y="5328.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">discipline that keep scope, budget, and</text>
+<text id="line-3-14" x="40" y="5350.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">schedule under control.</text>
+</g>
+</g>
+<g id="Card / Technology Development">
+<rect id="Surface-23" x="20" y="5396" width="350" height="144" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<rect id="Icon tile-7" x="40" y="5418" width="44" height="44" rx="6" ry="6" fill="#EAF0F7"/>
+<g id="Icon / tech">
+<rect id="Screen" x="52.8333" y="5432.67" width="18.3333" height="12.8333" rx="1.83333" ry="1.83333" fill="none" stroke="#163969" stroke-width="1.9"/>
+<path id="Icon / tech-2" d="M58.3333 5448.25 H65.6667" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / tech-3" d="M58.7917 5437.25 L56.5 5439.54 L58.7917 5441.83" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / tech-4" d="M65.2083 5437.25 L67.5 5439.54 L65.2083 5441.83" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Index-7" x="98" y="5430" font-family="Varta" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.2">03</text>
+<g id="Title-16">
+<text id="line-1-47" x="98" y="5453.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Technology Development</text>
+</g>
+<g id="Body-16">
+<text id="line-1-48" x="40" y="5488.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Applications, integrations, and automation</text>
+<text id="line-2-35" x="40" y="5510.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">built on processes that are already stable.</text>
+</g>
+</g>
+<g id="Card / Managed IT Solutions">
+<rect id="Surface-24" x="20" y="5556" width="350" height="144" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<rect id="Icon tile-8" x="40" y="5578" width="44" height="44" rx="6" ry="6" fill="#EAF0F7"/>
+<g id="Icon / managed">
+<path id="Icon / managed-2" d="M62 5591.29 L70.25 5594.96 V5600.92 C70.25 5605.5 65.6667 5607.79 62 5608.71 C58.3333 5607.79 53.75 5605.5 53.75 5600.92 V5594.96 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="Core" cx="62" cy="5599.54" r="2.38333" fill="none" stroke="#163969" stroke-width="1.9"/>
+<path id="Icon / managed-3" d="M62 5602.29 V5605.04" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Index-8" x="98" y="5590" font-family="Varta" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.2">04</text>
+<g id="Title-17">
+<text id="line-1-49" x="98" y="5613.24" font-family="Varta" font-size="19" font-weight="700" fill="#10203A">Managed IT Solutions</text>
+</g>
+<g id="Body-17">
+<text id="line-1-50" x="40" y="5648.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Ongoing support, security, and infrastructure</text>
+<text id="line-2-36" x="40" y="5670.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">management so operations stay steady.</text>
+</g>
+</g>
+<g id="Closing note">
+<text id="line-1-51" x="20" y="5740.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Not sure where the drift starts? Begin with a free</text>
+<text id="line-2-37" x="20" y="5762.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">process assessment.</text>
+</g>
+</g>
+<g id="Section / Free toolkit">
+<rect id="Background-9" x="0" y="5816" width="390" height="454" fill="#FFFFFF"/>
+<rect id="Card surface" x="20" y="5860" width="350" height="366" rx="16" ry="16" fill="#0E2647"/>
+<rect id="Accent bar" x="20" y="5860" width="5" height="366" rx="2.5" ry="2.5" fill="#F7B537"/>
+<g id="Watermark-2" opacity="0.09" clip-path="url(#clip-4)">
+<g id="Compass mark-5">
+<circle id="Ring-8" cx="330" cy="5930" r="104.5" fill="none" stroke="#FFFFFF" stroke-width="11"/>
+<path id="Arc-5" d="M362.292 5830.61 A104.5 104.5 0 0 1 429.385 5962.29" fill="none" stroke="#F7B537" stroke-width="11" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle-5" d="M408.11 5805 L357.986 5947.49 L251.89 6055 L302.014 5912.51 Z" fill="#FFFFFF"/>
+<circle id="Pivot-5" cx="330" cy="5930" r="8.25" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="Eyebrow / Free resource">
+<text id="Label-26" x="44" y="5900" font-family="Open Sans" font-size="13" font-weight="700" fill="#F7B537" letter-spacing="1.6">FREE RESOURCE</text>
+</g>
+<g id="Heading-6">
+<text id="line-1-52" x="44" y="5937.16" font-family="Varta" font-size="27" font-weight="700" fill="#FFFFFF" letter-spacing="-0.3">Unlock your FREE toolkit</text>
+</g>
+<g id="Body-18">
+<text id="line-1-53" x="44" y="5974.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">The operations checklist we use on day one of</text>
+<text id="line-2-38" x="44" y="5996.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">an engagement — the questions that expose</text>
+<text id="line-3-15" x="44" y="6018.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">where your process is quietly drifting.</text>
+</g>
+<g id="Email capture">
+<rect id="Input field" x="44" y="6050" width="302" height="52" rx="6" ry="6" fill="#FFFFFF"/>
+<text id="Placeholder" x="60" y="6083" font-family="Open Sans" font-size="14" font-weight="400" fill="#8A97AA">Enter your work email</text>
+<g id="Button / Unlock">
+<rect id="Surface-25" x="44" y="6114" width="302" height="52" rx="6" ry="6" fill="#F7B537"/>
+<text id="Label-27" x="160.866" y="6145" font-family="Open Sans" font-size="15" font-weight="700" fill="#0A1526" letter-spacing="0.8">UNLOCK</text>
+</g>
+<text id="Consent note" x="44" y="6188" font-family="Open Sans" font-size="11" font-weight="400" fill="#8397B2">No spam. Unsubscribe at any time. See our Privacy Policy.</text>
+</g>
+</g>
+<g id="Section / Final CTA">
+<rect id="Background-10" x="0" y="6270" width="390" height="356" fill="#163969"/>
+<g id="Decoration-3" clip-path="url(#clip-5)">
+<g id="Watermark-3" opacity="0.07">
+<circle id="Ring-9" cx="360" cy="6448" r="170" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle id="Ring-10" cx="360" cy="6448" r="124" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle id="Ring-11" cx="360" cy="6448" r="80" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+</g>
+</g>
+<g id="Heading-7">
+<text id="line-1-54" x="20" y="6351.16" font-family="Varta" font-size="27" font-weight="700" fill="#FFFFFF" letter-spacing="-0.3">Ready to chart your course?</text>
+</g>
+<g id="Subheading-5">
+<text id="line-1-55" x="20" y="6390.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#B9C6D8">Start with a clear read on how work moves today.</text>
+<text id="line-2-39" x="20" y="6415.5" font-family="Open Sans" font-size="15" font-weight="400" fill="#B9C6D8">We’ll show you where it drifts and what it costs.</text>
+</g>
+<g id="Button / Request Your Free Process Assessment">
+<rect id="Surface-26" x="20" y="6450" width="350" height="54" rx="6" ry="6" fill="#C62C28"/>
+<text id="Label-28" x="41.2094" y="6481.17" font-family="Open Sans" font-size="12.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.8">REQUEST YOUR FREE PROCESS ASSESSMENT</text>
+<path id="Arrow-2" d="M338.791 6477 H350.791 M345.791 6472.5 L350.791 6477 L345.791 6481.5" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Button / Schedule a Call-2">
+<rect id="Surface-27" x="20" y="6516" width="350" height="54" rx="6" ry="6" fill="none" stroke="#6F86A6" stroke-width="1.5"/>
+<text id="Label-29" x="122.992" y="6548" font-family="Open Sans" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="0.8">SCHEDULE A CALL</text>
+</g>
+</g>
+<g id="Section / Footer">
+<rect id="Background-11" x="0" y="6626" width="390" height="678" fill="#0A1526"/>
+<g id="Logo / CorporateLounge-2">
+<text id="CORP-2" x="20" y="6688.88" font-family="Varta" font-size="18.6" font-weight="700" fill="#FFFFFF" letter-spacing="0.744">CORP</text>
+<g id="Compass mark-6">
+<circle id="Ring-12" cx="79.2826" cy="6682.65" r="7.9515" fill="none" stroke="#FFFFFF" stroke-width="2.697"/>
+<path id="Arc-6" d="M81.7398 6675.09 A7.9515 7.9515 0 0 1 86.845 6685.11" fill="none" stroke="#F7B537" stroke-width="2.697" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle-6" d="M85.8865 6672.08 L81.6487 6684.13 L72.6788 6693.22 L76.9166 6681.17 Z" fill="#C62C28"/>
+<circle id="Pivot-6" cx="79.2826" cy="6682.65" r="0.6975" fill="#FFFFFF"/>
+</g>
+<text id="RATE-2" x="89.6986" y="6688.88" font-family="Varta" font-size="18.6" font-weight="700" fill="#FFFFFF" letter-spacing="0.744">RATE</text>
+<text id="LOUNGE-2" x="79.0551" y="6702.27" font-family="Varta" font-size="11.16" font-weight="700" fill="#C62C28" letter-spacing="2.697">LOUNGE</text>
+</g>
+<g id="Tagline">
+<text id="line-1-56" x="20" y="6738.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#8397B2">A process-focused IT consultancy giving operations</text>
+<text id="line-2-40" x="20" y="6760.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#8397B2">the structure to execute consistently.</text>
+</g>
+<g id="Footer navigation">
+<g id="Column / Solutions">
+<text id="Heading-8" x="20" y="6794" font-family="Open Sans" font-size="11" font-weight="700" fill="#FFFFFF" letter-spacing="1.3">SOLUTIONS</text>
+<g id="Link / Business Process Improvement">
+<text id="line-1-57" x="20" y="6821.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Business Process</text>
+<text id="line-2-41" x="20" y="6839.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Improvement</text>
+</g>
+<g id="Link / Program &amp; Project Management">
+<text id="line-1-58" x="20" y="6865.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Program &amp; Project</text>
+<text id="line-2-42" x="20" y="6883.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Management</text>
+</g>
+<g id="Link / Technology Development">
+<text id="line-1-59" x="20" y="6909.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Technology Development</text>
+</g>
+<g id="Link / Managed IT Solutions">
+<text id="line-1-60" x="20" y="6935.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Managed IT Solutions</text>
+</g>
+</g>
+<g id="Column / Company">
+<text id="Heading-9" x="195" y="6794" font-family="Open Sans" font-size="11" font-weight="700" fill="#FFFFFF" letter-spacing="1.3">COMPANY</text>
+<g id="Link / Our Story">
+<text id="line-1-61" x="195" y="6821.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Our Story</text>
+</g>
+<g id="Link / Why COMPASS">
+<text id="line-1-62" x="195" y="6847.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Why COMPASS</text>
+</g>
+<g id="Link / Careers">
+<text id="line-1-63" x="195" y="6873.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Careers</text>
+</g>
+<g id="Link / Contact Us">
+<text id="line-1-64" x="195" y="6899.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Contact Us</text>
+</g>
+</g>
+<g id="Column / Resources">
+<text id="Heading-10" x="20" y="6966" font-family="Open Sans" font-size="11" font-weight="700" fill="#FFFFFF" letter-spacing="1.3">RESOURCES</text>
+<g id="Link / Insights">
+<text id="line-1-65" x="20" y="6993.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Insights</text>
+</g>
+<g id="Link / Free Toolkit">
+<text id="line-1-66" x="20" y="7019.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Free Toolkit</text>
+</g>
+<g id="Link / Process Assessment">
+<text id="line-1-67" x="20" y="7045.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Process Assessment</text>
+</g>
+<g id="Link / Support">
+<text id="line-1-68" x="20" y="7071.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Support</text>
+</g>
+</g>
+<g id="Column / Legal">
+<text id="Heading-11" x="195" y="6966" font-family="Open Sans" font-size="11" font-weight="700" fill="#FFFFFF" letter-spacing="1.3">LEGAL</text>
+<g id="Link / Terms &amp; Conditions">
+<text id="line-1-69" x="195" y="6993.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Terms &amp; Conditions</text>
+</g>
+<g id="Link / Privacy Policy">
+<text id="line-1-70" x="195" y="7019.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Privacy Policy</text>
+</g>
+<g id="Link / Accessibility">
+<text id="line-1-71" x="195" y="7045.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2" letter-spacing="0.2">Accessibility</text>
+</g>
+</g>
+</g>
+<line id="Divider-7" x1="20" y1="7114" x2="370" y2="7114" stroke="#24405F" stroke-width="1" stroke-linecap="butt"/>
+<text id="Location" x="20" y="7144" font-family="Open Sans" font-size="13" font-weight="600" fill="#B9C6D8">Houston, Texas</text>
+<text id="Email" x="20" y="7166" font-family="Open Sans" font-size="13" font-weight="400" fill="#8397B2">hello@thecorporatelounge.com</text>
+<g id="Social">
+<circle id="Social ring" cx="35" cy="7206" r="15" fill="none" stroke="#24405F" stroke-width="1.25"/>
+<text id="Social / in" x="35" y="7211" font-family="Open Sans" font-size="11" font-weight="700" fill="#B9C6D8" text-anchor="middle">in</text>
+<circle id="Social ring-2" cx="73" cy="7206" r="15" fill="none" stroke="#24405F" stroke-width="1.25"/>
+<text id="Social / X" x="73" y="7211" font-family="Open Sans" font-size="11" font-weight="700" fill="#B9C6D8" text-anchor="middle">X</text>
+<circle id="Social ring-3" cx="111" cy="7206" r="15" fill="none" stroke="#24405F" stroke-width="1.25"/>
+<text id="Social / f" x="111" y="7211" font-family="Open Sans" font-size="11" font-weight="700" fill="#B9C6D8" text-anchor="middle">f</text>
+</g>
+<line id="Divider-8" x1="20" y1="7242" x2="370" y2="7242" stroke="#24405F" stroke-width="1" stroke-linecap="butt"/>
+<text id="Copyright" x="20" y="7274" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2">© 2026 CorporateLounge, LLC. All rights reserved.</text>
+</g>
+</g>
+</svg>

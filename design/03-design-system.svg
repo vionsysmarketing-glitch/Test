@@ -1,0 +1,667 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="4314" viewBox="0 0 1440 4314" fill="none">
+<defs>
+<clipPath id="clip"><rect x="0" y="0" width="1440" height="236"/></clipPath>
+</defs>
+<g id="Frame / Design system">
+<rect id="Canvas" x="0" y="0" width="1440" height="4314" fill="#FFFFFF"/>
+<rect id="Background" x="0" y="0" width="1440" height="236" fill="#0E2647"/>
+<g id="Decoration" opacity="0.09" clip-path="url(#clip)">
+<g id="Compass mark">
+<circle id="Ring" cx="1290" cy="118" r="181" fill="none" stroke="#FFFFFF" stroke-width="18"/>
+<path id="Arc" d="M1345.93 -54.1412 A181 181 0 0 1 1462.14 173.932" fill="none" stroke="#F7B537" stroke-width="18" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle" d="M1424.92 -97.913 L1338.34 148.205 L1155.08 333.913 L1241.66 87.7946 Z" fill="#C62C28"/>
+<circle id="Pivot" cx="1290" cy="118" r="14.25" fill="#FFFFFF"/>
+</g>
+</g>
+<g id="Logo / CorporateLounge">
+<text id="CORP" x="120" y="73.6" font-family="Varta" font-size="27" font-weight="700" fill="#FFFFFF" letter-spacing="1.08">CORP</text>
+<g id="Compass mark-2">
+<circle id="Ring-2" cx="204.643" cy="64.555" r="11.5425" fill="none" stroke="#FFFFFF" stroke-width="3.915"/>
+<path id="Arc-2" d="M208.21 53.5774 A11.5425 11.5425 0 0 1 215.621 68.1218" fill="none" stroke="#F7B537" stroke-width="3.915" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle-2" d="M214.229 49.2138 L208.078 66.7012 L195.057 79.8962 L201.209 62.4088 Z" fill="#C62C28"/>
+<circle id="Pivot-2" cx="204.643" cy="64.555" r="1.0125" fill="#FFFFFF"/>
+</g>
+<text id="RATE" x="219.763" y="73.6" font-family="Varta" font-size="27" font-weight="700" fill="#FFFFFF" letter-spacing="1.08">RATE</text>
+<text id="LOUNGE" x="202.906" y="93.04" font-family="Varta" font-size="16.2" font-weight="700" fill="#C62C28" letter-spacing="3.915">LOUNGE</text>
+</g>
+<text id="Title" x="120" y="152" font-family="Varta" font-size="34" font-weight="700" fill="#FFFFFF" letter-spacing="-0.3">Homepage Design System</text>
+<text id="Subtitle" x="120" y="184" font-family="Open Sans" font-size="15" font-weight="400" fill="#B9C6D8">Tokens, components, and layout rules used across the desktop and mobile homepage frames.</text>
+<g id="Block header / Logo &amp; mark">
+<text id="Index" x="120" y="324" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">01</text>
+<text id="Title-2" x="166" y="324" font-family="Varta" font-size="30" font-weight="700" fill="#10203A" letter-spacing="-0.2">Logo &amp; mark</text>
+<text id="Note" x="1320" y="324" font-family="Open Sans" font-size="14" font-weight="400" fill="#8A97AA" text-anchor="end">Compass replaces the O — never substitute a plain letter</text>
+<line id="Rule" x1="120" y1="344" x2="1320" y2="344" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Logo / Primary lockup">
+<rect id="Stage" x="120" y="392" width="384" height="176" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1"/>
+<g id="Logo / CorporateLounge-2">
+<text id="CORP-2" x="241.925" y="483.51" font-family="Varta" font-size="23.4" font-weight="700" fill="#163969" letter-spacing="0.936">CORP</text>
+<g id="Compass mark-3">
+<circle id="Ring-3" cx="314.32" cy="475.671" r="10.0035" fill="none" stroke="#163969" stroke-width="3.393"/>
+<path id="Arc-3" d="M317.412 466.157 A10.0035 10.0035 0 0 1 323.834 478.762" fill="none" stroke="#F7B537" stroke-width="3.393" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle-3" d="M322.628 462.375 L317.297 477.531 L306.012 488.967 L311.344 473.811 Z" fill="#C62C28"/>
+<circle id="Pivot-3" cx="314.32" cy="475.671" r="0.8775" fill="#FFFFFF"/>
+</g>
+<text id="RATE-2" x="327.424" y="483.51" font-family="Varta" font-size="23.4" font-weight="700" fill="#163969" letter-spacing="0.936">RATE</text>
+<text id="LOUNGE-2" x="311.451" y="500.358" font-family="Varta" font-size="14.04" font-weight="700" fill="#C62C28" letter-spacing="3.393">LOUNGE</text>
+</g>
+<text id="Label" x="312" y="594" font-family="Open Sans" font-size="13" font-weight="600" fill="#56657C" text-anchor="middle">Primary lockup</text>
+</g>
+<g id="Logo / Reversed lockup">
+<rect id="Stage-2" x="528" y="392" width="384" height="176" rx="10" ry="10" fill="#0E2647"/>
+<g id="Logo / CorporateLounge-3">
+<text id="CORP-3" x="649.925" y="483.51" font-family="Varta" font-size="23.4" font-weight="700" fill="#FFFFFF" letter-spacing="0.936">CORP</text>
+<g id="Compass mark-4">
+<circle id="Ring-4" cx="722.32" cy="475.671" r="10.0035" fill="none" stroke="#FFFFFF" stroke-width="3.393"/>
+<path id="Arc-4" d="M725.412 466.157 A10.0035 10.0035 0 0 1 731.834 478.762" fill="none" stroke="#F7B537" stroke-width="3.393" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle-4" d="M730.628 462.375 L725.297 477.531 L714.012 488.967 L719.344 473.811 Z" fill="#C62C28"/>
+<circle id="Pivot-4" cx="722.32" cy="475.671" r="0.8775" fill="#FFFFFF"/>
+</g>
+<text id="RATE-3" x="735.424" y="483.51" font-family="Varta" font-size="23.4" font-weight="700" fill="#FFFFFF" letter-spacing="0.936">RATE</text>
+<text id="LOUNGE-3" x="719.451" y="500.358" font-family="Varta" font-size="14.04" font-weight="700" fill="#C62C28" letter-spacing="3.393">LOUNGE</text>
+</g>
+<text id="Label-2" x="720" y="594" font-family="Open Sans" font-size="13" font-weight="600" fill="#56657C" text-anchor="middle">Reversed lockup</text>
+</g>
+<g id="Logo / Mark only">
+<rect id="Stage-3" x="936" y="392" width="384" height="176" rx="10" ry="10" fill="#F4F7FB" stroke="#DEE5EE" stroke-width="1"/>
+<g id="Compass mark-5">
+<circle id="Ring-5" cx="1128" cy="480" r="37.5" fill="none" stroke="#163969" stroke-width="13"/>
+<path id="Arc-5" d="M1139.59 444.335 A37.5 37.5 0 0 1 1163.66 491.588" fill="none" stroke="#F7B537" stroke-width="13" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="Needle-5" d="M1159.24 429.999 L1139.19 486.995 L1096.76 530.001 L1116.81 473.005 Z" fill="#C62C28"/>
+<circle id="Pivot-5" cx="1128" cy="480" r="3.3" fill="#FFFFFF"/>
+</g>
+<text id="Label-3" x="1128" y="594" font-family="Open Sans" font-size="13" font-weight="600" fill="#56657C" text-anchor="middle">Mark only</text>
+</g>
+<text id="Note / Clear space" x="120" y="628" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Clear space</text>
+<g id="Body">
+<text id="line-1" x="120" y="654.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Minimum padding on all sides equals the height of the</text>
+<text id="line-2" x="120" y="676.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">compass mark.</text>
+</g>
+<text id="Note / Minimum size" x="528" y="628" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Minimum size</text>
+<g id="Body-2">
+<text id="line-1-2" x="528" y="654.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">120px wide on screen. Below that, use the compass</text>
+<text id="line-2-2" x="528" y="676.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">mark on its own.</text>
+</g>
+<text id="Note / Colour" x="936" y="628" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Colour</text>
+<g id="Body-3">
+<text id="line-1-3" x="936" y="654.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Navy wordmark with a red LOUNGE. Reversed lockup</text>
+<text id="line-2-3" x="936" y="676.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">keeps LOUNGE red on navy.</text>
+</g>
+<g id="Block header / Colour">
+<text id="Index-2" x="120" y="730" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">02</text>
+<text id="Title-3" x="166" y="730" font-family="Varta" font-size="30" font-weight="700" fill="#10203A" letter-spacing="-0.2">Colour</text>
+<text id="Note-2" x="1320" y="730" font-family="Open Sans" font-size="14" font-weight="400" fill="#8A97AA" text-anchor="end">Brand values sampled from the CL logo artwork</text>
+<line id="Rule-2" x1="120" y1="750" x2="1320" y2="750" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<text id="Group label" x="120" y="796" font-family="Open Sans" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.4">BRAND</text>
+<g id="Swatch / Navy">
+<rect id="Chip" x="120" y="814" width="200" height="104" rx="6" ry="6" fill="#163969"/>
+<text id="Name" x="120" y="942" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Navy</text>
+<text id="Hex" x="120" y="962" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#163969</text>
+<g id="Usage">
+<text id="line-1-4" x="120" y="985.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Primary. Wordmark, headings,</text>
+<text id="line-2-4" x="120" y="1003.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">dark surfaces.</text>
+</g>
+</g>
+<g id="Swatch / Red">
+<rect id="Chip-2" x="344" y="814" width="200" height="104" rx="6" ry="6" fill="#C62C28"/>
+<text id="Name-2" x="344" y="942" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Red</text>
+<text id="Hex-2" x="344" y="962" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#C62C28</text>
+<g id="Usage-2">
+<text id="line-1-5" x="344" y="985.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Accent. Primary CTAs, links, alert</text>
+<text id="line-2-5" x="344" y="1003.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">states.</text>
+</g>
+</g>
+<g id="Swatch / Gold">
+<rect id="Chip-3" x="568" y="814" width="200" height="104" rx="6" ry="6" fill="#F7B537"/>
+<text id="Name-3" x="568" y="942" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Gold</text>
+<text id="Hex-3" x="568" y="962" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#F7B537</text>
+<g id="Usage-3">
+<text id="line-1-6" x="568" y="985.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Highlight. Eyebrows on dark,</text>
+<text id="line-2-6" x="568" y="1003.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">lead-magnet CTA.</text>
+</g>
+</g>
+<text id="Group label-2" x="120" y="1036" font-family="Open Sans" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.4">NAVY RAMP</text>
+<g id="Swatch / Navy 900">
+<rect id="Chip-4" x="120" y="1054" width="220.8" height="84" rx="6" ry="6" fill="#0A1526"/>
+<text id="Name-4" x="120" y="1162" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Navy 900</text>
+<text id="Hex-4" x="120" y="1182" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#0A1526</text>
+<g id="Usage-4">
+<text id="line-1-7" x="120" y="1205.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Footer, deepest surface.</text>
+</g>
+</g>
+<g id="Swatch / Navy 800">
+<rect id="Chip-5" x="364.8" y="1054" width="220.8" height="84" rx="6" ry="6" fill="#0E2647"/>
+<text id="Name-5" x="364.8" y="1162" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Navy 800</text>
+<text id="Hex-5" x="364.8" y="1182" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#0E2647</text>
+<g id="Usage-5">
+<text id="line-1-8" x="364.8" y="1205.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Hero, COMPASS band, feature cards.</text>
+</g>
+</g>
+<g id="Swatch / Navy 700">
+<rect id="Chip-6" x="609.6" y="1054" width="220.8" height="84" rx="6" ry="6" fill="#163969"/>
+<text id="Name-6" x="609.6" y="1162" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Navy 700</text>
+<text id="Hex-6" x="609.6" y="1182" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#163969</text>
+<g id="Usage-6">
+<text id="line-1-9" x="609.6" y="1205.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Brand navy. CTA band, card fills.</text>
+</g>
+</g>
+<g id="Swatch / Navy 600">
+<rect id="Chip-7" x="854.4" y="1054" width="220.8" height="84" rx="6" ry="6" fill="#1D4C86"/>
+<text id="Name-7" x="854.4" y="1162" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Navy 600</text>
+<text id="Hex-7" x="854.4" y="1182" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#1D4C86</text>
+<g id="Usage-7">
+<text id="line-1-10" x="854.4" y="1205.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Hover state on navy surfaces.</text>
+</g>
+</g>
+<g id="Swatch / Navy line">
+<rect id="Chip-8" x="1099.2" y="1054" width="220.8" height="84" rx="6" ry="6" fill="#24405F"/>
+<text id="Name-8" x="1099.2" y="1162" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Navy line</text>
+<text id="Hex-8" x="1099.2" y="1182" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#24405F</text>
+<g id="Usage-8">
+<text id="line-1-11" x="1099.2" y="1205.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Hairlines and borders on dark.</text>
+</g>
+</g>
+<text id="Group label-3" x="120" y="1256" font-family="Open Sans" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.4">NEUTRALS &amp; ACCENT RAMP</text>
+<g id="Swatch / Ink">
+<rect id="Chip-9" x="120" y="1274" width="136" height="72" rx="6" ry="6" fill="#10203A"/>
+<text id="Name-9" x="120" y="1370" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Ink</text>
+<text id="Hex-9" x="120" y="1390" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#10203A</text>
+<g id="Usage-9">
+<text id="line-1-12" x="120" y="1413.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Headings and</text>
+<text id="line-2-7" x="120" y="1431.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">high-emphasis body.</text>
+</g>
+</g>
+<g id="Swatch / Slate 600">
+<rect id="Chip-10" x="272" y="1274" width="136" height="72" rx="6" ry="6" fill="#56657C"/>
+<text id="Name-10" x="272" y="1370" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Slate 600</text>
+<text id="Hex-10" x="272" y="1390" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#56657C</text>
+<g id="Usage-10">
+<text id="line-1-13" x="272" y="1413.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Body copy on light</text>
+<text id="line-2-8" x="272" y="1431.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">surfaces.</text>
+</g>
+</g>
+<g id="Swatch / Slate 400">
+<rect id="Chip-11" x="424" y="1274" width="136" height="72" rx="6" ry="6" fill="#8A97AA"/>
+<text id="Name-11" x="424" y="1370" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Slate 400</text>
+<text id="Hex-11" x="424" y="1390" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#8A97AA</text>
+<g id="Usage-11">
+<text id="line-1-14" x="424" y="1413.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Meta, placeholders,</text>
+<text id="line-2-9" x="424" y="1431.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">muted labels.</text>
+</g>
+</g>
+<g id="Swatch / Line">
+<rect id="Chip-12" x="576" y="1274" width="136" height="72" rx="6" ry="6" fill="#DEE5EE"/>
+<text id="Name-12" x="576" y="1370" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Line</text>
+<text id="Hex-12" x="576" y="1390" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#DEE5EE</text>
+<g id="Usage-12">
+<text id="line-1-15" x="576" y="1413.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Card borders, dividers.</text>
+</g>
+</g>
+<g id="Swatch / Surface">
+<rect id="Chip-13" x="728" y="1274" width="136" height="72" rx="6" ry="6" fill="#F4F7FB" stroke="#DEE5EE" stroke-width="1"/>
+<text id="Name-13" x="728" y="1370" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Surface</text>
+<text id="Hex-13" x="728" y="1390" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#F4F7FB</text>
+<g id="Usage-13">
+<text id="line-1-16" x="728" y="1413.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Alternating section</text>
+<text id="line-2-10" x="728" y="1431.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">background.</text>
+</g>
+</g>
+<g id="Swatch / White">
+<rect id="Chip-14" x="880" y="1274" width="136" height="72" rx="6" ry="6" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1"/>
+<text id="Name-14" x="880" y="1370" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">White</text>
+<text id="Hex-14" x="880" y="1390" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#FFFFFF</text>
+<g id="Usage-14">
+<text id="line-1-17" x="880" y="1413.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Base surface and</text>
+<text id="line-2-11" x="880" y="1431.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">reversed type.</text>
+</g>
+</g>
+<g id="Swatch / Red 700">
+<rect id="Chip-15" x="1032" y="1274" width="136" height="72" rx="6" ry="6" fill="#A6231F"/>
+<text id="Name-15" x="1032" y="1370" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Red 700</text>
+<text id="Hex-15" x="1032" y="1390" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#A6231F</text>
+<g id="Usage-15">
+<text id="line-1-18" x="1032" y="1413.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">CTA hover / pressed.</text>
+</g>
+</g>
+<g id="Swatch / Red 100">
+<rect id="Chip-16" x="1184" y="1274" width="136" height="72" rx="6" ry="6" fill="#F7E3E2"/>
+<text id="Name-16" x="1184" y="1370" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Red 100</text>
+<text id="Hex-16" x="1184" y="1390" font-family="Open Sans" font-size="13" font-weight="400" fill="#56657C">#F7E3E2</text>
+<g id="Usage-16">
+<text id="line-1-19" x="1184" y="1413.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" letter-spacing="0.2">Alert pill background.</text>
+</g>
+</g>
+<g id="Block header / Typography">
+<text id="Index-3" x="120" y="1464" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">03</text>
+<text id="Title-4" x="166" y="1464" font-family="Varta" font-size="30" font-weight="700" fill="#10203A" letter-spacing="-0.2">Typography</text>
+<text id="Note-3" x="1320" y="1464" font-family="Open Sans" font-size="14" font-weight="400" fill="#8A97AA" text-anchor="end">Varta for display · Open Sans for body — both live on the site</text>
+<line id="Rule-3" x1="120" y1="1484" x2="1320" y2="1484" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / Display">
+<text id="Name-17" x="120" y="1581" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">Display</text>
+<text id="Spec" x="216" y="1581" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Varta 700 · 56/64 · -0.5 tracking</text>
+<text id="Sample" x="492" y="1597.16" font-family="Varta" font-size="56" font-weight="700" fill="#10203A" letter-spacing="-0.5">Charting Success.</text>
+<text id="Usage-17" x="1320" y="1581" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">Hero headline</text>
+<line id="Rule-4" x1="120" y1="1618" x2="1320" y2="1618" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / H2">
+<text id="Name-18" x="120" y="1655" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">H2</text>
+<text id="Spec-2" x="216" y="1655" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Varta 700 · 40/48 · -0.3 tracking</text>
+<text id="Sample-2" x="492" y="1665.4" font-family="Varta" font-size="40" font-weight="700" fill="#10203A" letter-spacing="-0.3">Guiding Ambition. Charting Success.</text>
+<text id="Usage-18" x="1320" y="1655" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">Section headings</text>
+<line id="Rule-5" x1="120" y1="1684" x2="1320" y2="1684" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / H3">
+<text id="Name-19" x="120" y="1714" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">H3</text>
+<text id="Spec-3" x="216" y="1714" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Varta 700 · 26/34 · -0.2 tracking</text>
+<text id="Sample-3" x="492" y="1719.36" font-family="Varta" font-size="26" font-weight="700" fill="#10203A" letter-spacing="-0.2">Guiding Ambition. Charting Success.</text>
+<text id="Usage-19" x="1320" y="1714" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">Service card titles</text>
+<line id="Rule-6" x1="120" y1="1736" x2="1320" y2="1736" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / H4">
+<text id="Name-20" x="120" y="1763" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">H4</text>
+<text id="Spec-4" x="216" y="1763" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Varta 700 · 20/28 · +0 tracking</text>
+<text id="Sample-4" x="492" y="1766.2" font-family="Varta" font-size="20" font-weight="700" fill="#10203A">Guiding Ambition. Charting Success.</text>
+<text id="Usage-20" x="1320" y="1763" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">Feature card titles</text>
+<line id="Rule-7" x1="120" y1="1782" x2="1320" y2="1782" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / Body L">
+<text id="Name-21" x="120" y="1810" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">Body L</text>
+<text id="Spec-5" x="216" y="1810" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Open Sans 400 · 18/30 · +0 tracking</text>
+<text id="Sample-5" x="492" y="1812.48" font-family="Open Sans" font-size="18" font-weight="400" fill="#10203A">Guiding Ambition. Charting Success.</text>
+<text id="Usage-21" x="1320" y="1810" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">Hero and section intros</text>
+<line id="Rule-8" x1="120" y1="1830" x2="1320" y2="1830" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / Body">
+<text id="Name-22" x="120" y="1857" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">Body</text>
+<text id="Spec-6" x="216" y="1857" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Open Sans 400 · 16/27 · +0 tracking</text>
+<text id="Sample-6" x="492" y="1858.76" font-family="Open Sans" font-size="16" font-weight="400" fill="#10203A">Guiding Ambition. Charting Success.</text>
+<text id="Usage-22" x="1320" y="1857" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">Long-form paragraphs</text>
+<line id="Rule-9" x1="120" y1="1876" x2="1320" y2="1876" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / Small">
+<text id="Name-23" x="120" y="1903" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">Small</text>
+<text id="Spec-7" x="216" y="1903" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Open Sans 400 · 14/22 · +0 tracking</text>
+<text id="Sample-7" x="492" y="1904.04" font-family="Open Sans" font-size="14" font-weight="400" fill="#10203A">Guiding Ambition. Charting Success.</text>
+<text id="Usage-23" x="1320" y="1903" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">Card body, footer links</text>
+<line id="Rule-10" x1="120" y1="1922" x2="1320" y2="1922" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / Eyebrow">
+<text id="Name-24" x="120" y="1949" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">Eyebrow</text>
+<text id="Spec-8" x="216" y="1949" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Open Sans 700 · 13/16 · +1.6 tracking</text>
+<text id="Sample-8" x="492" y="1949.68" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A" letter-spacing="1.6">GUIDING AMBITION. CHARTING SUCCESS.</text>
+<text id="Usage-24" x="1320" y="1949" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">Section kickers, all caps</text>
+<line id="Rule-11" x1="120" y1="1968" x2="1320" y2="1968" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / Button">
+<text id="Name-25" x="120" y="1995" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">Button</text>
+<text id="Spec-9" x="216" y="1995" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Open Sans 700 · 15/20 · +0.3 tracking</text>
+<text id="Sample-9" x="492" y="1996.4" font-family="Open Sans" font-size="15" font-weight="700" fill="#10203A" letter-spacing="0.3">GUIDING AMBITION. CHARTING SUCCESS.</text>
+<text id="Usage-25" x="1320" y="1995" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">All CTA labels, all caps</text>
+<line id="Rule-12" x1="120" y1="2014" x2="1320" y2="2014" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Type / Micro">
+<text id="Name-26" x="120" y="2041" font-family="Open Sans" font-size="13" font-weight="700" fill="#10203A">Micro</text>
+<text id="Spec-10" x="216" y="2041" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Open Sans 400 · 12/18 · +0.2 tracking</text>
+<text id="Sample-10" x="492" y="2041.32" font-family="Open Sans" font-size="12" font-weight="400" fill="#10203A" letter-spacing="0.2">Guiding Ambition. Charting Success.</text>
+<text id="Usage-26" x="1320" y="2041" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA" text-anchor="end">Legal, consent, captions</text>
+<line id="Rule-13" x1="120" y1="2060" x2="1320" y2="2060" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Block header / Layout grid">
+<text id="Index-4" x="120" y="2138" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">04</text>
+<text id="Title-5" x="166" y="2138" font-family="Varta" font-size="30" font-weight="700" fill="#10203A" letter-spacing="-0.2">Layout grid</text>
+<text id="Note-4" x="1320" y="2138" font-family="Open Sans" font-size="14" font-weight="400" fill="#8A97AA" text-anchor="end">1440 desktop · 390 mobile</text>
+<line id="Rule-14" x1="120" y1="2158" x2="1320" y2="2158" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<rect id="Stage-4" x="120" y="2206" width="1200" height="244" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Desktop grid">
+<rect id="Frame 1440" x="288" y="2242" width="864" height="150" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1"/>
+<rect id="Column" x="360" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-2" x="421.2" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-3" x="482.4" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-4" x="543.6" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-5" x="604.8" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-6" x="666" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-7" x="727.2" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-8" x="788.4" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-9" x="849.6" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-10" x="910.8" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-11" x="972" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<rect id="Column-12" x="1033.2" y="2256" width="46.8" height="122" fill="#C62C28" opacity="0.14"/>
+<line id="Margin guide" x1="360" y1="2230" x2="360" y2="2392" stroke="#163969" stroke-width="1" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<line id="Margin guide-2" x1="1080" y1="2230" x2="1080" y2="2392" stroke="#163969" stroke-width="1" stroke-linecap="butt" stroke-dasharray="4 4"/>
+<text id="Margin label" x="324" y="2418" font-family="Open Sans" font-size="11" font-weight="600" fill="#56657C" text-anchor="middle">120</text>
+<text id="Margin label-2" x="1116" y="2418" font-family="Open Sans" font-size="11" font-weight="600" fill="#56657C" text-anchor="middle">120</text>
+<text id="Spec-11" x="720" y="2418" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">12 columns · 76px column · 24px gutter · 1200px content</text>
+</g>
+<text id="Spec / Desktop 1440" x="120" y="2494" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Desktop 1440</text>
+<g id="Body-4">
+<text id="line-1-20" x="120" y="2520.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">120px margin · 12 cols · 24px gutter</text>
+</g>
+<text id="Spec / Mobile 390" x="426" y="2494" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Mobile 390</text>
+<g id="Body-5">
+<text id="line-1-21" x="426" y="2520.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">20px margin · 4 cols · 16px gutter</text>
+</g>
+<text id="Spec / Radius" x="732" y="2494" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Radius</text>
+<g id="Body-6">
+<text id="line-1-22" x="732" y="2520.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">6 buttons/inputs · 10 cards · 16 panels ·</text>
+<text id="line-2-12" x="732" y="2542.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">pill chips</text>
+</g>
+<text id="Spec / Spacing" x="1038" y="2494" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">Spacing</text>
+<g id="Body-7">
+<text id="line-1-23" x="1038" y="2520.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">8pt base. Section padding 96–104px</text>
+<text id="line-2-13" x="1038" y="2542.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">desktop, 56px mobile.</text>
+</g>
+<g id="Block header / Components">
+<text id="Index-5" x="120" y="2590" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">05</text>
+<text id="Title-6" x="166" y="2590" font-family="Varta" font-size="30" font-weight="700" fill="#10203A" letter-spacing="-0.2">Components</text>
+<text id="Note-5" x="1320" y="2590" font-family="Open Sans" font-size="14" font-weight="400" fill="#8A97AA" text-anchor="end">Interactive states listed below each</text>
+<line id="Rule-15" x1="120" y1="2610" x2="1320" y2="2610" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Buttons">
+<text id="Group label-4" x="120" y="2658" font-family="Open Sans" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.4">BUTTONS</text>
+<rect id="Light stage" x="120" y="2678" width="592" height="132" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1"/>
+<g id="Button / Primary">
+<rect id="Surface" x="148" y="2706" width="129.647" height="52" rx="6" ry="6" fill="#C62C28"/>
+<text id="Label-4" x="176" y="2737" font-family="Open Sans" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="0.8">PRIMARY</text>
+</g>
+<g id="Button / Secondary">
+<rect id="Surface-2" x="293.647" y="2706" width="154.278" height="52" rx="6" ry="6" fill="none" stroke="#163969" stroke-width="1.5"/>
+<text id="Label-5" x="321.647" y="2737" font-family="Open Sans" font-size="15" font-weight="700" fill="#163969" letter-spacing="0.8">SECONDARY</text>
+</g>
+<g id="Button / Unlock">
+<rect id="Surface-3" x="463.925" y="2706" width="124.269" height="52" rx="6" ry="6" fill="#F7B537"/>
+<text id="Label-6" x="491.925" y="2737" font-family="Open Sans" font-size="15" font-weight="700" fill="#0A1526" letter-spacing="0.8">UNLOCK</text>
+</g>
+<g id="Link / Text link">
+<text id="Label-7" x="148" y="2786" font-family="Open Sans" font-size="15" font-weight="700" fill="#C62C28" letter-spacing="0.3">Text link</text>
+<path id="Arrow" d="M225.637 2781 H238.637 M233.637 2776.5 L238.637 2781 L233.637 2785.5" fill="none" stroke="#C62C28" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="States" x="288" y="2786" font-family="Open Sans" font-size="12" font-weight="400" fill="#8A97AA">Hover: Red 700 · Focus: 2px navy ring</text>
+<rect id="Dark stage" x="736" y="2678" width="584" height="132" rx="10" ry="10" fill="#0E2647"/>
+<g id="Button / Primary-2">
+<rect id="Surface-4" x="764" y="2706" width="129.647" height="52" rx="6" ry="6" fill="#C62C28"/>
+<text id="Label-8" x="792" y="2737" font-family="Open Sans" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="0.8">PRIMARY</text>
+</g>
+<g id="Button / Secondary-2">
+<rect id="Surface-5" x="909.647" y="2706" width="154.278" height="52" rx="6" ry="6" fill="none" stroke="#6F86A6" stroke-width="1.5"/>
+<text id="Label-9" x="937.647" y="2737" font-family="Open Sans" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="0.8">SECONDARY</text>
+</g>
+<g id="Button / On white">
+<rect id="Surface-6" x="1079.92" y="2706" width="138.463" height="52" rx="6" ry="6" fill="#FFFFFF"/>
+<text id="Label-10" x="1107.92" y="2737" font-family="Open Sans" font-size="15" font-weight="700" fill="#163969" letter-spacing="0.8">ON WHITE</text>
+</g>
+<text id="States-2" x="764" y="2786" font-family="Open Sans" font-size="12" font-weight="400" fill="#8397B2">Reversed set for navy sections</text>
+</g>
+<g id="Form field &amp; chips">
+<text id="Group label-5" x="120" y="2862" font-family="Open Sans" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.4">INPUT &amp; CHIPS</text>
+<rect id="Input / default" x="120" y="2882" width="380" height="56" rx="6" ry="6" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Placeholder" x="138" y="2916" font-family="Open Sans" font-size="15" font-weight="400" fill="#8A97AA">Enter your work email</text>
+<rect id="Input / focus" x="524" y="2882" width="380" height="56" rx="6" ry="6" fill="#FFFFFF" stroke="#163969" stroke-width="2"/>
+<text id="Value" x="542" y="2916" font-family="Open Sans" font-size="15" font-weight="400" fill="#10203A">ops@agency.gov</text>
+<g id="Chip / HUB">
+<rect id="Surface-7" x="928" y="2892" width="65.3281" height="38" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-11" x="960.664" y="2915" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">HUB</text>
+</g>
+<g id="Chip / DIR-Approved">
+<rect id="Surface-8" x="1005.33" y="2892" width="136.859" height="38" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-12" x="1073.76" y="2915" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">DIR-APPROVED</text>
+</g>
+<g id="Chip / NMSDC">
+<rect id="Surface-9" x="1154.19" y="2892" width="85.2031" height="38" rx="999" ry="999" fill="none" stroke="#DEE5EE" stroke-width="1.25"/>
+<text id="Label-13" x="1196.79" y="2915" font-family="Open Sans" font-size="12" font-weight="700" fill="#163969" letter-spacing="1" text-anchor="middle">NMSDC</text>
+</g>
+</g>
+<g id="Cards">
+<text id="Group label-6" x="120" y="2990" font-family="Open Sans" font-size="12" font-weight="700" fill="#8A97AA" letter-spacing="1.4">CARDS</text>
+<rect id="Card / Feature (light)" x="120" y="3010" width="384" height="224" rx="10" ry="10" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1.25"/>
+<rect id="Icon tile" x="148" y="3038" width="52" height="52" rx="6" ry="6" fill="#EAF0F7"/>
+<g id="Icon / government">
+<path id="Icon / government-2" d="M160 3074.5 H188" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-3" d="M174 3052.33 L185.667 3059.33 H162.333 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-4" d="M165.833 3061.67 V3072.17" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-5" d="M172.833 3061.67 V3072.17" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-6" d="M179.833 3061.67 V3072.17" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Title-7" x="148" y="3126" font-family="Varta" font-size="20" font-weight="700" fill="#10203A">Feature card</text>
+<g id="Body-8">
+<text id="line-1-24" x="148" y="3152.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Icon tile, title, two lines of body, and an arrow link</text>
+<text id="line-2-14" x="148" y="3174.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">pinned to the base.</text>
+</g>
+<g id="Link / Explore">
+<text id="Label-14" x="148" y="3208" font-family="Open Sans" font-size="15" font-weight="700" fill="#C62C28" letter-spacing="0.3">Explore</text>
+<path id="Arrow-2" d="M216.209 3203 H229.209 M224.209 3198.5 L229.209 3203 L224.209 3207.5" fill="none" stroke="#C62C28" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<rect id="Card / Principle (dark)" x="528" y="3010" width="384" height="224" rx="10" ry="10" fill="#163969" stroke="#24405F" stroke-width="1.25"/>
+<text id="Index-6" x="556" y="3058" font-family="Varta" font-size="15" font-weight="700" fill="#F7B537" letter-spacing="1.2">01</text>
+<line id="Index rule" x1="556" y1="3076" x2="588" y2="3076" stroke="#F7B537" stroke-width="2" stroke-linecap="butt"/>
+<text id="Title-8" x="556" y="3122" font-family="Varta" font-size="20" font-weight="700" fill="#FFFFFF">Principle card</text>
+<g id="Body-9">
+<text id="line-1-25" x="556" y="3148.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">Numbered index, gold rule, icon, title and body on</text>
+<text id="line-2-15" x="556" y="3170.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#B9C6D8">Navy 700.</text>
+</g>
+<rect id="Card / Outcome" x="936" y="3010" width="384" height="224" rx="10" ry="10" fill="#F4F7FB" stroke="#DEE5EE" stroke-width="1.25"/>
+<g id="Icon / check">
+<circle id="Disc" cx="981" cy="3055" r="13.75" fill="#163969"/>
+<path id="Tick" d="M974.75 3055 L979.125 3059.38 L987.25 3050.62" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Title-9" x="966" y="3116" font-family="Varta" font-size="20" font-weight="700" fill="#10203A">Outcome card</text>
+<g id="Body-10">
+<text id="line-1-26" x="966" y="3142.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Filled check disc, title, and supporting line. No</text>
+<text id="line-2-16" x="966" y="3164.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">link.</text>
+</g>
+</g>
+<g id="Block header / Icon set">
+<text id="Index-7" x="120" y="3322" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">06</text>
+<text id="Title-10" x="166" y="3322" font-family="Varta" font-size="30" font-weight="700" fill="#10203A" letter-spacing="-0.2">Icon set</text>
+<text id="Note-6" x="1320" y="3322" font-family="Open Sans" font-size="14" font-weight="400" fill="#8A97AA" text-anchor="end">1.9px stroke · round caps · 24px grid</text>
+<line id="Rule-16" x1="120" y1="3342" x2="1320" y2="3342" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Icon tile / Government">
+<rect id="Stage-5" x="120" y="3390" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / government-7">
+<path id="Icon / government-8" d="M182.857 3446 H214.857" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-9" d="M198.857 3420.67 L212.19 3428.67 H185.524 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-10" d="M189.524 3431.33 V3443.33" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-11" d="M197.524 3431.33 V3443.33" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / government-12" d="M205.524 3431.33 V3443.33" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Label-15" x="198.857" y="3498" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Government</text>
+</g>
+<g id="Icon tile / Education">
+<rect id="Stage-6" x="293.714" y="3390" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / education">
+<path id="Icon / education-2" d="M372.571 3422 L387.238 3430 L372.571 3438 L357.905 3430 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / education-3" d="M363.238 3432.67 V3440.67 C363.238 3444.67 381.905 3444.67 381.905 3440.67 V3432.67" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Label-16" x="372.571" y="3498" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Education</text>
+</g>
+<g id="Icon tile / Energy">
+<rect id="Stage-7" x="467.429" y="3390" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / energy">
+<path id="Icon / energy-2" d="M547.619 3420.67 L535.619 3436 H545.619 L543.619 3447.33 L556.952 3431.33 H546.286 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Label-17" x="546.286" y="3498" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Energy</text>
+</g>
+<g id="Icon tile / Corporate">
+<rect id="Stage-8" x="641.143" y="3390" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / corporate">
+<path id="Icon / corporate-2" d="M706.667 3446 H733.333" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-3" d="M708 3446 V3426 H721.333 V3446" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-4" d="M721.333 3446 V3432.67 H732 V3446" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-5" d="M712 3430 h0.133333" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-6" d="M717.333 3430 h0.133333" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-7" d="M712 3436.67 h0.133333" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-8" d="M717.333 3436.67 h0.133333" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / corporate-9" d="M725.333 3438 h0.133333" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Label-18" x="720" y="3498" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Corporate</text>
+</g>
+<g id="Icon tile / Standardize">
+<rect id="Stage-9" x="814.857" y="3390" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / standardize">
+<path id="Icon / standardize-2" d="M883.048 3421.33 V3446.67" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect id="Lane" x="888.381" y="3422.67" width="17.3333" height="6.66667" rx="3.33333" ry="3.33333" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Lane-2" x="888.381" y="3430.67" width="17.3333" height="6.66667" rx="3.33333" ry="3.33333" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Lane-3" x="888.381" y="3438.67" width="17.3333" height="6.66667" rx="3.33333" ry="3.33333" fill="none" stroke="#163969" stroke-width="1.9"/>
+</g>
+<text id="Label-19" x="893.714" y="3498" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Standardize</text>
+</g>
+<g id="Icon tile / Control">
+<rect id="Stage-10" x="988.571" y="3390" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / control">
+<path id="Icon / control-2" d="M1054.1 3434 H1063.43" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / control-3" d="M1071.43 3434 H1080.76" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / control-4" d="M1076.1 3429.33 L1080.76 3434 L1076.1 3438.67" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect id="Gate" x="1064.1" y="3426" width="6.66667" height="16" rx="2.13333" ry="2.13333" fill="#163969"/>
+</g>
+<text id="Label-20" x="1067.43" y="3498" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Control</text>
+</g>
+<g id="Icon tile / Find delays">
+<rect id="Stage-11" x="1162.29" y="3390" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / delay">
+<circle id="Dial" cx="1241.14" cy="3434" r="12.6667" fill="none" stroke="#163969" stroke-width="1.9"/>
+<path id="Icon / delay-2" d="M1241.14 3426.67 V3434 H1247.14" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Label-21" x="1241.14" y="3498" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Find delays</text>
+</g>
+<g id="Icon tile / Ownership">
+<rect id="Stage-12" x="120" y="3518" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / ownership">
+<path id="Icon / ownership-2" d="M198.857 3549.33 L210.857 3554.67 V3563.33 C210.857 3570 204.19 3573.33 198.857 3574.67 C193.524 3573.33 186.857 3570 186.857 3563.33 V3554.67 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / ownership-3" d="M193.524 3562 L197.524 3566 L204.857 3558" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Label-22" x="198.857" y="3626" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Ownership</text>
+</g>
+<g id="Icon tile / Outcome">
+<rect id="Stage-13" x="293.714" y="3518" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / check-2">
+<circle id="Disc-2" cx="372.571" cy="3562" r="14.6667" fill="#163969"/>
+<path id="Tick-2" d="M365.905 3562 L370.571 3566.67 L379.238 3557.33" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Label-23" x="372.571" y="3626" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Outcome</text>
+</g>
+<g id="Icon tile / Process">
+<rect id="Stage-14" x="467.429" y="3518" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / process">
+<rect id="Lane-4" x="531.619" y="3548.67" width="29.3333" height="6.66667" rx="2" ry="2" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Lane-5" x="531.619" y="3558.67" width="29.3333" height="6.66667" rx="2" ry="2" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Lane-6" x="531.619" y="3568.67" width="29.3333" height="6.66667" rx="2" ry="2" fill="none" stroke="#163969" stroke-width="1.9"/>
+</g>
+<text id="Label-24" x="546.286" y="3626" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Process</text>
+</g>
+<g id="Icon tile / Programme">
+<rect id="Stage-15" x="641.143" y="3518" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / program">
+<path id="Icon / program-2" d="M708 3572.67 V3551.33" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / program-3" d="M708 3572.67 H732" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect id="Bar" x="712" y="3564.67" width="5.33333" height="8" rx="1.33333" ry="1.33333" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Bar-2" x="718.667" y="3558" width="5.33333" height="14.6667" rx="1.33333" ry="1.33333" fill="none" stroke="#163969" stroke-width="1.9"/>
+<rect id="Bar-3" x="725.333" y="3552.67" width="5.33333" height="20" rx="1.33333" ry="1.33333" fill="none" stroke="#163969" stroke-width="1.9"/>
+</g>
+<text id="Label-25" x="720" y="3626" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Programme</text>
+</g>
+<g id="Icon tile / Technology">
+<rect id="Stage-16" x="814.857" y="3518" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / tech">
+<rect id="Screen" x="880.381" y="3551.33" width="26.6667" height="18.6667" rx="2.66667" ry="2.66667" fill="none" stroke="#163969" stroke-width="1.9"/>
+<path id="Icon / tech-2" d="M888.381 3574 H899.048" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / tech-3" d="M889.048 3558 L885.714 3561.33 L889.048 3564.67" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon / tech-4" d="M898.381 3558 L901.714 3561.33 L898.381 3564.67" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Label-26" x="893.714" y="3626" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Technology</text>
+</g>
+<g id="Icon tile / Managed IT">
+<rect id="Stage-17" x="988.571" y="3518" width="157.714" height="88" rx="10" ry="10" fill="#F4F7FB"/>
+<g id="Icon / managed">
+<path id="Icon / managed-2" d="M1067.43 3549.33 L1079.43 3554.67 V3563.33 C1079.43 3570 1072.76 3573.33 1067.43 3574.67 C1062.1 3573.33 1055.43 3570 1055.43 3563.33 V3554.67 Z" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="Core" cx="1067.43" cy="3561.33" r="3.46667" fill="none" stroke="#163969" stroke-width="1.9"/>
+<path id="Icon / managed-3" d="M1067.43 3565.33 V3569.33" fill="none" stroke="#163969" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text id="Label-27" x="1067.43" y="3626" font-family="Open Sans" font-size="12" font-weight="600" fill="#56657C" text-anchor="middle">Managed IT</text>
+</g>
+<g id="Block header / Contrast">
+<text id="Index-8" x="120" y="3706" font-family="Open Sans" font-size="13" font-weight="700" fill="#C62C28" letter-spacing="1.6">07</text>
+<text id="Title-11" x="166" y="3706" font-family="Varta" font-size="30" font-weight="700" fill="#10203A" letter-spacing="-0.2">Contrast</text>
+<text id="Note-7" x="1320" y="3706" font-family="Open Sans" font-size="14" font-weight="400" fill="#8A97AA" text-anchor="end">WCAG 2.1 · computed from the tokens</text>
+<line id="Rule-17" x1="120" y1="3726" x2="1320" y2="3726" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Contrast / Ink on White">
+<rect id="Sample-11" x="120" y="3782" width="96" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1"/>
+<text id="Sample text" x="168" y="3806" font-family="Open Sans" font-size="16" font-weight="700" fill="#10203A" text-anchor="middle">Aa</text>
+<text id="Pair" x="240" y="3806" font-family="Open Sans" font-size="14" font-weight="600" fill="#10203A">Ink on White</text>
+<text id="Usage-27" x="580" y="3806" font-family="Open Sans" font-size="13" font-weight="400" fill="#8A97AA">Body &amp; headings</text>
+<text id="Ratio" x="900" y="3806" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">16.28:1</text>
+<text id="Grade" x="1320" y="3806" font-family="Open Sans" font-size="13" font-weight="700" fill="#56657C" letter-spacing="0.6" text-anchor="end">AAA</text>
+<line id="Rule-18" x1="120" y1="3826" x2="1320" y2="3826" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Contrast / Slate 600 on White">
+<rect id="Sample-12" x="120" y="3834" width="96" height="36" rx="6" ry="6" fill="#FFFFFF" stroke="#DEE5EE" stroke-width="1"/>
+<text id="Sample text-2" x="168" y="3858" font-family="Open Sans" font-size="16" font-weight="700" fill="#56657C" text-anchor="middle">Aa</text>
+<text id="Pair-2" x="240" y="3858" font-family="Open Sans" font-size="14" font-weight="600" fill="#10203A">Slate 600 on White</text>
+<text id="Usage-28" x="580" y="3858" font-family="Open Sans" font-size="13" font-weight="400" fill="#8A97AA">Body copy</text>
+<text id="Ratio-2" x="900" y="3858" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">5.92:1</text>
+<text id="Grade-2" x="1320" y="3858" font-family="Open Sans" font-size="13" font-weight="700" fill="#56657C" letter-spacing="0.6" text-anchor="end">AA</text>
+<line id="Rule-19" x1="120" y1="3878" x2="1320" y2="3878" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Contrast / Slate 600 on Surface">
+<rect id="Sample-13" x="120" y="3886" width="96" height="36" rx="6" ry="6" fill="#F4F7FB"/>
+<text id="Sample text-3" x="168" y="3910" font-family="Open Sans" font-size="16" font-weight="700" fill="#56657C" text-anchor="middle">Aa</text>
+<text id="Pair-3" x="240" y="3910" font-family="Open Sans" font-size="14" font-weight="600" fill="#10203A">Slate 600 on Surface</text>
+<text id="Usage-29" x="580" y="3910" font-family="Open Sans" font-size="13" font-weight="400" fill="#8A97AA">Card body</text>
+<text id="Ratio-3" x="900" y="3910" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">5.51:1</text>
+<text id="Grade-3" x="1320" y="3910" font-family="Open Sans" font-size="13" font-weight="700" fill="#56657C" letter-spacing="0.6" text-anchor="end">AA</text>
+<line id="Rule-20" x1="120" y1="3930" x2="1320" y2="3930" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Contrast / White on Navy 800">
+<rect id="Sample-14" x="120" y="3938" width="96" height="36" rx="6" ry="6" fill="#0E2647"/>
+<text id="Sample text-4" x="168" y="3962" font-family="Open Sans" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Aa</text>
+<text id="Pair-4" x="240" y="3962" font-family="Open Sans" font-size="14" font-weight="600" fill="#10203A">White on Navy 800</text>
+<text id="Usage-30" x="580" y="3962" font-family="Open Sans" font-size="13" font-weight="400" fill="#8A97AA">Hero &amp; dark bands</text>
+<text id="Ratio-4" x="900" y="3962" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">15.14:1</text>
+<text id="Grade-4" x="1320" y="3962" font-family="Open Sans" font-size="13" font-weight="700" fill="#56657C" letter-spacing="0.6" text-anchor="end">AAA</text>
+<line id="Rule-21" x1="120" y1="3982" x2="1320" y2="3982" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Contrast / On-dark soft on Navy 800">
+<rect id="Sample-15" x="120" y="3990" width="96" height="36" rx="6" ry="6" fill="#0E2647"/>
+<text id="Sample text-5" x="168" y="4014" font-family="Open Sans" font-size="16" font-weight="700" fill="#B9C6D8" text-anchor="middle">Aa</text>
+<text id="Pair-5" x="240" y="4014" font-family="Open Sans" font-size="14" font-weight="600" fill="#10203A">On-dark soft on Navy 800</text>
+<text id="Usage-31" x="580" y="4014" font-family="Open Sans" font-size="13" font-weight="400" fill="#8A97AA">Dark body</text>
+<text id="Ratio-5" x="900" y="4014" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">8.75:1</text>
+<text id="Grade-5" x="1320" y="4014" font-family="Open Sans" font-size="13" font-weight="700" fill="#56657C" letter-spacing="0.6" text-anchor="end">AAA</text>
+<line id="Rule-22" x1="120" y1="4034" x2="1320" y2="4034" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Contrast / White on Red 600">
+<rect id="Sample-16" x="120" y="4042" width="96" height="36" rx="6" ry="6" fill="#C62C28"/>
+<text id="Sample text-6" x="168" y="4066" font-family="Open Sans" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Aa</text>
+<text id="Pair-6" x="240" y="4066" font-family="Open Sans" font-size="14" font-weight="600" fill="#10203A">White on Red 600</text>
+<text id="Usage-32" x="580" y="4066" font-family="Open Sans" font-size="13" font-weight="400" fill="#8A97AA">Primary button</text>
+<text id="Ratio-6" x="900" y="4066" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">5.54:1</text>
+<text id="Grade-6" x="1320" y="4066" font-family="Open Sans" font-size="13" font-weight="700" fill="#56657C" letter-spacing="0.6" text-anchor="end">AA</text>
+<line id="Rule-23" x1="120" y1="4086" x2="1320" y2="4086" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Contrast / Navy 900 on Gold">
+<rect id="Sample-17" x="120" y="4094" width="96" height="36" rx="6" ry="6" fill="#F7B537"/>
+<text id="Sample text-7" x="168" y="4118" font-family="Open Sans" font-size="16" font-weight="700" fill="#0A1526" text-anchor="middle">Aa</text>
+<text id="Pair-7" x="240" y="4118" font-family="Open Sans" font-size="14" font-weight="600" fill="#10203A">Navy 900 on Gold</text>
+<text id="Usage-33" x="580" y="4118" font-family="Open Sans" font-size="13" font-weight="400" fill="#8A97AA">Gold button</text>
+<text id="Ratio-7" x="900" y="4118" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">10.12:1</text>
+<text id="Grade-7" x="1320" y="4118" font-family="Open Sans" font-size="13" font-weight="700" fill="#56657C" letter-spacing="0.6" text-anchor="end">AAA</text>
+<line id="Rule-24" x1="120" y1="4138" x2="1320" y2="4138" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Contrast / Gold on Navy 800">
+<rect id="Sample-18" x="120" y="4146" width="96" height="36" rx="6" ry="6" fill="#0E2647"/>
+<text id="Sample text-8" x="168" y="4170" font-family="Open Sans" font-size="16" font-weight="700" fill="#F7B537" text-anchor="middle">Aa</text>
+<text id="Pair-8" x="240" y="4170" font-family="Open Sans" font-size="14" font-weight="600" fill="#10203A">Gold on Navy 800</text>
+<text id="Usage-34" x="580" y="4170" font-family="Open Sans" font-size="13" font-weight="400" fill="#8A97AA">Eyebrow on dark</text>
+<text id="Ratio-8" x="900" y="4170" font-family="Open Sans" font-size="14" font-weight="700" fill="#10203A">8.38:1</text>
+<text id="Grade-8" x="1320" y="4170" font-family="Open Sans" font-size="13" font-weight="700" fill="#56657C" letter-spacing="0.6" text-anchor="end">AAA</text>
+<line id="Rule-25" x1="120" y1="4190" x2="1320" y2="4190" stroke="#DEE5EE" stroke-width="1" stroke-linecap="butt"/>
+</g>
+<g id="Note-8">
+<text id="line-1-27" x="120" y="4238.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">Every pair used across these frames clears WCAG AA (4.5:1) for normal text, and most clear AAA. Gold is reserved for bold, tracked caps on navy — it is never used for body copy, and</text>
+<text id="line-2-17" x="120" y="4260.28" font-family="Open Sans" font-size="14" font-weight="400" fill="#56657C">never on a light surface.</text>
+</g>
+</g>
+</svg>
